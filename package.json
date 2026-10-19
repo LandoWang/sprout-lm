@@ -1,0 +1,17 @@
+{
+  "name": "sprout-lm",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An educational TypeScript inference engine with real paged KV attention",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
