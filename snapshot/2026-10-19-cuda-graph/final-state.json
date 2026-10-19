@@ -1,0 +1,10 @@
+{
+  "observedAtUtc": "2026-10-19T22:42:39.649912+00:00",
+  "gpu": "0, NVIDIA A100 80GB PCIe, 64085 MiB, 17067 MiB\n1, NVIDIA A100 80GB PCIe, 4 MiB, 81149 MiB\n",
+  "computeProcesses": "GPU-7f625747-eb0f-a595-3d64-84215ad232f7, 1006127, /usr/local/bin/node, 64076 MiB\n",
+  "serviceState": "active",
+  "health": {
+    "status": "ok",
+    "pendingRequests": 0
+  }
+}

@@ -1,5 +1,6 @@
 import { KVCache, PagedSequence } from './kv-cache.ts';
-import { TinyTransformer, argmax } from './model.ts';
+import { TinyTransformer } from './model.ts';
+import { argmax, type ModelRunner, type FinishReason } from './runner.ts';
 
 type Status = 'waiting' | 'running' | 'finished' | 'cancelled';
 type Phase = 'prefill' | 'decode' | 'recompute';
@@ -12,6 +13,7 @@ interface Request {
   status: Status;
   kv?: PagedSequence;
   prefixHits: number;
+  finishReason?: FinishReason;
 }
 export interface EngineOptions {
   blockSize: number;
@@ -20,6 +22,7 @@ export interface EngineOptions {
   maxBatchTokens: number;
   prefillChunkSize: number;
   prefixCaching: boolean;
+  recordTrace: boolean;
 }
 export interface Work {
   id: string;
@@ -28,15 +31,16 @@ export interface Work {
   tokens: number;
   blockTable: number[];
 }
-export interface Event {
+export type Event = {
   tick: number;
-  type: 'queued' | 'admitted' | 'token' | 'finished' | 'cancelled' | 'preempted';
   id: string;
   detail: string;
-}
+} & ({ type: 'token'; token: number; index: number } | { type: 'finished'; finishReason: FinishReason } | {
+  type: 'queued' | 'admitted' | 'cancelled' | 'preempted';
+});
 
-export class Engine {
-  readonly model: TinyTransformer;
+export class Engine<R extends ModelRunner = TinyTransformer> {
+  readonly model: R;
   readonly cache: KVCache;
   readonly options: EngineOptions;
   readonly trace: Event[] = [];
@@ -44,37 +48,43 @@ export class Engine {
   private readonly active = new Map<string, Request>();
   private waiting: string[] = [];
   private tick = 0;
+  private nextOrder = 0;
+  private stepEvents?: Event[];
 
-  constructor(options: Partial<EngineOptions> = {}, model = new TinyTransformer()) {
+  constructor(options: Partial<EngineOptions> = {}, model: R = new TinyTransformer() as unknown as R) {
     this.options = {
       blockSize: 4, numBlocks: 64, maxSequences: 4,
-      maxBatchTokens: 8, prefillChunkSize: 4, prefixCaching: true, ...options,
+      maxBatchTokens: 8, prefillChunkSize: 4, prefixCaching: true, recordTrace: true, ...options,
     };
     for (const [name, value] of Object.entries(this.options)) {
-      if (name !== 'prefixCaching' && (!Number.isSafeInteger(value) || (value as number) <= 0)) {
+      if (name === 'prefixCaching' || name === 'recordTrace') {
+        if (typeof value !== 'boolean') throw new Error(`${name} must be a boolean.`);
+      } else if (!Number.isSafeInteger(value) || (value as number) <= 0) {
         throw new Error(`${name} must be a positive integer.`);
       }
     }
     this.model = model;
-    this.cache = new KVCache({
+    const layout = {
       blockSize: this.options.blockSize, numBlocks: this.options.numBlocks,
-      layers: model.layers, width: model.width,
-    });
+      layers: model.spec.layers, width: model.spec.kvHeads * model.spec.headDim,
+    };
+    this.cache = new KVCache({ ...layout, dtype: model.spec.kvDtype, deviceStorage: model.createKVStorage?.(layout) });
   }
 
   add(input: { id: string; prompt: readonly number[]; maxNewTokens: number }): void {
     if (!input.id || this.requests.has(input.id)) throw new Error('Request ID must be nonempty and unique.');
-    if (!input.prompt.length || input.prompt.some(t => !Number.isInteger(t) || t < 0 || t >= this.model.vocabSize)) {
+    if (!input.prompt.length || input.prompt.some(t => !Number.isInteger(t) || t < 0 || t >= this.model.spec.vocabSize)) {
       throw new Error('Prompt must contain valid token IDs.');
     }
     if (!Number.isSafeInteger(input.maxNewTokens) || input.maxNewTokens <= 0) throw new Error('maxNewTokens must be a positive integer.');
     // The final sampled token does not need a KV slot: it will never be fed back in.
     const slots = input.prompt.length + input.maxNewTokens - 1;
+    if (slots > this.model.spec.maxContextLength) throw new Error('Request exceeds the model context limit.');
     if (slots > this.options.numBlocks * this.options.blockSize) {
       throw new Error('Request cannot fit alone in the KV pool. Increase numBlocks or shorten it.');
     }
     const request: Request = {
-      id: input.id, order: this.requests.size, prompt: [...input.prompt], maxNewTokens: input.maxNewTokens,
+      id: input.id, order: this.nextOrder++, prompt: [...input.prompt], maxNewTokens: input.maxNewTokens,
       output: [], status: 'waiting', prefixHits: 0,
     };
     this.requests.set(request.id, request);
@@ -83,6 +93,13 @@ export class Engine {
   }
 
   get pending(): boolean { return this.active.size > 0 || this.waiting.length > 0; }
+
+  /** Serving callers can discard terminal requests after delivering their results. */
+  forget(id: string): boolean {
+    const request = this.requests.get(id);
+    if (!request || request.status === 'waiting' || request.status === 'running') return false;
+    return this.requests.delete(id);
+  }
 
   cancel(id: string): boolean {
     const request = this.requests.get(id);
@@ -100,7 +117,7 @@ export class Engine {
     const request = this.requests.get(id);
     if (!request) throw new Error(`Unknown request: ${id}`);
     return {
-      id, status: request.status, output: [...request.output],
+      id, status: request.status, output: [...request.output], finishReason: request.finishReason,
       computedTokens: request.kv?.length ?? 0,
       blockTable: [...(request.kv?.blocks ?? [])], prefixHits: request.prefixHits,
     };
@@ -108,8 +125,17 @@ export class Engine {
 
   /** One scheduling iteration; callers can admit/cancel requests between iterations. */
   step() {
+    const events: Event[] = [];
+    this.stepEvents = events;
+    try {
+      return this.runStep(events);
+    } finally {
+      this.stepEvents = undefined;
+    }
+  }
+
+  private runStep(events: Event[]) {
     this.tick++;
-    const eventStart = this.trace.length;
     this.admit();
     let budget = this.options.maxBatchTokens;
     const work: Work[] = [];
@@ -129,7 +155,10 @@ export class Engine {
       for (let i = 0; i < count; i++) {
         if (!this.reserve(request)) break;
         const kv = request.kv!;
-        const logits = this.model.forwardToken(history[kv.length], kv.length, kv);
+        const outputToken = kv.length === history.length - 1;
+        const sampled = this.model.forwardSample?.(history[kv.length], kv.length, kv, outputToken);
+        const logits = this.model.forwardSample ? undefined
+          : this.model.forwardToken(history[kv.length], kv.length, kv, outputToken);
         kv.length++;
         computed++;
         budget--;
@@ -138,10 +167,14 @@ export class Engine {
           this.cache.publish(request.prompt.slice(0, kv.length), kv);
         }
         if (kv.length === history.length) {
-          const token = argmax(logits);
+          if (!this.model.forwardSample && (!logits || logits.length !== this.model.spec.vocabSize)) throw new Error('Runner returned invalid logits.');
+          const token = this.model.forwardSample ? sampled : argmax(logits!);
+          if (token === undefined || !Number.isInteger(token) || token < 0 || token >= this.model.spec.vocabSize) throw new Error('Runner returned invalid sampled token.');
           request.output.push(token);
           this.emit('token', request, String(token));
-          if (request.output.length === request.maxNewTokens) {
+          const eos = this.model.spec.eosTokenIds.includes(token);
+          if (eos || request.output.length === request.maxNewTokens) {
+            request.finishReason = eos ? 'eos' : 'length';
             request.status = 'finished';
             kv.release();
             request.kv = undefined;
@@ -153,7 +186,7 @@ export class Engine {
       }
       if (computed) work.push({ id: request.id, phase, from, tokens: computed, blockTable });
     }
-    return { tick: this.tick, work, events: this.trace.slice(eventStart), memory: this.cache.snapshot() };
+    return { tick: this.tick, work, events, memory: this.cache.snapshot() };
   }
 
   private phase(request: Request): Phase {
@@ -198,6 +231,11 @@ export class Engine {
   }
 
   private emit(type: Event['type'], request: Request, detail: string): void {
-    this.trace.push({ tick: this.tick, type, id: request.id, detail });
+    const base = { tick: this.tick, id: request.id, detail };
+    const event: Event = type === 'token'
+      ? { ...base, type, token: request.output.at(-1)!, index: request.output.length - 1 }
+      : type === 'finished' ? { ...base, type, finishReason: request.finishReason! } : { ...base, type };
+    if (this.options.recordTrace) this.trace.push(event);
+    this.stepEvents?.push(event);
   }
 }

@@ -1,0 +1,21 @@
+
+> sprout-lm@0.1.0 test:cuda
+> node --test test/cuda.integration.ts
+
+{"cudaGEMV":{"deviceName":"NVIDIA A100 80GB PCIe","device":1,"deviceFreeBytes":84635680768,"deviceTotalBytes":85093777408,"matvecCalls":6,"tiles":18,"hostToDeviceBytes":9854976,"deviceToHostBytes":14400,"uploadWallMs":1.8515100000000002,"gpuComputeMs":32.252256512176245,"matvecWallMs":34.475578,"peakScratchBytes":1577984,"residentWeightBytes":0,"peakResidentWeightBytes":0,"weightUploadBytes":0,"weightUploadWallMs":0,"matvecWeightUploadBytes":9830400,"deviceTensorBytes":0,"deviceOpCalls":0,"deviceForwards":0,"deviceForwardEventMs":0,"blockTableUploadBytes":0,"graphCaptures":0,"graphLaunches":0,"graphCaptureWallMs":0,"graphNodes":0,"graphInputUploadBytes":0,"liveGraphs":0,"mappedWeightBytes":4915200,"weightMode":"offload","matvecMode":"direct","weightLimitBytes":0,"reserveBytes":1073741824}}
+✔ CUDA offload non-square GEMV handles F32/BF16/F16 and validates lifecycle (269.483604ms)
+{"cudaQwenMaxError":2.2351741790771484e-8,"stats":{"deviceName":"NVIDIA A100 80GB PCIe","device":1,"deviceFreeBytes":84635680768,"deviceTotalBytes":85093777408,"matvecCalls":225,"tiles":225,"hostToDeviceBytes":300000,"deviceToHostBytes":16320,"uploadWallMs":3.3407490000000006,"gpuComputeMs":7.9206397803500295,"matvecWallMs":15.067773000000008,"peakScratchBytes":2288,"residentWeightBytes":0,"peakResidentWeightBytes":0,"weightUploadBytes":0,"weightUploadWallMs":0,"matvecWeightUploadBytes":284160,"deviceTensorBytes":0,"deviceOpCalls":0,"deviceForwards":0,"deviceForwardEventMs":0,"blockTableUploadBytes":0,"graphCaptures":0,"graphLaunches":0,"graphCaptureWallMs":0,"graphNodes":0,"graphInputUploadBytes":0,"liveGraphs":0,"mappedWeightBytes":20992,"weightMode":"offload","matvecMode":"direct","weightLimitBytes":0,"reserveBytes":1073741824}}
+✔ CUDA offload preserves Qwen paged forward against independent Transformers logits (30.395644ms)
+{"cudaGEMV":{"deviceName":"NVIDIA A100 80GB PCIe","device":1,"deviceFreeBytes":84629389312,"deviceTotalBytes":85093777408,"matvecCalls":6,"tiles":18,"hostToDeviceBytes":4939776,"deviceToHostBytes":14400,"uploadWallMs":0.97697,"gpuComputeMs":0.21286399941891432,"matvecWallMs":0.632589,"peakScratchBytes":5120,"residentWeightBytes":4915200,"peakResidentWeightBytes":4915200,"weightUploadBytes":4915200,"weightUploadWallMs":0.920785,"matvecWeightUploadBytes":0,"deviceTensorBytes":0,"deviceOpCalls":0,"deviceForwards":0,"deviceForwardEventMs":0,"blockTableUploadBytes":0,"graphCaptures":0,"graphLaunches":0,"graphCaptureWallMs":0,"graphNodes":0,"graphInputUploadBytes":0,"liveGraphs":0,"mappedWeightBytes":4915200,"weightMode":"resident","matvecMode":"direct","weightLimitBytes":0,"reserveBytes":1073741824}}
+✔ CUDA resident non-square GEMV handles F32/BF16/F16 and validates lifecycle (30.154255ms)
+{"cudaQwenMaxError":2.2351741790771484e-8,"stats":{"deviceName":"NVIDIA A100 80GB PCIe","device":1,"deviceFreeBytes":84635680768,"deviceTotalBytes":85093777408,"matvecCalls":225,"tiles":225,"hostToDeviceBytes":36832,"deviceToHostBytes":16320,"uploadWallMs":1.7927830000000007,"gpuComputeMs":2.362368012778461,"matvecWallMs":7.634937000000004,"peakScratchBytes":240,"residentWeightBytes":20992,"peakResidentWeightBytes":20992,"weightUploadBytes":20992,"weightUploadWallMs":0.202587,"matvecWeightUploadBytes":0,"deviceTensorBytes":0,"deviceOpCalls":0,"deviceForwards":0,"deviceForwardEventMs":0,"blockTableUploadBytes":0,"graphCaptures":0,"graphLaunches":0,"graphCaptureWallMs":0,"graphNodes":0,"graphInputUploadBytes":0,"liveGraphs":0,"mappedWeightBytes":20992,"weightMode":"resident","matvecMode":"direct","weightLimitBytes":0,"reserveBytes":1073741824}}
+✔ CUDA resident preserves Qwen paged forward against independent Transformers logits (16.333789ms)
+✔ resident allocation failure preserves prior matrices and respects memory budgets (6.06897ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 539.39795

@@ -1,4 +1,4 @@
-import type { KVStore, Vector } from './model.ts';
+import type { KVStore, NumericVector as Vector, KVDtype, DeviceKVStorage } from './runner.ts';
 
 interface PrefixBlock { page: number; lastUsed: number }
 
@@ -37,6 +37,12 @@ export class PagedSequence implements KVStore {
     return this.pool.slot(layer, page, position % this.pool.blockSize);
   }
 
+  deviceView() {
+    this.assertLive();
+    if (!this.pool.deviceStorage) throw new Error('Sequence has no device KV storage.');
+    return { storage: this.pool.deviceStorage, blocks: this.blocks, length: this.length };
+  }
+
   release(): void {
     if (this.released) return;
     for (const page of this.blocks) this.pool.releasePage(page);
@@ -55,6 +61,8 @@ export class KVCache {
   readonly blockSize: number;
   readonly layers: number;
   readonly width: number;
+  readonly dtype: KVDtype;
+  readonly deviceStorage?: DeviceKVStorage;
   private readonly keys: Vector[];
   private readonly values: Vector[];
   private readonly refs: number[];
@@ -63,17 +71,26 @@ export class KVCache {
   private clock = 0;
   evictions = 0;
 
-  constructor(options: { numBlocks: number; blockSize: number; layers: number; width: number }) {
+  constructor(options: { numBlocks: number; blockSize: number; layers: number; width: number; dtype?: KVDtype; deviceStorage?: DeviceKVStorage }) {
     for (const [name, value] of Object.entries(options)) {
-      if (!Number.isSafeInteger(value) || value <= 0) throw new Error(`${name} must be a positive integer.`);
+      if (name === 'dtype' || name === 'deviceStorage') continue;
+      if (!Number.isSafeInteger(value) || (value as number) <= 0) throw new Error(`${name} must be a positive integer.`);
     }
     this.numBlocks = options.numBlocks;
     this.blockSize = options.blockSize;
     this.layers = options.layers;
     this.width = options.width;
+    this.dtype = options.dtype ?? 'float64';
+    this.deviceStorage = options.deviceStorage;
+    if (this.deviceStorage && (this.dtype !== 'float32' || ['numBlocks', 'blockSize', 'layers', 'width'].some(
+      key => this.deviceStorage![key as keyof DeviceKVStorage] !== options[key as keyof typeof options]))) {
+      throw new Error('Device KV layout mismatch.');
+    }
+    if (!['float32', 'float64'].includes(this.dtype)) throw new Error('Unsupported KV dtype.');
     const size = this.numBlocks * this.blockSize * this.width;
-    this.keys = Array.from({ length: this.layers }, () => new Float64Array(size));
-    this.values = Array.from({ length: this.layers }, () => new Float64Array(size));
+    const ArrayType = this.dtype === 'float32' ? Float32Array : Float64Array;
+    this.keys = this.deviceStorage ? [] : Array.from({ length: this.layers }, () => new ArrayType(size));
+    this.values = this.deviceStorage ? [] : Array.from({ length: this.layers }, () => new ArrayType(size));
     this.refs = Array(this.numBlocks).fill(0);
     this.free = Array.from({ length: this.numBlocks }, (_, i) => this.numBlocks - 1 - i);
   }
@@ -133,6 +150,7 @@ export class KVCache {
   }
 
   slot(layer: number, page: number, offset: number): { key: Vector; value: Vector } {
+    if (this.deviceStorage) throw new Error('Device KV cannot be read as a host array.');
     if (!Number.isInteger(layer) || layer < 0 || layer >= this.layers) throw new Error('Invalid layer.');
     const start = (page * this.blockSize + offset) * this.width;
     return {

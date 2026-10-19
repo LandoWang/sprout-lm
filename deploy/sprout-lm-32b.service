@@ -1,0 +1,29 @@
+[Unit]
+Description=SproutLM Qwen2.5-32B on A100 (CUDA forward and paged KV)
+After=network.target
+RequiresMountsFor=/mnt/nvme/sprout-lm
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=azureuser
+WorkingDirectory=/mnt/nvme/sprout-lm
+ExecStart=/usr/local/bin/node src/server.ts
+Environment=BACKEND=cuda
+Environment=MODEL_DIR=/mnt/nvme/sprout-lm/models/qwen2.5-32b-instruct
+Environment=CUDA_DEVICE=0
+Environment=CUDA_TILE_MIB=128
+Environment=CUDA_WEIGHT_LIMIT_MIB=69632
+Environment=CUDA_RESERVE_MIB=4096
+Environment=KV_TOKENS=2048
+Environment=HOST=127.0.0.1
+Environment=PORT=3000
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

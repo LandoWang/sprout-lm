@@ -1,0 +1,132 @@
+{
+  "model": "Qwen/Qwen2.5-32B-Instruct@5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+  "coordinatorPid": 1035557,
+  "prefillPid": 1035568,
+  "decodePid": 1035569,
+  "reference": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.17.0",
+    "dtype": "float32"
+  },
+  "positions": 4,
+  "logitsPerPosition": 152064,
+  "maxError": 0.0009183883666992188,
+  "maxToleranceRatio": 0.4423885391121997,
+  "tolerance": "1e-3 + abs(reference) * 1e-4",
+  "results": [
+    {
+      "input": [
+        16,
+        10,
+        16,
+        28
+      ],
+      "output": [
+        17,
+        11
+      ],
+      "transfer": {
+        "request": "reference-0",
+        "bytes": 2097152,
+        "eventMs": 0.06380800157785416,
+        "startedAt": 1792452086562,
+        "endedAt": 1792452086563
+      }
+    },
+    {
+      "input": [
+        108386
+      ],
+      "output": [
+        3837,
+        35946
+      ],
+      "transfer": {
+        "request": "reference-1",
+        "bytes": 524288,
+        "eventMs": 0.03136000037193298,
+        "startedAt": 1792452086917,
+        "endedAt": 1792452086917
+      }
+    }
+  ],
+  "durationMs": 15605.825701,
+  "stats": {
+    "prefill": {
+      "deviceName": "NVIDIA A100 80GB PCIe",
+      "device": 0,
+      "deviceFreeBytes": 18959171584,
+      "deviceTotalBytes": 85093777408,
+      "matvecCalls": 2242,
+      "tiles": 2242,
+      "hostToDeviceBytes": 65529991196,
+      "deviceToHostBytes": 1216512,
+      "uploadWallMs": 7104.052898000005,
+      "gpuComputeMs": 0,
+      "matvecWallMs": 0,
+      "peakScratchBytes": 0,
+      "residentWeightBytes": 65525514240,
+      "peakResidentWeightBytes": 65525514240,
+      "weightUploadBytes": 65525514240,
+      "weightUploadWallMs": 7104.052898000005,
+      "matvecWeightUploadBytes": 0,
+      "deviceTensorBytes": 139675648,
+      "deviceOpCalls": 5769,
+      "deviceForwards": 5,
+      "deviceForwardEventMs": 315.62956619262695,
+      "blockTableUploadBytes": 20,
+      "graphCaptures": 1,
+      "graphLaunches": 1,
+      "graphCaptureWallMs": 10.783211,
+      "graphNodes": 1219,
+      "graphInputUploadBytes": 8,
+      "ipcCopyCalls": 0,
+      "ipcCopyBytes": 0,
+      "ipcCopyEventMs": 0,
+      "liveGraphs": 1,
+      "mappedWeightBytes": 65525514240,
+      "weightMode": "resident",
+      "matvecMode": "direct",
+      "weightLimitBytes": 0,
+      "reserveBytes": 4294967296
+    },
+    "decode": {
+      "deviceName": "NVIDIA A100 80GB PCIe",
+      "device": 1,
+      "deviceFreeBytes": 18959171584,
+      "deviceTotalBytes": 85093777408,
+      "matvecCalls": 898,
+      "tiles": 898,
+      "hostToDeviceBytes": 65529991184,
+      "deviceToHostBytes": 1216512,
+      "uploadWallMs": 6369.97569,
+      "gpuComputeMs": 0,
+      "matvecWallMs": 0,
+      "peakScratchBytes": 0,
+      "residentWeightBytes": 65525514240,
+      "peakResidentWeightBytes": 65525514240,
+      "weightUploadBytes": 65525514240,
+      "weightUploadWallMs": 6369.97569,
+      "matvecWeightUploadBytes": 0,
+      "deviceTensorBytes": 139675648,
+      "deviceOpCalls": 2310,
+      "deviceForwards": 2,
+      "deviceForwardEventMs": 128.99747467041016,
+      "blockTableUploadBytes": 8,
+      "graphCaptures": 1,
+      "graphLaunches": 1,
+      "graphCaptureWallMs": 10.362696,
+      "graphNodes": 1219,
+      "graphInputUploadBytes": 8,
+      "ipcCopyCalls": 2,
+      "ipcCopyBytes": 2621440,
+      "ipcCopyEventMs": 0.09516800194978714,
+      "liveGraphs": 1,
+      "mappedWeightBytes": 65525514240,
+      "weightMode": "resident",
+      "matvecMode": "direct",
+      "weightLimitBytes": 0,
+      "reserveBytes": 4294967296
+    }
+  }
+}

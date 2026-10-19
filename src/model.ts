@@ -1,19 +1,14 @@
+import type { KVStore, ModelRunner, ModelSpec } from './runner.ts';
+export type { KVStore } from './runner.ts';
+export { argmax } from './runner.ts';
+export { encode } from './tokenizer.ts';
+
 /** A real, very small causal Transformer. Seeded weights are NOT trained. */
 export type Vector = Float64Array;
-export interface KVStore {
-  set(layer: number, position: number, key: Vector, value: Vector): void;
-  get(layer: number, position: number): { key: Vector; value: Vector };
-}
 
 interface Layer {
   q: Vector; k: Vector; v: Vector; out: Vector;
   up: Vector; down: Vector;
-}
-
-export function argmax(values: Vector): number {
-  let best = 0;
-  for (let i = 1; i < values.length; i++) if (values[i] > values[best]) best = i;
-  return best;
 }
 
 function linear(x: Vector, weights: Vector, rows: number): Vector {
@@ -43,12 +38,18 @@ function softmax(scores: Vector): Vector {
   return exps.map(v => v / sum);
 }
 
-export class TinyTransformer {
+export class TinyTransformer implements ModelRunner {
   readonly width = 16;
   readonly heads = 2;
   readonly layers = 2;
   readonly hidden = 32;
   readonly vocabSize = 257; // UTF-8 bytes + BOS (256).
+  readonly spec: ModelSpec = {
+    id: 'tiny', layers: this.layers, hiddenSize: this.width,
+    attentionHeads: this.heads, kvHeads: this.heads, headDim: this.width / this.heads,
+    vocabSize: this.vocabSize, maxContextLength: Number.MAX_SAFE_INTEGER,
+    kvDtype: 'float64', eosTokenIds: [],
+  };
   private readonly embedding: Vector;
   private readonly output: Vector;
   private readonly weights: Layer[];
@@ -144,8 +145,4 @@ export class TinyTransformer {
     }
     return linear(norm(states.at(-1)!), this.output, this.vocabSize);
   }
-}
-
-export function encode(text: string): number[] {
-  return [256, ...new TextEncoder().encode(text)];
 }

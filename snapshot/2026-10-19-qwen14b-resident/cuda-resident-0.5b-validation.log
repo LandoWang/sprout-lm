@@ -1,0 +1,21 @@
+
+> sprout-lm@0.1.0 test:model
+> node --test test/model.integration.ts
+
+✔ real Qwen checkpoint: reference logits, tokenizer, scheduling, HTTP and EOS (4343.60381ms)
+ℹ Load 685 ms; RSS 1463 MiB
+ℹ 1 prompt tokens, 3 output tokens: first=94 ms, total=403 ms, text="\n\nI am"
+ℹ 19 prompt tokens, 10 output tokens: first=367 ms, total=1301 ms, text="Hello! How can I assist you today?"
+ℹ 1 prompt tokens, 2 output tokens: first=16 ms, total=192 ms, text="，我"
+ℹ 3 prompt tokens, 3 output tokens: first=49 ms, total=317 ms, text="! I'm"
+ℹ Maximum absolute logit error versus Transformers FP32 eager: 0.00024497509002685547
+ℹ HTTP JSON/SSE natural EOS: "Hello! How can I assist you today?"
+ℹ CUDA offload: {"deviceName":"NVIDIA A100 80GB PCIe","device":0,"deviceFreeBytes":47902425088,"deviceTotalBytes":85093777408,"matvecCalls":14828,"tiles":15004,"hostToDeviceBytes":1074587648,"deviceToHostBytes":133793792,"uploadWallMs":563.8884460000043,"gpuComputeMs":492.663007684052,"matvecWallMs":944.7064719999937,"peakScratchBytes":134386468,"residentWeightBytes":987922432,"peakResidentWeightBytes":987922432,"weightUploadBytes":987922432,"weightUploadWallMs":429.86856100000006,"matvecWeightUploadBytes":0,"mappedWeightBytes":987922432,"weightMode":"resident","weightLimitBytes":0,"reserveBytes":1073741824}
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4651.339688

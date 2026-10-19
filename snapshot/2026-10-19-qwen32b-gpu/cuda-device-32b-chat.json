@@ -1,0 +1,608 @@
+{
+  "model": {
+    "id": "Qwen/Qwen2.5-32B-Instruct@5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "layers": 64,
+    "hiddenSize": 5120,
+    "attentionHeads": 40,
+    "kvHeads": 8,
+    "headDim": 128,
+    "vocabSize": 152064,
+    "maxContextLength": 256,
+    "kvDtype": "float32",
+    "eosTokenIds": [
+      151645,
+      151643
+    ]
+  },
+  "backend": "cuda-device",
+  "chat": true,
+  "prompt": "用一句话解释为什么天空是蓝色的，不超过40个汉字。",
+  "input": [
+    151644,
+    8948,
+    198,
+    2610,
+    525,
+    1207,
+    16948,
+    11,
+    3465,
+    553,
+    54364,
+    14817,
+    13,
+    1446,
+    525,
+    264,
+    10950,
+    17847,
+    13,
+    151645,
+    198,
+    151644,
+    872,
+    198,
+    11622,
+    105321,
+    104136,
+    100678,
+    101916,
+    20412,
+    105681,
+    9370,
+    3837,
+    106070,
+    19,
+    15,
+    18947,
+    114311,
+    1773,
+    151645,
+    198,
+    151644,
+    77091,
+    198
+  ],
+  "output": [
+    101916,
+    105681,
+    62112,
+    105797,
+    99632,
+    99759,
+    101281,
+    99225,
+    15946,
+    100400,
+    99225,
+    106204,
+    1773,
+    151645
+  ],
+  "text": "天空蓝色因大气散射太阳光中蓝光较多。",
+  "finishReason": "eos",
+  "loadMs": 15266.222748,
+  "firstTokenMs": 11305.046776,
+  "generationMs": 14732.024446,
+  "processMemory": {
+    "rss": 66115653632,
+    "heapTotal": 221229056,
+    "heapUsed": 90586544,
+    "external": 8694073,
+    "arrayBuffers": 37601
+  },
+  "processResourceUsage": {
+    "userCPUTime": 15899698,
+    "systemCPUTime": 8752197,
+    "maxRSS": 64566068,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 1139527,
+    "majorPageFault": 50720,
+    "swappedOut": 0,
+    "fsRead": 2153544,
+    "fsWrite": 56,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 69236,
+    "involuntaryContextSwitches": 85
+  },
+  "loadStats": {
+    "deviceName": "NVIDIA A100 80GB PCIe",
+    "device": 0,
+    "deviceFreeBytes": 19045154816,
+    "deviceTotalBytes": 85093777408,
+    "matvecCalls": 0,
+    "tiles": 0,
+    "hostToDeviceBytes": 65529991168,
+    "deviceToHostBytes": 0,
+    "uploadWallMs": 14281.101244999998,
+    "gpuComputeMs": 0,
+    "matvecWallMs": 0,
+    "peakScratchBytes": 0,
+    "residentWeightBytes": 65525514240,
+    "peakResidentWeightBytes": 65525514240,
+    "weightUploadBytes": 65525514240,
+    "weightUploadWallMs": 14281.101244999998,
+    "matvecWeightUploadBytes": 0,
+    "deviceTensorBytes": 64178176,
+    "deviceOpCalls": 0,
+    "deviceForwards": 0,
+    "deviceForwardEventMs": 0,
+    "blockTableUploadBytes": 0,
+    "mappedWeightBytes": 65525514240,
+    "weightMode": "resident",
+    "weightLimitBytes": 73014444032,
+    "reserveBytes": 4294967296
+  },
+  "stats": {
+    "deviceName": "NVIDIA A100 80GB PCIe",
+    "device": 0,
+    "deviceFreeBytes": 18910937088,
+    "deviceTotalBytes": 85093777408,
+    "matvecCalls": 25550,
+    "tiles": 69648,
+    "hostToDeviceBytes": 65529991696,
+    "deviceToHostBytes": 56,
+    "uploadWallMs": 14281.101244999998,
+    "gpuComputeMs": 0,
+    "matvecWallMs": 0,
+    "peakScratchBytes": 134205440,
+    "residentWeightBytes": 65525514240,
+    "peakResidentWeightBytes": 65525514240,
+    "weightUploadBytes": 65525514240,
+    "weightUploadWallMs": 14281.101244999998,
+    "matvecWeightUploadBytes": 0,
+    "deviceTensorBytes": 64178176,
+    "deviceOpCalls": 65749,
+    "deviceForwards": 57,
+    "deviceForwardEventMs": 14715.725845336914,
+    "blockTableUploadBytes": 528,
+    "mappedWeightBytes": 65525514240,
+    "weightMode": "resident",
+    "weightLimitBytes": 73014444032,
+    "reserveBytes": 4294967296
+  },
+  "generationTransfers": {
+    "hostToDeviceBytes": 528,
+    "deviceToHostBytes": 56,
+    "uploadWallMs": 0,
+    "weightUploadBytes": 0,
+    "matvecWeightUploadBytes": 0
+  },
+  "decodeSummary": {
+    "steps": 13,
+    "totalMs": 3425.0295350000088,
+    "meanMs": 263.46381038461607,
+    "stepsPerSecond": 3.7955877072458493
+  },
+  "kv": {
+    "totalPages": 7,
+    "freePages": 7,
+    "cachedPages": 0,
+    "evictions": 0,
+    "pages": [
+      {
+        "id": 0,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      },
+      {
+        "id": 1,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      },
+      {
+        "id": 2,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      },
+      {
+        "id": 3,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      },
+      {
+        "id": 4,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      },
+      {
+        "id": 5,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      },
+      {
+        "id": 6,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "ms": 301.414404000001,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 2,
+      "ms": 254.67910099999972,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 3,
+      "ms": 254.6284369999994,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 4,
+      "ms": 254.71315499999946,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 5,
+      "ms": 254.85270599999785,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 6,
+      "ms": 254.83726599999864,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 7,
+      "ms": 254.5360550000005,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 8,
+      "ms": 254.61429100000169,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 9,
+      "ms": 254.58933400000024,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 10,
+      "ms": 254.76312899999903,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 11,
+      "ms": 254.93959600000017,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 12,
+      "ms": 254.92654200000106,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 13,
+      "ms": 254.89029499999742,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 14,
+      "ms": 255.1815170000009,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 15,
+      "ms": 255.0167909999982,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 16,
+      "ms": 255.23205100000268,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 17,
+      "ms": 255.1957029999976,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 18,
+      "ms": 255.22810400000162,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 19,
+      "ms": 255.370257999999,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 20,
+      "ms": 255.488018,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 21,
+      "ms": 255.45093800000177,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 22,
+      "ms": 255.67725000000064,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 23,
+      "ms": 255.5125029999981,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 24,
+      "ms": 255.69335000000137,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 25,
+      "ms": 255.93096300000252,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 26,
+      "ms": 255.879025000002,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 27,
+      "ms": 255.89379300000292,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 28,
+      "ms": 255.92793700000038,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 29,
+      "ms": 256.1067289999992,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 30,
+      "ms": 256.1310049999993,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 31,
+      "ms": 256.1234809999987,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 32,
+      "ms": 256.0680370000009,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 33,
+      "ms": 256.27915100000246,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 34,
+      "ms": 256.23043999999936,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 35,
+      "ms": 256.1697170000007,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 36,
+      "ms": 256.2030670000022,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 37,
+      "ms": 256.50436999999874,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 38,
+      "ms": 256.4809459999997,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 39,
+      "ms": 256.433477999999,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 40,
+      "ms": 256.41270899999654,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 41,
+      "ms": 256.58075200000167,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 42,
+      "ms": 256.57780600000115,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 43,
+      "ms": 256.5936350000011,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 44,
+      "ms": 263.5712800000001,
+      "phase": "prefill",
+      "tokens": [
+        101916
+      ]
+    },
+    {
+      "round": 45,
+      "ms": 263.2344830000002,
+      "phase": "decode",
+      "tokens": [
+        105681
+      ]
+    },
+    {
+      "round": 46,
+      "ms": 263.156167000001,
+      "phase": "decode",
+      "tokens": [
+        62112
+      ]
+    },
+    {
+      "round": 47,
+      "ms": 263.14597800000047,
+      "phase": "decode",
+      "tokens": [
+        105797
+      ]
+    },
+    {
+      "round": 48,
+      "ms": 263.3712970000015,
+      "phase": "decode",
+      "tokens": [
+        99632
+      ]
+    },
+    {
+      "round": 49,
+      "ms": 263.35423600000286,
+      "phase": "decode",
+      "tokens": [
+        99759
+      ]
+    },
+    {
+      "round": 50,
+      "ms": 263.3054450000018,
+      "phase": "decode",
+      "tokens": [
+        101281
+      ]
+    },
+    {
+      "round": 51,
+      "ms": 263.33947799999805,
+      "phase": "decode",
+      "tokens": [
+        99225
+      ]
+    },
+    {
+      "round": 52,
+      "ms": 263.6564580000013,
+      "phase": "decode",
+      "tokens": [
+        15946
+      ]
+    },
+    {
+      "round": 53,
+      "ms": 263.5838330000006,
+      "phase": "decode",
+      "tokens": [
+        100400
+      ]
+    },
+    {
+      "round": 54,
+      "ms": 263.66886200000226,
+      "phase": "decode",
+      "tokens": [
+        99225
+      ]
+    },
+    {
+      "round": 55,
+      "ms": 263.5832620000001,
+      "phase": "decode",
+      "tokens": [
+        106204
+      ]
+    },
+    {
+      "round": 56,
+      "ms": 263.7308059999996,
+      "phase": "decode",
+      "tokens": [
+        1773
+      ]
+    },
+    {
+      "round": 57,
+      "ms": 263.8992299999991,
+      "phase": "decode",
+      "tokens": [
+        151645
+      ]
+    }
+  ],
+  "limitations": [
+    "All numerical forward operators, paged KV and greedy argmax on GPU; TypeScript orchestration.",
+    "BF16/F16 weights convert in GPU tiles for FP32 SGEMV. FP32 activations/KV; no Tensor Core GEMM.",
+    "Synchronous per-token completion; sequential prefill and request execution; no tensor batching or multi-GPU."
+  ]
+}

@@ -1,0 +1,18 @@
+
+> sprout-lm@0.1.0 test:cuda-device
+> node --test test/cuda-device.integration.ts
+
+{"deviceQwenMaxError":2.2351741790771484e-8,"stats":{"deviceName":"NVIDIA A100 80GB PCIe","device":1,"deviceFreeBytes":84635680768,"deviceTotalBytes":85093777408,"matvecCalls":225,"tiles":225,"hostToDeviceBytes":21816,"deviceToHostBytes":1920,"uploadWallMs":0.229427,"gpuComputeMs":0,"matvecWallMs":0,"peakScratchBytes":1048576,"residentWeightBytes":20992,"peakResidentWeightBytes":20992,"weightUploadBytes":20992,"weightUploadWallMs":0.229427,"matvecWeightUploadBytes":0,"deviceTensorBytes":8480,"deviceOpCalls":585,"deviceForwards":15,"deviceForwardEventMs":39.50396741181612,"blockTableUploadBytes":144,"graphCaptures":2,"graphLaunches":13,"graphCaptureWallMs":3.270175,"graphNodes":82,"graphInputUploadBytes":104,"liveGraphs":1,"mappedWeightBytes":20992,"weightMode":"resident","weightLimitBytes":0,"reserveBytes":1073741824}}
+✔ all-device Qwen logits match Transformers with noncontiguous GPU KV pages (227.214473ms)
+✔ GPU sampling, shared prefixes, pressure/recompute and cancellation retain correct ownership (23.333085ms)
+✔ device handles, GPU argmax ties, nonfinite logits and closed resources are validated (1.597106ms)
+✔ device attention crosses 256 positions and reaches the configured KV boundary (221.312544ms)
+✔ graph capture abort, handle ownership and explicit release are safe (12.721678ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 697.469845

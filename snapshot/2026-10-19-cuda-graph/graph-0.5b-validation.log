@@ -1,0 +1,21 @@
+
+> sprout-lm@0.1.0 test:model
+> node --test test/model.integration.ts
+
+✔ real Qwen checkpoint: reference logits, tokenizer, scheduling, HTTP and EOS (2754.245369ms)
+ℹ Load 344 ms; RSS 1461 MiB
+ℹ 1 prompt tokens, 3 output tokens: first=76 ms, total=309 ms, text="\n\nI am"
+ℹ 19 prompt tokens, 10 output tokens: first=128 ms, total=888 ms, text="Hello! How can I assist you today?"
+ℹ 1 prompt tokens, 2 output tokens: first=13 ms, total=153 ms, text="，我"
+ℹ 3 prompt tokens, 3 output tokens: first=24 ms, total=223 ms, text="! I'm"
+ℹ Maximum absolute logit error versus Transformers FP32 eager: 0.00024497509002685547
+ℹ HTTP JSON/SSE natural EOS: "Hello! How can I assist you today?"
+ℹ CUDA offload: {"deviceName":"NVIDIA A100 80GB PCIe","device":1,"deviceFreeBytes":83301892096,"deviceTotalBytes":85093777408,"matvecCalls":14828,"tiles":15004,"hostToDeviceBytes":988210252,"deviceToHostBytes":10939496,"uploadWallMs":104.82629700000005,"gpuComputeMs":0,"matvecWallMs":0,"peakScratchBytes":134217728,"residentWeightBytes":987922432,"peakResidentWeightBytes":987922432,"weightUploadBytes":987922432,"weightUploadWallMs":104.82629700000005,"matvecWeightUploadBytes":0,"deviceTensorBytes":32671232,"deviceOpCalls":38192,"deviceForwards":88,"deviceForwardEventMs":614.777054309845,"blockTableUploadBytes":1308,"graphCaptures":6,"graphLaunches":38,"graphCaptureWallMs":37.358679,"graphNodes":3836,"graphInputUploadBytes":304,"liveGraphs":1,"mappedWeightBytes":987922432,"weightMode":"resident","weightLimitBytes":0,"reserveBytes":1073741824}
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3054.838807

@@ -1,0 +1,6878 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct@7ae557604adf67be50417f59c2c2f167def9a775 (three-process CUDA PD)",
+  "loadMs": 1140.409282,
+  "cold": {
+    "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+    "output": [
+      99692,
+      3837,
+      45181,
+      16,
+      55286,
+      100062,
+      22243,
+      8863,
+      26939,
+      16,
+      15,
+      15,
+      3837,
+      73157,
+      22243,
+      91680,
+      61443,
+      46944,
+      82587,
+      1773,
+      114566,
+      73157,
+      22243,
+      9370,
+      82587,
+      48443,
+      16,
+      198,
+      17,
+      198,
+      18,
+      198
+    ],
+    "text": "好的，从1开始逐行数到100，每行只写一个数字。以下是每行的数字：\n\n1\n2\n3\n",
+    "terminal": "finished",
+    "firstTokenMs": 237.25580300000001,
+    "totalMs": 412.56194000000005,
+    "tokenTimesMs": [
+      237.25580300000001,
+      250.96142499999996,
+      255.95890499999996,
+      261.148954,
+      266.30918599999995,
+      271.46800699999994,
+      276.9053960000001,
+      281.9469080000001,
+      287.15280600000006,
+      292.350819,
+      297.6091550000001,
+      303.074607,
+      308.13793899999996,
+      313.3773100000001,
+      318.6960980000001,
+      323.99034099999994,
+      329.30954999999994,
+      334.6360730000001,
+      339.99958400000014,
+      345.36025100000006,
+      350.7921900000001,
+      356.08041100000014,
+      361.807691,
+      367.24025099999994,
+      372.67862200000013,
+      378.18811500000015,
+      383.7311010000001,
+      389.1819660000001,
+      394.8044400000001,
+      400.2926440000001,
+      406.283995,
+      412.35999400000014
+    ],
+    "interToken": {
+      "count": 31,
+      "meanMs": 5.6485222903225845,
+      "p95Ms": 6.075999000000138,
+      "maxMs": 13.705621999999948
+    }
+  },
+  "steady": [
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "output": [
+        99692,
+        3837,
+        45181,
+        16,
+        55286,
+        100062,
+        22243,
+        8863,
+        26939,
+        16,
+        15,
+        15,
+        3837,
+        73157,
+        22243,
+        91680,
+        61443,
+        46944,
+        82587,
+        1773,
+        114566,
+        73157,
+        22243,
+        9370,
+        82587,
+        48443,
+        16,
+        198,
+        17,
+        198,
+        18,
+        198
+      ],
+      "text": "好的，从1开始逐行数到100，每行只写一个数字。以下是每行的数字：\n\n1\n2\n3\n",
+      "terminal": "finished",
+      "firstTokenMs": 211.8130860000001,
+      "totalMs": 378.05636600000025,
+      "tokenTimesMs": [
+        211.8130860000001,
+        217.5004610000001,
+        222.74486100000013,
+        227.64710800000012,
+        232.70548200000007,
+        237.77614800000015,
+        242.85061100000007,
+        248.09351800000013,
+        253.3055670000001,
+        258.49976400000014,
+        263.70765600000004,
+        268.96833600000014,
+        274.20716500000003,
+        279.51862000000006,
+        284.835294,
+        290.2267780000002,
+        295.5641310000001,
+        300.8731210000001,
+        306.288309,
+        311.69873900000016,
+        317.146207,
+        322.5668850000002,
+        328.10648400000014,
+        333.5631500000002,
+        339.07401600000003,
+        344.562641,
+        350.2974740000002,
+        355.66199800000004,
+        361.2423130000002,
+        366.7769940000003,
+        372.29068499999994,
+        377.9423529999999
+      ],
+      "interToken": {
+        "count": 31,
+        "meanMs": 5.359008612903219,
+        "p95Ms": 5.6873749999999745,
+        "maxMs": 5.734833000000208
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "output": [
+        99692,
+        3837,
+        45181,
+        16,
+        55286,
+        100062,
+        22243,
+        8863,
+        26939,
+        16,
+        15,
+        15,
+        3837,
+        73157,
+        22243,
+        91680,
+        61443,
+        46944,
+        82587,
+        1773,
+        114566,
+        73157,
+        22243,
+        9370,
+        82587,
+        48443,
+        16,
+        198,
+        17,
+        198,
+        18,
+        198
+      ],
+      "text": "好的，从1开始逐行数到100，每行只写一个数字。以下是每行的数字：\n\n1\n2\n3\n",
+      "terminal": "finished",
+      "firstTokenMs": 204.75975599999992,
+      "totalMs": 370.3958889999999,
+      "tokenTimesMs": [
+        204.75975599999992,
+        210.23162899999988,
+        215.2851139999998,
+        220.38765899999999,
+        225.79339900000014,
+        230.6830789999999,
+        235.80954900000006,
+        241.0070609999998,
+        246.24044000000004,
+        251.6397689999999,
+        256.65637400000014,
+        261.9434940000001,
+        267.13122799999974,
+        272.3837229999999,
+        277.5592139999999,
+        282.839962,
+        288.24483999999984,
+        293.50753399999985,
+        298.818358,
+        304.17940499999986,
+        309.5342999999998,
+        314.90927299999976,
+        320.3320859999999,
+        325.7664789999999,
+        331.2365399999999,
+        336.67428900000004,
+        342.1227490000001,
+        348.0532370000001,
+        353.7032329999997,
+        359.06759599999987,
+        364.68638299999975,
+        370.30126299999984
+      ],
+      "interToken": {
+        "count": 31,
+        "meanMs": 5.340048612903223,
+        "p95Ms": 5.649995999999646,
+        "maxMs": 5.9304879999999685
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "output": [
+        99692,
+        3837,
+        45181,
+        16,
+        55286,
+        100062,
+        22243,
+        8863,
+        26939,
+        16,
+        15,
+        15,
+        3837,
+        73157,
+        22243,
+        91680,
+        61443,
+        46944,
+        82587,
+        1773,
+        114566,
+        73157,
+        22243,
+        9370,
+        82587,
+        48443,
+        16,
+        198,
+        17,
+        198,
+        18,
+        198
+      ],
+      "text": "好的，从1开始逐行数到100，每行只写一个数字。以下是每行的数字：\n\n1\n2\n3\n",
+      "terminal": "finished",
+      "firstTokenMs": 204.57737700000007,
+      "totalMs": 371.78158600000006,
+      "tokenTimesMs": [
+        204.57737700000007,
+        209.99402800000007,
+        215.17971799999987,
+        220.05743500000017,
+        225.112212,
+        230.25993100000005,
+        235.32486700000027,
+        240.609551,
+        245.89539300000024,
+        251.14971100000002,
+        256.35707200000024,
+        261.6799380000002,
+        267.15460699999994,
+        272.0987869999999,
+        277.42424800000026,
+        282.7819690000001,
+        288.00393699999995,
+        293.3441350000003,
+        298.6511009999999,
+        304.0276880000001,
+        309.43695400000024,
+        314.8370850000001,
+        320.13113699999985,
+        325.65032900000006,
+        332.5525160000002,
+        338.20855299999994,
+        343.969595,
+        349.4775960000002,
+        355.01045299999987,
+        360.54430200000024,
+        366.08525499999996,
+        371.6746069999999
+      ],
+      "interToken": {
+        "count": 31,
+        "meanMs": 5.390233225806447,
+        "p95Ms": 5.761042000000089,
+        "maxMs": 6.90218700000014
+      }
+    }
+  ],
+  "concurrent": {
+    "first": {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "output": [
+        99692,
+        3837,
+        45181,
+        16,
+        55286,
+        100062,
+        22243,
+        8863,
+        26939,
+        16,
+        15,
+        15,
+        3837,
+        73157,
+        22243,
+        91680,
+        61443,
+        46944,
+        82587,
+        1773,
+        114566,
+        73157,
+        22243,
+        9370,
+        82587,
+        48443,
+        16,
+        198,
+        17,
+        198,
+        18,
+        198
+      ],
+      "text": "好的，从1开始逐行数到100，每行只写一个数字。以下是每行的数字：\n\n1\n2\n3\n",
+      "terminal": "finished",
+      "firstTokenMs": 204.71889999999985,
+      "totalMs": 372.37267199999997,
+      "tokenTimesMs": [
+        204.71889999999985,
+        211.93252799999982,
+        217.06549099999984,
+        222.2537709999997,
+        227.36857899999995,
+        232.40439100000003,
+        237.52753499999972,
+        242.64295399999992,
+        247.74856499999987,
+        252.90695499999993,
+        258.2312429999997,
+        263.36726099999987,
+        268.57026399999995,
+        273.73056700000006,
+        279.0410899999997,
+        284.327127,
+        289.6313479999999,
+        294.9694129999998,
+        300.44282399999975,
+        305.9167419999999,
+        311.31224299999985,
+        316.7093070000001,
+        322.13414299999977,
+        327.60858199999984,
+        333.4798289999999,
+        338.66792399999986,
+        344.1516389999997,
+        349.6302059999998,
+        355.14636199999995,
+        360.69733199999973,
+        366.6832139999997,
+        372.29747199999974
+      ],
+      "interToken": {
+        "count": 31,
+        "meanMs": 5.4057603870967705,
+        "p95Ms": 5.985881999999947,
+        "maxMs": 7.2136279999999715
+      }
+    },
+    "sibling": {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "output": [
+        99692,
+        3837,
+        45181,
+        16,
+        55286,
+        100062,
+        22243,
+        8863,
+        26939,
+        16,
+        15,
+        15,
+        3837,
+        73157,
+        22243,
+        91680,
+        61443,
+        46944,
+        82587,
+        1773,
+        114566,
+        73157,
+        22243,
+        9370,
+        82587,
+        48443,
+        16,
+        198,
+        17,
+        198,
+        18,
+        198
+      ],
+      "text": "好的，从1开始逐行数到100，每行只写一个数字。以下是每行的数字：\n\n1\n2\n3\n",
+      "terminal": "finished",
+      "firstTokenMs": 205.70030899999983,
+      "totalMs": 371.3833319999999,
+      "tokenTimesMs": [
+        205.70030899999983,
+        211.08401800000001,
+        216.16986199999974,
+        221.20702600000004,
+        226.40582099999983,
+        231.49104399999987,
+        236.71521699999994,
+        241.80122200000005,
+        246.9410969999999,
+        252.1263759999997,
+        257.27752299999975,
+        262.4670000000001,
+        267.70803399999977,
+        273.2271149999997,
+        278.5102569999999,
+        283.724882,
+        289.2252279999998,
+        294.47056999999995,
+        299.84026300000005,
+        305.36762999999974,
+        310.7751439999997,
+        316.201603,
+        321.6372489999999,
+        327.0409159999999,
+        332.8098030000001,
+        338.03374399999984,
+        343.5246440000001,
+        349.0174159999997,
+        354.63695499999994,
+        360.11841700000014,
+        365.6533169999998,
+        371.32917099999986
+      ],
+      "interToken": {
+        "count": 31,
+        "meanMs": 5.342866516129033,
+        "p95Ms": 5.675854000000072,
+        "maxMs": 5.768887000000177
+      }
+    },
+    "overlappingDecodeSteps": 31
+  },
+  "cancellation": {
+    "id": "135d720e-85e0-4d0c-8df4-598323ff6b2e",
+    "output": [],
+    "text": "",
+    "terminal": "cancelled",
+    "totalMs": 3.730109000000084,
+    "tokenTimesMs": []
+  },
+  "survivor": {
+    "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+    "output": [
+      99692,
+      3837,
+      45181,
+      16,
+      55286,
+      100062,
+      22243,
+      8863,
+      26939,
+      16,
+      15,
+      15,
+      3837,
+      73157,
+      22243,
+      91680,
+      61443,
+      46944,
+      82587,
+      1773,
+      114566,
+      73157,
+      22243,
+      9370,
+      82587,
+      48443,
+      16,
+      198,
+      17,
+      198,
+      18,
+      198
+    ],
+    "text": "好的，从1开始逐行数到100，每行只写一个数字。以下是每行的数字：\n\n1\n2\n3\n",
+    "terminal": "finished",
+    "firstTokenMs": 203.81397799999968,
+    "totalMs": 372.89766699999973,
+    "tokenTimesMs": [
+      203.81397799999968,
+      211.12123099999963,
+      216.20665499999996,
+      221.29840999999988,
+      226.4903019999997,
+      231.5997309999998,
+      236.78192499999977,
+      241.8794109999999,
+      247.0891059999999,
+      252.31841799999984,
+      257.5801499999998,
+      262.8380649999999,
+      268.0714549999998,
+      273.35174099999995,
+      278.6782639999997,
+      284.0031839999997,
+      289.32493799999975,
+      294.72827400000006,
+      300.1102899999996,
+      305.47115699999995,
+      312.28506100000004,
+      317.751925,
+      323.20826999999963,
+      328.67841999999973,
+      334.07621599999993,
+      339.54234799999995,
+      344.95579299999963,
+      350.4736429999998,
+      355.9228439999997,
+      361.536662,
+      367.02027799999996,
+      372.8525219999997
+    ],
+    "interToken": {
+      "count": 31,
+      "meanMs": 5.452856258064516,
+      "p95Ms": 6.813904000000093,
+      "maxMs": 7.307252999999946
+    }
+  },
+  "health": {
+    "count": 97,
+    "meanMs": 0.8714481443299031,
+    "p95Ms": 1.1313979999999901,
+    "maxMs": 22.915318999999954
+  },
+  "state": {
+    "coordinatorPid": 1034826,
+    "workers": {
+      "prefill": {
+        "pid": 1034845,
+        "device": 0
+      },
+      "decode": {
+        "pid": 1034846,
+        "device": 1
+      }
+    },
+    "busy": {
+      "prefill": false,
+      "decode": false
+    },
+    "requests": [],
+    "prefill": {
+      "totalPages": 16,
+      "freePages": 16,
+      "cachedPages": 0,
+      "evictions": 0,
+      "pages": [
+        {
+          "id": 0,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 1,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 2,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 3,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 4,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 5,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 6,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 7,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 8,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 9,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 10,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 11,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 12,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 13,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 14,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 15,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        }
+      ]
+    },
+    "decode": {
+      "totalPages": 16,
+      "freePages": 16,
+      "cachedPages": 0,
+      "evictions": 0,
+      "pages": [
+        {
+          "id": 0,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 1,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 2,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 3,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 4,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 5,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 6,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 7,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 8,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 9,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 10,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 11,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 12,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 13,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 14,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        },
+        {
+          "id": 15,
+          "refs": 0,
+          "cached": false,
+          "activeRefs": 0
+        }
+      ]
+    },
+    "transfers": {
+      "count": 7,
+      "bytes": 8085504,
+      "eventMs": 0.3455359973013401
+    }
+  },
+  "trace": [
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 0,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986848,
+        "endedAt": 1792451986864
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 4,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986865,
+        "endedAt": 1792451986880
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 8,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986881,
+        "endedAt": 1792451986897
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 12,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986897,
+        "endedAt": 1792451986913
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 16,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986913,
+        "endedAt": 1792451986930
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 20,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986930,
+        "endedAt": 1792451986947
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 24,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986948,
+        "endedAt": 1792451986965
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 28,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986966,
+        "endedAt": 1792451986983
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 32,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451986984,
+        "endedAt": 1792451987001
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 36,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451987002,
+        "endedAt": 1792451987020
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 40,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "startedAt": 1792451987020,
+        "endedAt": 1792451987038
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 44,
+      "tokens": 3,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 99692,
+        "startedAt": 1792451987039,
+        "endedAt": 1792451987058
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "transfer",
+      "worker": "decode",
+      "from": 0,
+      "tokens": 47,
+      "sourcePages": [
+        0,
+        1,
+        2
+      ],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "bytes": 1155072,
+        "eventMs": 0.0530879981815815,
+        "startedAt": 1792451987059,
+        "endedAt": 1792451987059
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 47,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 3837,
+        "startedAt": 1792451987060,
+        "endedAt": 1792451987071
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 48,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 45181,
+        "startedAt": 1792451987072,
+        "endedAt": 1792451987077
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 49,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 16,
+        "startedAt": 1792451987077,
+        "endedAt": 1792451987082
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 50,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 55286,
+        "startedAt": 1792451987083,
+        "endedAt": 1792451987087
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 51,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 100062,
+        "startedAt": 1792451987088,
+        "endedAt": 1792451987092
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 52,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 22243,
+        "startedAt": 1792451987093,
+        "endedAt": 1792451987098
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 53,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 8863,
+        "startedAt": 1792451987098,
+        "endedAt": 1792451987103
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 54,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 26939,
+        "startedAt": 1792451987103,
+        "endedAt": 1792451987108
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 55,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 16,
+        "startedAt": 1792451987108,
+        "endedAt": 1792451987113
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 56,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 15,
+        "startedAt": 1792451987114,
+        "endedAt": 1792451987119
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 57,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 15,
+        "startedAt": 1792451987119,
+        "endedAt": 1792451987124
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 58,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 3837,
+        "startedAt": 1792451987124,
+        "endedAt": 1792451987129
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 59,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 73157,
+        "startedAt": 1792451987130,
+        "endedAt": 1792451987134
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 60,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 22243,
+        "startedAt": 1792451987135,
+        "endedAt": 1792451987140
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 61,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 91680,
+        "startedAt": 1792451987140,
+        "endedAt": 1792451987145
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 62,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 61443,
+        "startedAt": 1792451987145,
+        "endedAt": 1792451987150
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 63,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 46944,
+        "startedAt": 1792451987151,
+        "endedAt": 1792451987156
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 64,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 82587,
+        "startedAt": 1792451987156,
+        "endedAt": 1792451987161
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 65,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 1773,
+        "startedAt": 1792451987161,
+        "endedAt": 1792451987166
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 66,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 114566,
+        "startedAt": 1792451987167,
+        "endedAt": 1792451987172
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 67,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 73157,
+        "startedAt": 1792451987172,
+        "endedAt": 1792451987177
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 68,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 22243,
+        "startedAt": 1792451987177,
+        "endedAt": 1792451987183
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 69,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 9370,
+        "startedAt": 1792451987183,
+        "endedAt": 1792451987188
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 70,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 82587,
+        "startedAt": 1792451987189,
+        "endedAt": 1792451987194
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 71,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 48443,
+        "startedAt": 1792451987194,
+        "endedAt": 1792451987199
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 72,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 16,
+        "startedAt": 1792451987200,
+        "endedAt": 1792451987205
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 73,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 198,
+        "startedAt": 1792451987205,
+        "endedAt": 1792451987210
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 74,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 17,
+        "startedAt": 1792451987211,
+        "endedAt": 1792451987216
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 75,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 198,
+        "startedAt": 1792451987216,
+        "endedAt": 1792451987221
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 76,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 18,
+        "startedAt": 1792451987222,
+        "endedAt": 1792451987227
+      }
+    },
+    {
+      "id": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 77,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "83e368d7-7d67-49b1-8fdb-88dc6390a2f4",
+        "token": 198,
+        "startedAt": 1792451987228,
+        "endedAt": 1792451987233
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 0,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987236,
+        "endedAt": 1792451987252
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 4,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987252,
+        "endedAt": 1792451987269
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 8,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987269,
+        "endedAt": 1792451987285
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 12,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987286,
+        "endedAt": 1792451987303
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 16,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987303,
+        "endedAt": 1792451987320
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 20,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987321,
+        "endedAt": 1792451987338
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 24,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987338,
+        "endedAt": 1792451987356
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 28,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987356,
+        "endedAt": 1792451987374
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 32,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987375,
+        "endedAt": 1792451987393
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 36,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987393,
+        "endedAt": 1792451987412
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 40,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "startedAt": 1792451987412,
+        "endedAt": 1792451987431
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 44,
+      "tokens": 3,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 99692,
+        "startedAt": 1792451987431,
+        "endedAt": 1792451987445
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "transfer",
+      "worker": "decode",
+      "from": 0,
+      "tokens": 47,
+      "sourcePages": [
+        2,
+        1,
+        0
+      ],
+      "targetPages": [
+        4,
+        3,
+        2
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "bytes": 1155072,
+        "eventMs": 0.05523199960589409,
+        "startedAt": 1792451987446,
+        "endedAt": 1792451987446
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 47,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 3837,
+        "startedAt": 1792451987446,
+        "endedAt": 1792451987451
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 48,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 45181,
+        "startedAt": 1792451987452,
+        "endedAt": 1792451987456
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 49,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 16,
+        "startedAt": 1792451987457,
+        "endedAt": 1792451987461
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 50,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 55286,
+        "startedAt": 1792451987462,
+        "endedAt": 1792451987466
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 51,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 100062,
+        "startedAt": 1792451987467,
+        "endedAt": 1792451987472
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 52,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 22243,
+        "startedAt": 1792451987472,
+        "endedAt": 1792451987477
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 53,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 8863,
+        "startedAt": 1792451987477,
+        "endedAt": 1792451987482
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 54,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 26939,
+        "startedAt": 1792451987482,
+        "endedAt": 1792451987487
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 55,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 16,
+        "startedAt": 1792451987487,
+        "endedAt": 1792451987492
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 56,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 15,
+        "startedAt": 1792451987493,
+        "endedAt": 1792451987497
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 57,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 15,
+        "startedAt": 1792451987498,
+        "endedAt": 1792451987503
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 58,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 3837,
+        "startedAt": 1792451987503,
+        "endedAt": 1792451987508
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 59,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 73157,
+        "startedAt": 1792451987508,
+        "endedAt": 1792451987513
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 60,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 22243,
+        "startedAt": 1792451987514,
+        "endedAt": 1792451987519
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 61,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 91680,
+        "startedAt": 1792451987519,
+        "endedAt": 1792451987524
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 62,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 61443,
+        "startedAt": 1792451987524,
+        "endedAt": 1792451987529
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 63,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 46944,
+        "startedAt": 1792451987530,
+        "endedAt": 1792451987535
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 64,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 82587,
+        "startedAt": 1792451987535,
+        "endedAt": 1792451987540
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 65,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 1773,
+        "startedAt": 1792451987540,
+        "endedAt": 1792451987545
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 66,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 114566,
+        "startedAt": 1792451987546,
+        "endedAt": 1792451987551
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 67,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 73157,
+        "startedAt": 1792451987551,
+        "endedAt": 1792451987556
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 68,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 22243,
+        "startedAt": 1792451987557,
+        "endedAt": 1792451987562
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 69,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 9370,
+        "startedAt": 1792451987562,
+        "endedAt": 1792451987567
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 70,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 82587,
+        "startedAt": 1792451987568,
+        "endedAt": 1792451987573
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 71,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 48443,
+        "startedAt": 1792451987573,
+        "endedAt": 1792451987578
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 72,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 16,
+        "startedAt": 1792451987579,
+        "endedAt": 1792451987584
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 73,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 198,
+        "startedAt": 1792451987584,
+        "endedAt": 1792451987589
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 74,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 17,
+        "startedAt": 1792451987590,
+        "endedAt": 1792451987595
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 75,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 198,
+        "startedAt": 1792451987595,
+        "endedAt": 1792451987601
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 76,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 18,
+        "startedAt": 1792451987601,
+        "endedAt": 1792451987606
+      }
+    },
+    {
+      "id": "31e9465e-a758-41b3-b158-78182f0effc9",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 77,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "31e9465e-a758-41b3-b158-78182f0effc9",
+        "token": 198,
+        "startedAt": 1792451987606,
+        "endedAt": 1792451987612
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 0,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987615,
+        "endedAt": 1792451987630
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 4,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987630,
+        "endedAt": 1792451987646
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 8,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987646,
+        "endedAt": 1792451987662
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 12,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987663,
+        "endedAt": 1792451987679
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 16,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987679,
+        "endedAt": 1792451987696
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 20,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987696,
+        "endedAt": 1792451987713
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 24,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987713,
+        "endedAt": 1792451987730
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 28,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987730,
+        "endedAt": 1792451987748
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 32,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987748,
+        "endedAt": 1792451987766
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 36,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987766,
+        "endedAt": 1792451987784
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 40,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "startedAt": 1792451987785,
+        "endedAt": 1792451987803
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 44,
+      "tokens": 3,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 99692,
+        "startedAt": 1792451987803,
+        "endedAt": 1792451987817
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "transfer",
+      "worker": "decode",
+      "from": 0,
+      "tokens": 47,
+      "sourcePages": [
+        0,
+        1,
+        2
+      ],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "bytes": 1155072,
+        "eventMs": 0.0435199998319149,
+        "startedAt": 1792451987818,
+        "endedAt": 1792451987818
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 47,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 3837,
+        "startedAt": 1792451987818,
+        "endedAt": 1792451987823
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 48,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 45181,
+        "startedAt": 1792451987823,
+        "endedAt": 1792451987828
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 49,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 16,
+        "startedAt": 1792451987828,
+        "endedAt": 1792451987833
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 50,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 55286,
+        "startedAt": 1792451987833,
+        "endedAt": 1792451987838
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 51,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 100062,
+        "startedAt": 1792451987838,
+        "endedAt": 1792451987843
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 52,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 22243,
+        "startedAt": 1792451987844,
+        "endedAt": 1792451987848
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 53,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 8863,
+        "startedAt": 1792451987849,
+        "endedAt": 1792451987854
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 54,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 26939,
+        "startedAt": 1792451987854,
+        "endedAt": 1792451987859
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 55,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 16,
+        "startedAt": 1792451987859,
+        "endedAt": 1792451987864
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 56,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 15,
+        "startedAt": 1792451987864,
+        "endedAt": 1792451987869
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 57,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 15,
+        "startedAt": 1792451987870,
+        "endedAt": 1792451987874
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 58,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 3837,
+        "startedAt": 1792451987875,
+        "endedAt": 1792451987880
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 59,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 73157,
+        "startedAt": 1792451987880,
+        "endedAt": 1792451987885
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 60,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 22243,
+        "startedAt": 1792451987885,
+        "endedAt": 1792451987890
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 61,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 91680,
+        "startedAt": 1792451987890,
+        "endedAt": 1792451987895
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 62,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 61443,
+        "startedAt": 1792451987896,
+        "endedAt": 1792451987901
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 63,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 46944,
+        "startedAt": 1792451987901,
+        "endedAt": 1792451987906
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 64,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 82587,
+        "startedAt": 1792451987906,
+        "endedAt": 1792451987911
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 65,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 1773,
+        "startedAt": 1792451987912,
+        "endedAt": 1792451987917
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 66,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 114566,
+        "startedAt": 1792451987917,
+        "endedAt": 1792451987922
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 67,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 73157,
+        "startedAt": 1792451987922,
+        "endedAt": 1792451987928
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 68,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 22243,
+        "startedAt": 1792451987928,
+        "endedAt": 1792451987933
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 69,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 9370,
+        "startedAt": 1792451987933,
+        "endedAt": 1792451987938
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 70,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 82587,
+        "startedAt": 1792451987939,
+        "endedAt": 1792451987944
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 71,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 48443,
+        "startedAt": 1792451987944,
+        "endedAt": 1792451987949
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 72,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 16,
+        "startedAt": 1792451987950,
+        "endedAt": 1792451987955
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 73,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 198,
+        "startedAt": 1792451987955,
+        "endedAt": 1792451987960
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 74,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 17,
+        "startedAt": 1792451987961,
+        "endedAt": 1792451987966
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 75,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 198,
+        "startedAt": 1792451987966,
+        "endedAt": 1792451987972
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 76,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 18,
+        "startedAt": 1792451987972,
+        "endedAt": 1792451987977
+      }
+    },
+    {
+      "id": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 77,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "a9ef00a1-e564-4437-b0a6-5fcd2e564195",
+        "token": 198,
+        "startedAt": 1792451987978,
+        "endedAt": 1792451987983
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 0,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451987985,
+        "endedAt": 1792451988000
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 4,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988000,
+        "endedAt": 1792451988016
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 8,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988016,
+        "endedAt": 1792451988032
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 12,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988032,
+        "endedAt": 1792451988049
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 16,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988049,
+        "endedAt": 1792451988065
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 20,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988066,
+        "endedAt": 1792451988082
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 24,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988083,
+        "endedAt": 1792451988100
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 28,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988100,
+        "endedAt": 1792451988118
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 32,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988118,
+        "endedAt": 1792451988136
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 36,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988136,
+        "endedAt": 1792451988155
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 40,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "startedAt": 1792451988155,
+        "endedAt": 1792451988173
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 44,
+      "tokens": 3,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 99692,
+        "startedAt": 1792451988174,
+        "endedAt": 1792451988187
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "transfer",
+      "worker": "decode",
+      "from": 0,
+      "tokens": 47,
+      "sourcePages": [
+        2,
+        1,
+        0
+      ],
+      "targetPages": [
+        4,
+        3,
+        2
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "bytes": 1155072,
+        "eventMs": 0.043296001851558685,
+        "startedAt": 1792451988188,
+        "endedAt": 1792451988188
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 47,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 3837,
+        "startedAt": 1792451988188,
+        "endedAt": 1792451988193
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 48,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 45181,
+        "startedAt": 1792451988193,
+        "endedAt": 1792451988198
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 49,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 16,
+        "startedAt": 1792451988198,
+        "endedAt": 1792451988203
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 50,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 55286,
+        "startedAt": 1792451988203,
+        "endedAt": 1792451988208
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 51,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 100062,
+        "startedAt": 1792451988208,
+        "endedAt": 1792451988213
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 52,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 22243,
+        "startedAt": 1792451988214,
+        "endedAt": 1792451988218
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 53,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 8863,
+        "startedAt": 1792451988219,
+        "endedAt": 1792451988223
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 54,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 26939,
+        "startedAt": 1792451988224,
+        "endedAt": 1792451988229
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 55,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 16,
+        "startedAt": 1792451988229,
+        "endedAt": 1792451988234
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 56,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 15,
+        "startedAt": 1792451988234,
+        "endedAt": 1792451988239
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 57,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 15,
+        "startedAt": 1792451988240,
+        "endedAt": 1792451988245
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 58,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 3837,
+        "startedAt": 1792451988245,
+        "endedAt": 1792451988250
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 59,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 73157,
+        "startedAt": 1792451988250,
+        "endedAt": 1792451988255
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 60,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 22243,
+        "startedAt": 1792451988255,
+        "endedAt": 1792451988260
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 61,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 91680,
+        "startedAt": 1792451988261,
+        "endedAt": 1792451988266
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 62,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 61443,
+        "startedAt": 1792451988266,
+        "endedAt": 1792451988271
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 63,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 46944,
+        "startedAt": 1792451988271,
+        "endedAt": 1792451988276
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 64,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 82587,
+        "startedAt": 1792451988277,
+        "endedAt": 1792451988282
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 65,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 1773,
+        "startedAt": 1792451988282,
+        "endedAt": 1792451988287
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 66,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 114566,
+        "startedAt": 1792451988287,
+        "endedAt": 1792451988292
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 67,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 73157,
+        "startedAt": 1792451988293,
+        "endedAt": 1792451988298
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 68,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 22243,
+        "startedAt": 1792451988298,
+        "endedAt": 1792451988303
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 69,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 9370,
+        "startedAt": 1792451988303,
+        "endedAt": 1792451988309
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 70,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 82587,
+        "startedAt": 1792451988309,
+        "endedAt": 1792451988315
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 71,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 48443,
+        "startedAt": 1792451988316,
+        "endedAt": 1792451988321
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 72,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 16,
+        "startedAt": 1792451988322,
+        "endedAt": 1792451988327
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 73,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 198,
+        "startedAt": 1792451988327,
+        "endedAt": 1792451988332
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 74,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 17,
+        "startedAt": 1792451988333,
+        "endedAt": 1792451988338
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 75,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 198,
+        "startedAt": 1792451988338,
+        "endedAt": 1792451988344
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 76,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 18,
+        "startedAt": 1792451988344,
+        "endedAt": 1792451988349
+      }
+    },
+    {
+      "id": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 77,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "7df10308-2d51-48c1-af37-2c11b37b1a7d",
+        "token": 198,
+        "startedAt": 1792451988349,
+        "endedAt": 1792451988355
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 0,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988357,
+        "endedAt": 1792451988373
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 4,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988373,
+        "endedAt": 1792451988389
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 8,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988389,
+        "endedAt": 1792451988405
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 12,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988405,
+        "endedAt": 1792451988421
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 16,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988422,
+        "endedAt": 1792451988438
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 20,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988438,
+        "endedAt": 1792451988455
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 24,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988456,
+        "endedAt": 1792451988473
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 28,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988473,
+        "endedAt": 1792451988490
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 32,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988491,
+        "endedAt": 1792451988508
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 36,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988509,
+        "endedAt": 1792451988527
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 40,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "startedAt": 1792451988527,
+        "endedAt": 1792451988545
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 44,
+      "tokens": 3,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 99692,
+        "startedAt": 1792451988546,
+        "endedAt": 1792451988559
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "transfer",
+      "worker": "decode",
+      "from": 0,
+      "tokens": 47,
+      "sourcePages": [
+        0,
+        1,
+        2
+      ],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "bytes": 1155072,
+        "eventMs": 0.05190400034189224,
+        "startedAt": 1792451988560,
+        "endedAt": 1792451988560
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 47,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 3837,
+        "startedAt": 1792451988562,
+        "endedAt": 1792451988567
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 48,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 45181,
+        "startedAt": 1792451988567,
+        "endedAt": 1792451988572
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 49,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 16,
+        "startedAt": 1792451988572,
+        "endedAt": 1792451988577
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 0,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988563,
+        "endedAt": 1792451988578
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 50,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 55286,
+        "startedAt": 1792451988577,
+        "endedAt": 1792451988582
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 51,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 100062,
+        "startedAt": 1792451988583,
+        "endedAt": 1792451988587
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 52,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 22243,
+        "startedAt": 1792451988588,
+        "endedAt": 1792451988592
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 4,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988578,
+        "endedAt": 1792451988594
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 53,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 8863,
+        "startedAt": 1792451988593,
+        "endedAt": 1792451988598
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 54,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 26939,
+        "startedAt": 1792451988598,
+        "endedAt": 1792451988603
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 55,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 16,
+        "startedAt": 1792451988603,
+        "endedAt": 1792451988608
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 8,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988594,
+        "endedAt": 1792451988610
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 56,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 15,
+        "startedAt": 1792451988608,
+        "endedAt": 1792451988613
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 57,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 15,
+        "startedAt": 1792451988613,
+        "endedAt": 1792451988618
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 58,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 3837,
+        "startedAt": 1792451988619,
+        "endedAt": 1792451988623
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 12,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988610,
+        "endedAt": 1792451988627
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 59,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 73157,
+        "startedAt": 1792451988624,
+        "endedAt": 1792451988629
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 60,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 22243,
+        "startedAt": 1792451988629,
+        "endedAt": 1792451988634
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 61,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 91680,
+        "startedAt": 1792451988634,
+        "endedAt": 1792451988639
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 16,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988627,
+        "endedAt": 1792451988644
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 62,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 61443,
+        "startedAt": 1792451988640,
+        "endedAt": 1792451988645
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 63,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 46944,
+        "startedAt": 1792451988645,
+        "endedAt": 1792451988650
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 64,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 82587,
+        "startedAt": 1792451988650,
+        "endedAt": 1792451988655
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 65,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 1773,
+        "startedAt": 1792451988656,
+        "endedAt": 1792451988661
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 20,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988644,
+        "endedAt": 1792451988661
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 66,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 114566,
+        "startedAt": 1792451988661,
+        "endedAt": 1792451988666
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 67,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 73157,
+        "startedAt": 1792451988667,
+        "endedAt": 1792451988672
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 68,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 22243,
+        "startedAt": 1792451988672,
+        "endedAt": 1792451988677
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 24,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988661,
+        "endedAt": 1792451988679
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 69,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 9370,
+        "startedAt": 1792451988677,
+        "endedAt": 1792451988682
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 70,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 82587,
+        "startedAt": 1792451988683,
+        "endedAt": 1792451988688
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 71,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 48443,
+        "startedAt": 1792451988688,
+        "endedAt": 1792451988694
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 28,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988679,
+        "endedAt": 1792451988696
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 72,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 16,
+        "startedAt": 1792451988694,
+        "endedAt": 1792451988699
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 73,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 198,
+        "startedAt": 1792451988699,
+        "endedAt": 1792451988705
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 74,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 17,
+        "startedAt": 1792451988705,
+        "endedAt": 1792451988710
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 32,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988697,
+        "endedAt": 1792451988714
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 75,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 198,
+        "startedAt": 1792451988710,
+        "endedAt": 1792451988716
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 76,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 18,
+        "startedAt": 1792451988716,
+        "endedAt": 1792451988721
+      }
+    },
+    {
+      "id": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 77,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "result": {
+        "request": "f1f30ddd-dff8-4412-8194-f71b55a47d1f",
+        "token": 198,
+        "startedAt": 1792451988722,
+        "endedAt": 1792451988727
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 36,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988715,
+        "endedAt": 1792451988733
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 40,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "startedAt": 1792451988733,
+        "endedAt": 1792451988751
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 44,
+      "tokens": 3,
+      "sourcePages": [],
+      "targetPages": [
+        2,
+        1,
+        0
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 99692,
+        "startedAt": 1792451988751,
+        "endedAt": 1792451988765
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "transfer",
+      "worker": "decode",
+      "from": 0,
+      "tokens": 47,
+      "sourcePages": [
+        2,
+        1,
+        0
+      ],
+      "targetPages": [
+        5,
+        6,
+        7
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "bytes": 1155072,
+        "eventMs": 0.046879999339580536,
+        "startedAt": 1792451988766,
+        "endedAt": 1792451988766
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 47,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 3837,
+        "startedAt": 1792451988766,
+        "endedAt": 1792451988771
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 48,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 45181,
+        "startedAt": 1792451988771,
+        "endedAt": 1792451988776
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 49,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 16,
+        "startedAt": 1792451988776,
+        "endedAt": 1792451988781
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 50,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 55286,
+        "startedAt": 1792451988781,
+        "endedAt": 1792451988786
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 51,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 100062,
+        "startedAt": 1792451988786,
+        "endedAt": 1792451988791
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 52,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 22243,
+        "startedAt": 1792451988791,
+        "endedAt": 1792451988796
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 53,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 8863,
+        "startedAt": 1792451988797,
+        "endedAt": 1792451988801
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 54,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 26939,
+        "startedAt": 1792451988802,
+        "endedAt": 1792451988807
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 55,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 16,
+        "startedAt": 1792451988807,
+        "endedAt": 1792451988812
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 56,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 15,
+        "startedAt": 1792451988812,
+        "endedAt": 1792451988817
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 57,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 15,
+        "startedAt": 1792451988817,
+        "endedAt": 1792451988822
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 58,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 3837,
+        "startedAt": 1792451988822,
+        "endedAt": 1792451988827
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 59,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 73157,
+        "startedAt": 1792451988828,
+        "endedAt": 1792451988833
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 60,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 22243,
+        "startedAt": 1792451988833,
+        "endedAt": 1792451988838
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 61,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 91680,
+        "startedAt": 1792451988838,
+        "endedAt": 1792451988843
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 62,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 61443,
+        "startedAt": 1792451988844,
+        "endedAt": 1792451988849
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 63,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 46944,
+        "startedAt": 1792451988849,
+        "endedAt": 1792451988854
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 64,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 82587,
+        "startedAt": 1792451988854,
+        "endedAt": 1792451988859
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 65,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 1773,
+        "startedAt": 1792451988860,
+        "endedAt": 1792451988865
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 66,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 114566,
+        "startedAt": 1792451988865,
+        "endedAt": 1792451988870
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 67,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 73157,
+        "startedAt": 1792451988871,
+        "endedAt": 1792451988876
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 68,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 22243,
+        "startedAt": 1792451988876,
+        "endedAt": 1792451988881
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 69,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 9370,
+        "startedAt": 1792451988882,
+        "endedAt": 1792451988887
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 70,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 82587,
+        "startedAt": 1792451988887,
+        "endedAt": 1792451988892
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 71,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 48443,
+        "startedAt": 1792451988892,
+        "endedAt": 1792451988898
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 72,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 16,
+        "startedAt": 1792451988898,
+        "endedAt": 1792451988903
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 73,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 198,
+        "startedAt": 1792451988903,
+        "endedAt": 1792451988909
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 74,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 17,
+        "startedAt": 1792451988909,
+        "endedAt": 1792451988914
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 75,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 198,
+        "startedAt": 1792451988915,
+        "endedAt": 1792451988920
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 76,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 18,
+        "startedAt": 1792451988920,
+        "endedAt": 1792451988925
+      }
+    },
+    {
+      "id": "8845b92e-4121-409d-be16-360cf2f574cc",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 77,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "result": {
+        "request": "8845b92e-4121-409d-be16-360cf2f574cc",
+        "token": 198,
+        "startedAt": 1792451988926,
+        "endedAt": 1792451988931
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 0,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451988933,
+        "endedAt": 1792451988948
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 4,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451988948,
+        "endedAt": 1792451988964
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 8,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451988964,
+        "endedAt": 1792451988980
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 12,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451988980,
+        "endedAt": 1792451988997
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 16,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451988997,
+        "endedAt": 1792451989013
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 20,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451989014,
+        "endedAt": 1792451989030
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 24,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451989031,
+        "endedAt": 1792451989048
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 28,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451989048,
+        "endedAt": 1792451989066
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 32,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451989066,
+        "endedAt": 1792451989084
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 36,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451989084,
+        "endedAt": 1792451989102
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 40,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "startedAt": 1792451989103,
+        "endedAt": 1792451989121
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 44,
+      "tokens": 3,
+      "sourcePages": [],
+      "targetPages": [
+        0,
+        1,
+        2
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 99692,
+        "startedAt": 1792451989121,
+        "endedAt": 1792451989135
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "transfer",
+      "worker": "decode",
+      "from": 0,
+      "tokens": 47,
+      "sourcePages": [
+        0,
+        1,
+        2
+      ],
+      "targetPages": [
+        9,
+        8,
+        7
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "bytes": 1155072,
+        "eventMs": 0.05161599814891815,
+        "startedAt": 1792451989136,
+        "endedAt": 1792451989136
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 47,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 3837,
+        "startedAt": 1792451989138,
+        "endedAt": 1792451989142
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 48,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 45181,
+        "startedAt": 1792451989143,
+        "endedAt": 1792451989147
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 49,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 16,
+        "startedAt": 1792451989148,
+        "endedAt": 1792451989153
+      }
+    },
+    {
+      "id": "135d720e-85e0-4d0c-8df4-598323ff6b2e",
+      "phase": "prefill",
+      "worker": "prefill",
+      "from": 0,
+      "tokens": 4,
+      "sourcePages": [],
+      "targetPages": [
+        2
+      ],
+      "result": {
+        "request": "135d720e-85e0-4d0c-8df4-598323ff6b2e",
+        "startedAt": 1792451989138,
+        "endedAt": 1792451989153
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 50,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 55286,
+        "startedAt": 1792451989153,
+        "endedAt": 1792451989158
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 51,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 100062,
+        "startedAt": 1792451989158,
+        "endedAt": 1792451989163
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 52,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 22243,
+        "startedAt": 1792451989163,
+        "endedAt": 1792451989168
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 53,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 8863,
+        "startedAt": 1792451989168,
+        "endedAt": 1792451989173
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 54,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 26939,
+        "startedAt": 1792451989174,
+        "endedAt": 1792451989178
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 55,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 16,
+        "startedAt": 1792451989179,
+        "endedAt": 1792451989184
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 56,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 15,
+        "startedAt": 1792451989184,
+        "endedAt": 1792451989189
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 57,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 15,
+        "startedAt": 1792451989189,
+        "endedAt": 1792451989194
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 58,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 3837,
+        "startedAt": 1792451989194,
+        "endedAt": 1792451989199
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 59,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 73157,
+        "startedAt": 1792451989200,
+        "endedAt": 1792451989205
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 60,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 22243,
+        "startedAt": 1792451989205,
+        "endedAt": 1792451989210
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 61,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 91680,
+        "startedAt": 1792451989210,
+        "endedAt": 1792451989215
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 62,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 61443,
+        "startedAt": 1792451989216,
+        "endedAt": 1792451989221
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 63,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 46944,
+        "startedAt": 1792451989221,
+        "endedAt": 1792451989226
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 64,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 82587,
+        "startedAt": 1792451989226,
+        "endedAt": 1792451989231
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 65,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 1773,
+        "startedAt": 1792451989232,
+        "endedAt": 1792451989237
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 66,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 114566,
+        "startedAt": 1792451989238,
+        "endedAt": 1792451989243
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 67,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 73157,
+        "startedAt": 1792451989244,
+        "endedAt": 1792451989249
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 68,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 22243,
+        "startedAt": 1792451989249,
+        "endedAt": 1792451989254
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 69,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 9370,
+        "startedAt": 1792451989255,
+        "endedAt": 1792451989260
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 70,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 82587,
+        "startedAt": 1792451989260,
+        "endedAt": 1792451989265
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 71,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 48443,
+        "startedAt": 1792451989266,
+        "endedAt": 1792451989271
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 72,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 16,
+        "startedAt": 1792451989271,
+        "endedAt": 1792451989276
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 73,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 198,
+        "startedAt": 1792451989277,
+        "endedAt": 1792451989282
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 74,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 17,
+        "startedAt": 1792451989282,
+        "endedAt": 1792451989287
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 75,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 198,
+        "startedAt": 1792451989288,
+        "endedAt": 1792451989293
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 76,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 18,
+        "startedAt": 1792451989293,
+        "endedAt": 1792451989298
+      }
+    },
+    {
+      "id": "f16da028-bcdb-47f7-940d-907bb703c16d",
+      "phase": "decode",
+      "worker": "decode",
+      "from": 77,
+      "tokens": 1,
+      "sourcePages": [],
+      "targetPages": [
+        9,
+        8,
+        7,
+        6,
+        5
+      ],
+      "result": {
+        "request": "f16da028-bcdb-47f7-940d-907bb703c16d",
+        "token": 198,
+        "startedAt": 1792451989299,
+        "endedAt": 1792451989304
+      }
+    }
+  ],
+  "limitations": [
+    "HTTP/SSE loopback timing, includes IPC and client overhead; not directly comparable to Engine-only benchmarks.",
+    "No tensor batching, PD prefix cache or preemption; destination capacity reserved at admission.",
+    "Worker time intervals use same-host wall-clock milliseconds; not GPU utilization."
+  ]
+}

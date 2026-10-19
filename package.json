@@ -4,14 +4,31 @@
   "private": true,
   "type": "module",
   "description": "An educational TypeScript inference engine with real paged KV attention",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "demo": "node src/demo.ts",
+    "serve": "node src/server.ts",
+    "model:download": "node scripts/download-model.ts",
+    "test:model": "node --test test/model.integration.ts",
+    "build:cuda": "node scripts/build-cuda.ts",
+    "test:cuda": "node --test test/cuda.integration.ts",
+    "test:cuda-device": "node --test test/cuda-device.integration.ts",
+    "test:cuda-matvec": "node --test test/cuda-matvec.integration.ts",
+    "test:cuda-pd": "node --test test/cuda-pd.integration.ts",
+    "smoke:cuda": "node scripts/smoke-cuda.ts",
+    "bench:cuda-graph": "node scripts/benchmark-cuda-graph.ts",
+    "bench:pd": "node scripts/benchmark-pd.ts",
     "test": "node --test test/*.test.ts",
     "check": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
     "typescript": "^5.9.0"
+  },
+  "dependencies": {
+    "@huggingface/jinja": "0.5.10",
+    "@huggingface/tokenizers": "0.2.0"
   }
 }

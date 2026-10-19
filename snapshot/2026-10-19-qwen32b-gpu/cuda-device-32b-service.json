@@ -1,0 +1,24 @@
+{
+  "time_utc": "2026-10-19T21:26:38.629185+00:00",
+  "old_pid": 1004594,
+  "gpu0_after_stop": "0 MiB, 81152 MiB",
+  "state": "MainPID=1006127\nNRestarts=0\nActiveState=active\nSubState=running\nUnitFileState=enabled\n",
+  "gpu_after_restart": "0, 64085 MiB, 17067 MiB\n1, 4 MiB, 81149 MiB\n",
+  "health": {
+    "status": "ok",
+    "pendingRequests": 0
+  },
+  "generation_after_restart": {
+    "id": "bd806a32-fab2-4c11-869a-ff4087a03170",
+    "output": [
+      17,
+      11
+    ],
+    "text": "2,",
+    "finishReason": "length",
+    "usage": {
+      "promptTokens": 4,
+      "completionTokens": 2
+    }
+  }
+}

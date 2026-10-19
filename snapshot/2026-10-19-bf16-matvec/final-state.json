@@ -1,0 +1,14 @@
+{
+  "observedAtUTC": "2026-10-19T22:57:27.478698+00:00",
+  "experimentDirectory": "/mnt/nvme/sprout-lm/runs/bf16-experiment",
+  "serviceVersionChanged": false,
+  "gitCommittedOrPushed": false,
+  "serviceState": "active",
+  "servicePID": 1006127,
+  "health": {
+    "status": "ok",
+    "pendingRequests": 0
+  },
+  "gpus": "index, name, memory.used [MiB], memory.free [MiB], driver_version\n0, NVIDIA A100 80GB PCIe, 64085 MiB, 17067 MiB, 580.159.03\n1, NVIDIA A100 80GB PCIe, 4 MiB, 81149 MiB, 580.159.03",
+  "computeProcesses": "pid, gpu_uuid, used_gpu_memory [MiB]\n1006127, GPU-7f625747-eb0f-a595-3d64-84215ad232f7, 64076 MiB"
+}

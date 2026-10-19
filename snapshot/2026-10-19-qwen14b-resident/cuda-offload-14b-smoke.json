@@ -1,0 +1,228 @@
+{
+  "model": {
+    "id": "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+    "layers": 48,
+    "hiddenSize": 5120,
+    "attentionHeads": 40,
+    "kvHeads": 8,
+    "headDim": 128,
+    "vocabSize": 152064,
+    "maxContextLength": 32768,
+    "kvDtype": "float32",
+    "eosTokenIds": [
+      151645,
+      151643
+    ]
+  },
+  "backend": "cuda-offload-gemv",
+  "chat": false,
+  "prompt": "1+1=",
+  "input": [
+    16,
+    10,
+    16,
+    28
+  ],
+  "output": [
+    17,
+    374,
+    264,
+    259,
+    2717,
+    2449,
+    13,
+    2160
+  ],
+  "text": "2 is a tautology. Is",
+  "finishReason": "length",
+  "loadMs": 712.486009,
+  "firstTokenMs": 8369.42066,
+  "generationMs": 20655.662211,
+  "processMemory": {
+    "rss": 28702572544,
+    "heapTotal": 239677440,
+    "heapUsed": 118223752,
+    "external": 23703386,
+    "arrayBuffers": 15046914
+  },
+  "processResourceUsage": {
+    "userCPUTime": 19845874,
+    "systemCPUTime": 1841772,
+    "maxRSS": 28029856,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 677819,
+    "majorPageFault": 1,
+    "swappedOut": 0,
+    "fsRead": 1040,
+    "fsWrite": 40,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 1746,
+    "involuntaryContextSwitches": 67
+  },
+  "loadStats": {
+    "deviceName": "NVIDIA A100 80GB PCIe",
+    "device": 0,
+    "deviceFreeBytes": 49162813440,
+    "deviceTotalBytes": 85093777408,
+    "matvecCalls": 0,
+    "tiles": 0,
+    "hostToDeviceBytes": 0,
+    "deviceToHostBytes": 0,
+    "uploadWallMs": 0,
+    "gpuComputeMs": 0,
+    "matvecWallMs": 0,
+    "peakScratchBytes": 0,
+    "residentWeightBytes": 0,
+    "peakResidentWeightBytes": 0,
+    "weightUploadBytes": 0,
+    "weightUploadWallMs": 0,
+    "matvecWeightUploadBytes": 0,
+    "mappedWeightBytes": 29538385920,
+    "weightMode": "offload",
+    "weightLimitBytes": 0,
+    "reserveBytes": 1073741824
+  },
+  "stats": {
+    "deviceName": "NVIDIA A100 80GB PCIe",
+    "device": 0,
+    "deviceFreeBytes": 48961486848,
+    "deviceTotalBytes": 85093777408,
+    "matvecCalls": 3704,
+    "tiles": 7056,
+    "hostToDeviceBytes": 303216590848,
+    "deviceToHostBytes": 100024320,
+    "uploadWallMs": 18507.015901000013,
+    "gpuComputeMs": 1208.847872890532,
+    "matvecWallMs": 19860.52700299995,
+    "peakScratchBytes": 201389668,
+    "residentWeightBytes": 0,
+    "peakResidentWeightBytes": 0,
+    "weightUploadBytes": 0,
+    "weightUploadWallMs": 0,
+    "matvecWeightUploadBytes": 303122350080,
+    "mappedWeightBytes": 29538385920,
+    "weightMode": "offload",
+    "weightLimitBytes": 0,
+    "reserveBytes": 1073741824
+  },
+  "generationTransfers": {
+    "hostToDeviceBytes": 303216590848,
+    "deviceToHostBytes": 100024320,
+    "uploadWallMs": 18507.015901000013,
+    "weightUploadBytes": 0,
+    "matvecWeightUploadBytes": 303122350080
+  },
+  "decodeSummary": {
+    "steps": 7,
+    "totalMs": 12280.972900000002,
+    "meanMs": 1754.4247000000003,
+    "stepsPerSecond": 0.5699874152478587
+  },
+  "kv": {
+    "totalPages": 1,
+    "freePages": 1,
+    "cachedPages": 0,
+    "evictions": 0,
+    "pages": [
+      {
+        "id": 0,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "ms": 3188.0915699999996,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 2,
+      "ms": 1656.040043,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 3,
+      "ms": 1662.5136489999995,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 4,
+      "ms": 1848.8103689999998,
+      "phase": "prefill",
+      "tokens": [
+        17
+      ]
+    },
+    {
+      "round": 5,
+      "ms": 1752.7492789999997,
+      "phase": "decode",
+      "tokens": [
+        374
+      ]
+    },
+    {
+      "round": 6,
+      "ms": 1752.667797,
+      "phase": "decode",
+      "tokens": [
+        264
+      ]
+    },
+    {
+      "round": 7,
+      "ms": 1746.1082860000006,
+      "phase": "decode",
+      "tokens": [
+        259
+      ]
+    },
+    {
+      "round": 8,
+      "ms": 1760.5021640000014,
+      "phase": "decode",
+      "tokens": [
+        2717
+      ]
+    },
+    {
+      "round": 9,
+      "ms": 1750.9422240000004,
+      "phase": "decode",
+      "tokens": [
+        2449
+      ]
+    },
+    {
+      "round": 10,
+      "ms": 1760.863948000002,
+      "phase": "decode",
+      "tokens": [
+        13
+      ]
+    },
+    {
+      "round": 11,
+      "ms": 1757.1392019999985,
+      "phase": "decode",
+      "tokens": [
+        2160
+      ]
+    }
+  ],
+  "limitations": [
+    "Synchronous CUDA GEMV; TypeScript attention, norms and KV.",
+    "BF16/F16 file-backed host weights upload and convert to FP32 in bounded GPU tiles.",
+    "No multi-GPU execution, tensor batching or asynchronous serving."
+  ]
+}

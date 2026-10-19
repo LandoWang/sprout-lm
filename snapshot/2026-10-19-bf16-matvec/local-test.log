@@ -1,0 +1,44 @@
+
+> sprout-lm@0.1.0 test
+> node --test test/*.test.ts
+
+✔ paged attention matches independent dense recomputation at every position (12.177209ms)
+✔ continuous batches admit a late request and mix decode with chunked prefill (11.455708ms)
+✔ prefix sharing reuses physical pages and leaves the final prompt token for logits (3.729792ms)
+✔ same suffix under a different preceding context must not hit the prefix cache (2.225083ms)
+✔ memory pressure preempts/recomputes requests without changing generation (30.969417ms)
+✔ LRU eviction only removes cached pages with no active users (1.150042ms)
+✔ cancel running/queued requests and release references without damaging a sibling (4.150583ms)
+✔ reject invalid inputs and requests that cannot fit even in isolation (2.199709ms)
+✔ HTTP JSON and SSE expose identical tokens, incremental text, request IDs and usage (41.921167ms)
+✔ API rejects malformed and oversized input before streaming or admission (19.904833ms)
+✔ client disconnect cancels running generation and releases its live KV (7.130667ms)
+✔ explicit cancellation ends the matching SSE stream and leaves a sibling running (5.302042ms)
+✔ HTTP model failures produce a terminal SSE error and a closed health status (2.707708ms)
+✔ native Qwen GQA/RoPE/SwiGLU logits match independent Transformers full recomputation (41.593291ms)
+✔ Qwen mixed requests survive prefix sharing, chunking and pressure with reference outputs (16.811625ms)
+✔ EOS is sampled once, counts toward usage, and releases shared pages before the token limit (2.08275ms)
+✔ unsupported Qwen configurations fail before loading weights (0.565791ms)
+✔ cancelling a Qwen request preserves a sibling using its prefix pages (3.523042ms)
+✔ safetensors converts BF16/F16/F32 including signed and subnormal values (24.956416ms)
+✔ safetensors rejects truncated, overlapping, out-of-range and unsupported tensors (22.105542ms)
+✔ shared pump streams concurrent and late requests through pressure without changing tokens (34.730959ms)
+✔ abort queued and active requests; releasing a shared prefix preserves the sibling (8.383584ms)
+✔ early iterator return, pre-aborted signal and service close release all requests (2.607ms)
+✔ slow consumer is bounded and cancelled while another stream completes (7.559875ms)
+✔ invalid requests and admission limits fail without leaking queued work (3.710709ms)
+✔ failed model execution terminates all streams and retires partially written KV (1.637292ms)
+✔ idle service does not keep scheduling empty steps; new arrivals restart it (1.238292ms)
+✔ byte tokenizer preserves UTF-8 across token boundaries and ignores BOS (0.153667ms)
+✔ plugin factories are independent, reject unknown names and verify model special IDs (18.289625ms)
+✔ ByteLevel plugin streams split UTF-8, literal tokens, BOM and independent decoders (17.208875ms)
+✔ Jinja chat template loads independently from tokenizer implementation (4.401834ms)
+✔ indexed Qwen weights preserve all generated tokens and validate shard lookup (43.124291ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 255.064292

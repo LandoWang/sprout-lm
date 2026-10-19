@@ -1,0 +1,88 @@
+{
+  "benchmark": {
+    "convert": {
+      "firstToken": {
+        "count": 3,
+        "meanMs": 11998.612554666664,
+        "medianMs": 11998.190099,
+        "p95Ms": 12000.047718999998,
+        "minMs": 11997.599845999997,
+        "maxMs": 12000.047718999998
+      },
+      "decode": {
+        "count": 93,
+        "meanMs": 259.4711845913979,
+        "medianMs": 259.48727099999815,
+        "p95Ms": 260.39108800000395,
+        "minMs": 258.4368749999994,
+        "maxMs": 260.63435500000196
+      },
+      "decodeTokensPerSecond": 3.853992502384222
+    },
+    "direct": {
+      "firstToken": {
+        "count": 3,
+        "meanMs": 3032.8078273333335,
+        "medianMs": 3032.8986650000006,
+        "p95Ms": 3033.188967,
+        "minMs": 3032.3358499999995,
+        "maxMs": 3033.188967
+      },
+      "decode": {
+        "count": 93,
+        "meanMs": 66.45866607526908,
+        "medianMs": 66.43541900000127,
+        "p95Ms": 67.2335869999988,
+        "minMs": 65.63857599999756,
+        "maxMs": 67.47745000000214
+      },
+      "decodeTokensPerSecond": 15.04694660689443
+    },
+    "speedup": 3.9042490605744127,
+    "latencyReductionPercent": 74.38687992274563,
+    "outputTokensEqual": true
+  },
+  "recheck": {
+    "convert": {
+      "firstToken": {
+        "count": 1,
+        "meanMs": 12000.323248999997,
+        "medianMs": 12000.323248999997,
+        "p95Ms": 12000.323248999997,
+        "minMs": 12000.323248999997,
+        "maxMs": 12000.323248999997
+      },
+      "decode": {
+        "count": 31,
+        "meanMs": 259.4800806451608,
+        "medianMs": 259.44951500000025,
+        "p95Ms": 260.3353949999946,
+        "minMs": 258.51763599999686,
+        "maxMs": 260.4233879999956
+      },
+      "decodeTokensPerSecond": 3.8538603715307946
+    },
+    "direct": {
+      "firstToken": {
+        "count": 1,
+        "meanMs": 3033.330221,
+        "medianMs": 3033.330221,
+        "p95Ms": 3033.330221,
+        "minMs": 3033.330221,
+        "maxMs": 3033.330221
+      },
+      "decode": {
+        "count": 31,
+        "meanMs": 66.47038883870998,
+        "medianMs": 66.52175600000191,
+        "p95Ms": 67.23034600000028,
+        "minMs": 65.64160599999923,
+        "maxMs": 67.309494000001
+      },
+      "decodeTokensPerSecond": 15.044292917053552
+    },
+    "speedup": 3.903694339366477,
+    "latencyReductionPercent": 74.38324025742527,
+    "outputTokensEqual": true
+  }
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SproutLM：用 TypeScript 看懂 LLM 推理。从分页 KV 到双 A100 上的三进程 Prefill / Decode 分离。">
+<meta name="theme-color" content="#f5f7ef">
+<title>SproutLM · 让推理的每一步看得见</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🌱%3C/text%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;--paper:#f5f7ef;--ink:#20362c;--muted:#53685c;--line:#d6dfd1;--green:#215b40;--lime:#d9edaa;--white:#fffef9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75}a{color:var(--green);text-underline-offset:4px}a:hover{color:#102e20}a:focus-visible{outline:3px solid #497e23;outline-offset:5px}::selection{background:var(--lime)}
+.wrap{max-width:1160px;margin:auto;padding:0 32px}.skip{position:absolute;left:16px;top:-100px;background:white;padding:12px;z-index:10}.skip:focus{top:10px}header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:25px 0;border-bottom:1px solid var(--line)}.brand{font-size:22px;font-weight:750;text-decoration:none;letter-spacing:-.5px}.brand span{font-weight:400;color:var(--muted);font-size:13px;margin-left:12px}nav{display:flex;gap:24px;font-size:14px}nav a{text-decoration:none}
+.hero{display:grid;grid-template-columns:1.35fr 1fr;gap:60px;align-items:center;padding:78px 0 64px}.eyebrow{font-size:12px;font-weight:650;letter-spacing:2px;color:var(--green);text-transform:uppercase}.hero h1{font-size:clamp(36px,4.7vw,60px);line-height:1.2;font-weight:650;letter-spacing:-2px;margin:20px 0 24px}.hero p{max-width:550px;font-size:17px;color:var(--muted)}.links{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}.button{display:inline-block;text-decoration:none;background:var(--green);color:white;padding:11px 20px;border-radius:5px;font-size:14px;font-weight:600}.button:hover{color:white;background:#143b2a}.button.secondary{background:transparent;color:var(--green);border:1px solid var(--line)}
+.field-note{border:1px solid var(--line);background:var(--white);padding:28px;border-radius:8px}.field-note:before{content:"";display:block;width:38px;height:5px;background:var(--lime);margin-bottom:24px}.field-note h2{font-size:23px;margin:8px 0 18px;letter-spacing:-.6px}.field-note dl{margin:0}.field-note dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-size:13px}.field-note dt{color:var(--muted)}.field-note dd{margin:0;text-align:right;font-weight:550}.stamp{font-size:12px;color:var(--muted);margin-top:18px}
+section{padding:54px 0;border-top:1px solid var(--line)}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:24px}.section-head h2{font-size:30px;font-weight:600;letter-spacing:-.8px;margin:0}.section-head .number{font-size:13px;color:var(--muted);margin-right:12px;font-weight:400}.section-head p{color:var(--muted);font-size:14px;margin:0}.lede{max-width:790px;color:var(--muted);margin:0 0 28px}
+.architecture{background:var(--white);border:1px solid var(--line);padding:28px;border-radius:8px}.client{text-align:center;color:var(--muted);font-size:13px}.control{max-width:680px;margin:14px auto 0;background:var(--green);color:white;padding:20px 24px;border-radius:6px;text-align:center}.control .tag{color:#cfe1ca}.control h3{margin:5px 0;font-size:20px}.control p{margin:0;font-size:13px;color:#e0e9df}.tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600}.ipc{text-align:center;color:var(--muted);font-size:12px;padding:15px 0}.workers{display:grid;grid-template-columns:1fr 140px 1fr;align-items:center;gap:14px}.worker{background:#f2f5ea;border:1px solid var(--line);border-radius:6px;padding:22px}.worker h3{font-size:21px;margin:4px 0}.worker p{font-size:13px;margin:5px 0;color:var(--muted)}.worker.decode{background:#eaf0ec}.transfer{text-align:center;font-size:12px;color:var(--green)}.transfer b{display:block;font-size:26px;font-weight:400;line-height:1.5}.arch-caption{font-size:12px;color:var(--muted);margin:20px 0 0;text-align:center}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);list-style:none;padding:0;gap:24px;margin:30px 0 0}.steps li{padding-top:15px;border-top:2px solid #b5c8a9}.steps b{font-size:14px}.steps p{font-size:13px;color:var(--muted);margin:7px 0}.steps small{display:block;font-variant-numeric:tabular-nums;color:var(--green);font-size:12px;margin-bottom:9px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:8px;background:var(--white);overflow:hidden}.metric{padding:26px 22px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{display:block;font-size:34px;font-weight:600;line-height:1.4;letter-spacing:-1px}.metric strong span{font-size:14px;font-weight:400;letter-spacing:0}.metric p{font-size:12px;color:var(--muted);margin:6px 0 0}.metric .label{font-size:13px;font-weight:550;margin-bottom:10px}.note{font-size:13px;color:var(--muted);margin-top:18px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:28px}.fact{padding-left:17px;border-left:3px solid #b9d088;font-size:14px}.fact p{margin:4px 0;color:var(--muted);font-size:13px}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;font-size:12px;color:var(--muted);font-weight:550}th,td{padding:14px 16px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}td:first-child{font-weight:600;min-width:140px}td:last-child{color:var(--muted)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em;overflow-wrap:anywhere}pre{background:#20362c;color:#e6f0dc;padding:24px;overflow-x:auto;border-radius:6px;line-height:1.9;font-size:13px}pre code{overflow-wrap:normal;font-size:inherit}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px}.two-col>div{min-width:0}.two-col h3{font-size:19px;font-weight:600;margin:0 0 12px}.two-col p{font-size:14px;color:var(--muted)}.reading{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.reading a{display:block;padding:21px;border:1px solid var(--line);background:var(--white);border-radius:6px;text-decoration:none}.reading strong{font-size:15px}.reading span{display:block;font-size:13px;color:var(--muted);margin-top:7px}footer{border-top:1px solid var(--line);padding:26px 0 40px;display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted)}
+@media(max-width:850px){.hero{gap:30px;grid-template-columns:1fr 1fr}.brand span{display:none}.metrics{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.steps{grid-template-columns:1fr 1fr}.workers{grid-template-columns:1fr 100px 1fr}.worker{padding:16px}.reading{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:10px}}
+@media(max-width:580px){.wrap{padding:0 20px}header{align-items:flex-start;gap:16px}nav{gap:14px;font-size:12px;flex-wrap:wrap;justify-content:flex-end}.hero{grid-template-columns:1fr;padding:44px 0;gap:24px}.hero h1{letter-spacing:-1px}.hero p{font-size:15px}.field-note{padding:22px}section{padding:36px 0}.section-head h2{font-size:25px}.architecture{padding:18px}.control{padding:18px 12px}.control h3{font-size:17px}.workers{grid-template-columns:1fr;gap:8px}.transfer b{font-size:0}.transfer b:after{content:"↓";font-size:25px}.metric{padding:20px 16px}.metric strong{font-size:28px}.facts,.two-col{grid-template-columns:1fr;gap:22px}.steps{gap:18px}footer{flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">跳到主要内容</a>
+<div class="wrap">
+<header>
+<a class="brand" href="./">🌱 SproutLM <span>一个正在生长的推理引擎</span></a>
+<nav aria-label="主导航"><a href="#architecture">架构</a><a href="#results">实测</a><a href="#start">开始</a><a href="https://github.com/LandoWang/sprout-lm">GitHub ↗</a></nav>
+</header>
+<main id="main">
+<div class="hero">
+<div>
+<div class="eyebrow">TypeScript orchestrates. CUDA computes.</div>
+<h1>让推理的每一步<br>看得见。</h1>
+<p>从一个 token、几页 KV 开始，写出自己的 LLM 推理引擎。用 TypeScript 编排模型、调度请求，用 CUDA 完成设备计算，逐步走到双 A100 上的真实 32B 模型。</p>
+<div class="links"><a class="button" href="https://github.com/LandoWang/sprout-lm">阅读源码 ↗</a><a class="button secondary" href="#architecture">看现在的架构 ↓</a></div>
+</div>
+<aside class="field-note" aria-label="当前实验进展">
+<div class="eyebrow">Field notes / 2026.10.19</div>
+<h2>三个进程，两张卡。</h2>
+<dl><div><dt>模型</dt><dd>Qwen2.5-32B-Instruct</dd></div><div><dt>设备</dt><dd>2 × A100 80GB · NVLink</dd></div><div><dt>角色</dt><dd>API + Scheduler / P / D</dd></div><div><dt>权重 / KV</dt><dd>BF16 / FP32</dd></div><div><dt>执行</dt><dd>原生 CUDA 算子 + Graph</dd></div></dl>
+<div class="stamp">已验证的实验状态 · 页面不是实时监控</div>
+</aside>
+</div>
+
+<section id="architecture">
+<div class="section-head"><h2><span class="number">01</span>谁负责什么</h2><p>模型结构在 TypeScript，设备操作在原生扩展。</p></div>
+<p class="lede">协调进程管理请求、页号和引用。Prefill 与 Decode 各自拥有完整模型和 KV 池，独立执行计划；一张卡计算新 prompt 时，另一张卡可以继续输出。</p>
+<div class="architecture" role="group" aria-label="三进程架构：客户端连接协调进程，协调进程通过 Node IPC 控制两个 GPU Worker；KV 经 CUDA IPC 和 NVLink 从 P 传到 D。">
+<div class="client">客户端 · JSON / SSE<br>↓</div>
+<div class="control"><div class="tag">Process 01 · CPU</div><h3>API + GenerationService + PDScheduler</h3><p>文本插件 · 排队与准入 · 双端页引用 · 输出缓冲 · 取消</p></div>
+<div class="ipc">↓ Node IPC：执行计划 / token / 完成消息 ↓</div>
+<div class="workers">
+<div class="worker"><div class="tag">Process 02 · GPU 0</div><h3>Prefill Worker</h3><p>CudaQwenRunner · 完整 32B 权重</p><p>分块处理 prompt，生成首 token</p><p>独立 FP32 KV 池 · 2048 槽位</p></div>
+<div class="transfer">CUDA IPC 映射<b aria-hidden="true">⟶</b>NVLink P2P<br>复制有效 KV</div>
+<div class="worker decode"><div class="tag">Process 03 · GPU 1</div><h3>Decode Worker</h3><p>CudaQwenRunner · 完整 32B 权重</p><p>接收 KV，逐 token 生成后续输出</p><p>独立 FP32 KV 池 · 2048 槽位</p></div>
+</div>
+<p class="arch-caption">协调进程不创建 CUDA context。每张卡都有一份完整模型；这里实现的是 PD 分离。</p>
+</div>
+<ol class="steps">
+<li><small>01 / RESERVE</small><b>先预留两端页</b><p>P 预留 prompt 容量，D 预留请求最大容量。目的端装不下时，请求继续排队。</p></li>
+<li><small>02 / PREFILL</small><b>P 计算并返回首 token</b><p>完成消息代表 GPU 计算已结束。若首 token 就结束请求，可直接跳过 KV 交接。</p></li>
+<li><small>03 / TRANSFER</small><b>按页映射复制 KV</b><p>源页与目标页可以不同、非连续。D 的 CUDA event 确认复制完成后，才返回 ACK。</p></li>
+<li><small>04 / DECODE</small><b>释放 P 引用，继续生成</b><p>D 使用首 token 作为下一次输入。取消时，在途页仍保留到操作完成或 Worker 退出。</p></li>
+</ol>
+</section>
+
+<section id="results">
+<div class="section-head"><h2><span class="number">02</span>跑出来的数据</h2><p>Qwen2.5-32B · 双 A100 · 2026-10-19</p></div>
+<div class="metrics">
+<div class="metric"><div class="label">单请求 decode</div><strong>14.93 <span>token/s</span></strong><p>93 个稳定 token 间隔</p></div>
+<div class="metric"><div class="label">首 token</div><strong>3.024 <span>s</span></strong><p>47-token prompt，三个稳定请求均值</p></div>
+<div class="metric"><div class="label">KV 复制</div><strong>0.192 <span>ms</span></strong><p>23.5 MiB · 7 次 CUDA event 均值</p></div>
+<div class="metric"><div class="label">健康检查 p95</div><strong>0.675 <span>ms</span></strong><p>生成期间共 1313 次探测</p></div>
+</div>
+<p class="note">HTTP/SSE 回环测量，输出 32 token；每卡 256-token 测试池、16-token 页、P chunk 4，关闭前缀缓存。一个冷请求后测量三个稳定请求。复制时间仅为 CUDA event 区间，不包含全部排队和控制开销。常驻部署的池为每卡 2048 token。</p>
+<div class="facts"><div class="fact"><strong>31 / 31 次 decode 与另一个请求的 prefill 重叠</strong><p>依据同机 Worker 执行时间区间；不等同于 GPU occupancy 测量。</p></div><div class="fact"><strong>BF16 直接读取：单卡 decode 约提升 3.90 倍</strong><p>另一次 Engine-only 对照：259.471 → 66.459 ms/token，两边均开启 Graph。与上方 HTTP 数据采用不同测量口径。</p></div></div>
+<p class="note"><a href="https://github.com/LandoWang/sprout-lm/blob/main/snapshot/2026-10-19-pd-three-process/README.md">PD 实验方法、数值验证与原始记录 ↗</a> · <a href="https://github.com/LandoWang/sprout-lm/blob/main/snapshot/2026-10-19-bf16-matvec/README.md">BF16 对照实验 ↗</a></p>
+</section>
+
+<section id="capabilities">
+<div class="section-head"><h2><span class="number">03</span>已经长出了什么</h2><p>区分后端，按实际验证的边界描述能力。</p></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">部分</th><th scope="col">已实现</th><th scope="col">当前边界</th></tr></thead><tbody>
+<tr><td>模型与文本</td><td>TinyTransformer / Qwen2；safetensors 分片加载；独立 tokenizer 与模板插件</td><td>greedy + EOS；尚无量化、MoE、MLA 或任意模型自动适配</td></tr>
+<tr><td>Engine 调度</td><td>连续调度、分块 prefill、分页 KV、完整前缀页共享、抢占重算</td><td>前缀共享与抢占属于原 Engine 路径；每轮请求仍依次计算</td></tr>
+<tr><td>GPU 执行</td><td>完整设备前向、设备 KV、BF16 / F16 直接读取、可选 CUDA Graph</td><td>激活与 KV 为 FP32；尚无 Tensor Core GEMM、FlashAttention 或张量 batch</td></tr>
+<tr><td>PD 分离</td><td>三进程、双卡独立推进、CUDA IPC / P2P、在途引用保护、整组失败重启</td><td>尚无 PD 前缀缓存、抢占重算、D 端复制与计算重叠、跨机 RDMA</td></tr>
+<tr><td>服务接口</td><td><code>/generate</code> JSON / SSE、健康检查、主动取消、背压与慢消费者限制</td><td>SproutLM 原生协议；尚未实现 OpenAI / Codex 适配或工具调用</td></tr>
+</tbody></table></div>
+<p class="note">验证记录：39 项轻量测试、3 项双 GPU 集成测试；真实 0.5B 与 32B 短样本的完整 logits 对照、GPU 回归与 Worker 故障恢复实验。<a href="https://github.com/LandoWang/sprout-lm/blob/main/MODEL_VALIDATION.md">查看验证范围 ↗</a></p>
+</section>
+
+<section id="start">
+<div class="section-head"><h2><span class="number">04</span>从一个小实验开始</h2><p>Node.js 24+ · TypeScript 直接运行</p></div>
+<div class="two-col"><div><h3>先看 CPU 上的调度与页表</h3><p>默认 TinyTransformer 使用未训练的随机权重，便于观察机制。普通演示会插入新请求并复用前缀；压力模式展示抢占与重算。</p><pre><code>git clone https://github.com/LandoWang/sprout-lm.git
+cd sprout-lm
+npm ci
+npm run demo
+npm run demo -- --pressure
+npm test</code></pre></div>
+<div><h3>再接上真实模型和 GPU</h3><p>从 Qwen2.5-0.5B 的 CPU 路径开始，或按 README 构建 CUDA 原生扩展。双卡 PD 要求每张卡都能容纳完整模型，并支持当前 CUDA IPC / P2P 路径。</p><pre><code>npm run model:download
+MODEL_DIR=models/qwen2.5-0.5b-instruct npm run serve</code></pre><p><a href="https://github.com/LandoWang/sprout-lm#readme">完整运行、API 和 A100 部署说明 ↗</a></p><p>Python 仅用于离线数值验证。服务端的模型编排、请求调度和页引用管理都在 TypeScript 中。</p></div></div>
+</section>
+
+<section id="reading">
+<div class="section-head"><h2><span class="number">05</span>继续往下读</h2><p>下一步按问题生长。</p></div>
+<div class="reading"><a href="https://github.com/LandoWang/sprout-lm/blob/main/MILESTONES.md"><strong>Milestones ↗</strong><span>模型变大、PD 扩展、批量计算、Agent / Harness；逐项记录验收状态。</span></a><a href="https://github.com/LandoWang/sprout-lm/tree/main/snapshot"><strong>实验快照 ↗</strong><span>从 72B CPU + GPU 协同到 32B 全 GPU、Graph、BF16 和双卡 PD。</span></a><a href="https://github.com/LandoWang/sprout-lm/blob/main/src/pd-scheduler.ts"><strong>从调度器读源码 ↗</strong><span>观察执行计划、双端页引用、KV 交接、取消和 Worker 失败清理。</span></a></div>
+</section>
+</main>
+<footer><span>🌱 SproutLM · 把机制写清楚，把实验留下来。</span><span>内容更新于 2026-10-19 · <a href="https://github.com/LandoWang/sprout-lm">LandoWang / sprout-lm</a></span></footer>
+</div>
+</body>
+</html>

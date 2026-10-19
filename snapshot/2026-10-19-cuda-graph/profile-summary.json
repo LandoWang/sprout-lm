@@ -1,0 +1,411 @@
+{
+  "eager-32b-profile": {
+    "trace": "runs/eager-32b-profile",
+    "promptTokens": 4,
+    "output": [
+      17,
+      11,
+      220,
+      17,
+      10,
+      17,
+      28,
+      19
+    ],
+    "decode": [
+      {
+        "position": 4,
+        "kernels": 3315,
+        "kernelSpanMs": 275.309285,
+        "kernelBusyMs": 271.478749,
+        "betweenKernelGapMs": 3.830536,
+        "noRecordedDeviceActivityMs": 3.830536,
+        "byCategoryMs": {
+          "embeddingKernel": 0.0024,
+          "normKernel": 22.383047999999985,
+          "convert": 154.80539999999976,
+          "cuBLAS kernels": 91.35062599999995,
+          "addKernel": 0.7746949999999999,
+          "ropeKernel": 0.5495420000000002,
+          "appendKVKernel": 0.15241700000000005,
+          "attentionKernel": 0.9607460000000002,
+          "swigluKernel": 0.22115300000000007,
+          "argmaxKernel": 0.278722
+        },
+        "correlatedRuntimeCalls": {
+          "cudaLaunchKernel_v7000": 3251,
+          "cudaLaunchKernelExC_v11060": 64
+        }
+      },
+      {
+        "position": 5,
+        "kernels": 3315,
+        "kernelSpanMs": 275.416007,
+        "kernelBusyMs": 271.60237,
+        "betweenKernelGapMs": 3.813637,
+        "noRecordedDeviceActivityMs": 3.813637,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002272,
+          "normKernel": 22.384614000000006,
+          "convert": 154.8027720000001,
+          "cuBLAS kernels": 91.42046599999986,
+          "addKernel": 0.7702770000000005,
+          "ropeKernel": 0.55178,
+          "appendKVKernel": 0.15257900000000008,
+          "attentionKernel": 1.0215409999999998,
+          "swigluKernel": 0.22201800000000005,
+          "argmaxKernel": 0.274051
+        },
+        "correlatedRuntimeCalls": {
+          "cudaLaunchKernel_v7000": 3251,
+          "cudaLaunchKernelExC_v11060": 64
+        }
+      },
+      {
+        "position": 6,
+        "kernels": 3315,
+        "kernelSpanMs": 275.456231,
+        "kernelBusyMs": 271.644807,
+        "betweenKernelGapMs": 3.811424,
+        "noRecordedDeviceActivityMs": 3.811424,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002496,
+          "normKernel": 22.381798,
+          "convert": 154.80291699999998,
+          "cuBLAS kernels": 91.41744099999988,
+          "addKernel": 0.7719390000000005,
+          "ropeKernel": 0.5493490000000002,
+          "appendKVKernel": 0.15238700000000005,
+          "attentionKernel": 1.072968,
+          "swigluKernel": 0.222757,
+          "argmaxKernel": 0.270755
+        },
+        "correlatedRuntimeCalls": {
+          "cudaLaunchKernel_v7000": 3251,
+          "cudaLaunchKernelExC_v11060": 64
+        }
+      },
+      {
+        "position": 7,
+        "kernels": 3315,
+        "kernelSpanMs": 275.495528,
+        "kernelBusyMs": 271.688427,
+        "betweenKernelGapMs": 3.807101,
+        "noRecordedDeviceActivityMs": 3.807101,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002337,
+          "normKernel": 22.385159999999996,
+          "convert": 154.81224600000033,
+          "cuBLAS kernels": 91.39579299999998,
+          "addKernel": 0.7701170000000007,
+          "ropeKernel": 0.5500539999999998,
+          "appendKVKernel": 0.15232000000000007,
+          "attentionKernel": 1.122154,
+          "swigluKernel": 0.22342700000000004,
+          "argmaxKernel": 0.274819
+        },
+        "correlatedRuntimeCalls": {
+          "cudaLaunchKernel_v7000": 3251,
+          "cudaLaunchKernelExC_v11060": 64
+        }
+      },
+      {
+        "position": 8,
+        "kernels": 3315,
+        "kernelSpanMs": 275.520967,
+        "kernelBusyMs": 271.694398,
+        "betweenKernelGapMs": 3.826569,
+        "noRecordedDeviceActivityMs": 3.826569,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002304,
+          "normKernel": 22.382855999999997,
+          "convert": 154.80494800000017,
+          "cuBLAS kernels": 91.35232999999992,
+          "addKernel": 0.7705670000000006,
+          "ropeKernel": 0.5501800000000002,
+          "appendKVKernel": 0.15241600000000008,
+          "attentionKernel": 1.1781549999999998,
+          "swigluKernel": 0.22352000000000005,
+          "argmaxKernel": 0.277122
+        },
+        "correlatedRuntimeCalls": {
+          "cudaLaunchKernel_v7000": 3251,
+          "cudaLaunchKernelExC_v11060": 64
+        }
+      },
+      {
+        "position": 9,
+        "kernels": 3315,
+        "kernelSpanMs": 275.625352,
+        "kernelBusyMs": 271.797018,
+        "betweenKernelGapMs": 3.828334,
+        "noRecordedDeviceActivityMs": 3.828334,
+        "byCategoryMs": {
+          "embeddingKernel": 0.00256,
+          "normKernel": 22.383173000000006,
+          "convert": 154.80449600000017,
+          "cuBLAS kernels": 91.39847200000023,
+          "addKernel": 0.7706970000000009,
+          "ropeKernel": 0.5497310000000001,
+          "appendKVKernel": 0.15238500000000008,
+          "attentionKernel": 1.2421550000000006,
+          "swigluKernel": 0.220898,
+          "argmaxKernel": 0.272451
+        },
+        "correlatedRuntimeCalls": {
+          "cudaLaunchKernel_v7000": 3251,
+          "cudaLaunchKernelExC_v11060": 64
+        }
+      },
+      {
+        "position": 10,
+        "kernels": 3315,
+        "kernelSpanMs": 275.660264,
+        "kernelBusyMs": 271.859882,
+        "betweenKernelGapMs": 3.800382,
+        "noRecordedDeviceActivityMs": 3.800382,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002336,
+          "normKernel": 22.38563700000001,
+          "convert": 154.7919250000003,
+          "cuBLAS kernels": 91.41706999999998,
+          "addKernel": 0.7722020000000007,
+          "ropeKernel": 0.55124,
+          "appendKVKernel": 0.15238500000000008,
+          "attentionKernel": 1.2967799999999998,
+          "swigluKernel": 0.22137700000000007,
+          "argmaxKernel": 0.26893
+        },
+        "correlatedRuntimeCalls": {
+          "cudaLaunchKernel_v7000": 3251,
+          "cudaLaunchKernelExC_v11060": 64
+        }
+      }
+    ],
+    "mean": {
+      "kernels": 3315.0,
+      "kernelSpanMs": 275.49766199999993,
+      "kernelBusyMs": 271.68080728571425,
+      "betweenKernelGapMs": 3.816854714285714,
+      "noRecordedDeviceActivityMs": 3.816854714285714
+    },
+    "meanCategoryMs": {
+      "embeddingKernel": 0.0023864285714285715,
+      "attentionKernel": 1.1277855714285714,
+      "swigluKernel": 0.2221642857142858,
+      "argmaxKernel": 0.27383571428571424,
+      "normKernel": 22.383755142857144,
+      "ropeKernel": 0.5502680000000001,
+      "appendKVKernel": 0.15241271428571437,
+      "addKernel": 0.7714991428571435,
+      "convert": 154.80352914285726,
+      "cuBLAS kernels": 91.39317114285711
+    },
+    "limitations": [
+      "Nsight tracing changes timings; use unprofiled benchmarks for speedup.",
+      "Gaps are within one forward, exclude before/after-forward gaps, and are not SM utilization. No-recorded-device-activity also excludes traced memcpy/memset.",
+      "cuBLAS category is all kernels other than SproutLM named kernels in this trace."
+    ]
+  },
+  "graph-32b-profile": {
+    "trace": "runs/graph-32b-profile",
+    "promptTokens": 4,
+    "output": [
+      17,
+      11,
+      220,
+      17,
+      10,
+      17,
+      28,
+      19
+    ],
+    "decode": [
+      {
+        "position": 4,
+        "kernels": 3315,
+        "kernelSpanMs": 270.851679,
+        "kernelBusyMs": 270.783229,
+        "betweenKernelGapMs": 0.06845,
+        "noRecordedDeviceActivityMs": 0.06845,
+        "byCategoryMs": {
+          "embeddingKernel": 0.004704,
+          "normKernel": 22.30404699999999,
+          "convert": 155.00161699999975,
+          "cuBLAS kernels": 91.13139699999991,
+          "addKernel": 0.6086019999999996,
+          "ropeKernel": 0.5418189999999997,
+          "appendKVKernel": 0.12806100000000004,
+          "attentionKernel": 0.9508889999999999,
+          "swigluKernel": 0.18581999999999993,
+          "argmaxKernel": 0.263203
+        },
+        "correlatedRuntimeCalls": {
+          "cudaGraphLaunch_v10000": 1
+        }
+      },
+      {
+        "position": 5,
+        "kernels": 3315,
+        "kernelSpanMs": 270.161848,
+        "kernelBusyMs": 270.09516,
+        "betweenKernelGapMs": 0.066688,
+        "noRecordedDeviceActivityMs": 0.066688,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002816,
+          "normKernel": 22.30348999999999,
+          "convert": 154.20599400000006,
+          "cuBLAS kernels": 91.17793899999997,
+          "addKernel": 0.6091769999999996,
+          "ropeKernel": 0.541665,
+          "appendKVKernel": 0.12793300000000002,
+          "attentionKernel": 1.01159,
+          "swigluKernel": 0.18748600000000004,
+          "argmaxKernel": 0.26621
+        },
+        "correlatedRuntimeCalls": {
+          "cudaGraphLaunch_v10000": 1
+        }
+      },
+      {
+        "position": 6,
+        "kernels": 3315,
+        "kernelSpanMs": 270.339386,
+        "kernelBusyMs": 270.272344,
+        "betweenKernelGapMs": 0.067042,
+        "noRecordedDeviceActivityMs": 0.067042,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002944,
+          "normKernel": 22.30674600000001,
+          "convert": 154.36381000000003,
+          "cuBLAS kernels": 91.1283129999999,
+          "addKernel": 0.606904,
+          "ropeKernel": 0.5409619999999997,
+          "appendKVKernel": 0.12812700000000002,
+          "attentionKernel": 1.0629199999999999,
+          "swigluKernel": 0.18675199999999997,
+          "argmaxKernel": 0.280355
+        },
+        "correlatedRuntimeCalls": {
+          "cudaGraphLaunch_v10000": 1
+        }
+      },
+      {
+        "position": 7,
+        "kernels": 3315,
+        "kernelSpanMs": 270.456924,
+        "kernelBusyMs": 270.388733,
+        "betweenKernelGapMs": 0.068191,
+        "noRecordedDeviceActivityMs": 0.068191,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002752,
+          "normKernel": 22.302823999999994,
+          "convert": 154.43227599999994,
+          "cuBLAS kernels": 91.12798499999992,
+          "addKernel": 0.6098579999999995,
+          "ropeKernel": 0.5412169999999998,
+          "appendKVKernel": 0.128002,
+          "attentionKernel": 1.1130700000000004,
+          "swigluKernel": 0.18802799999999995,
+          "argmaxKernel": 0.276483
+        },
+        "correlatedRuntimeCalls": {
+          "cudaGraphLaunch_v10000": 1
+        }
+      },
+      {
+        "position": 8,
+        "kernels": 3315,
+        "kernelSpanMs": 270.587516,
+        "kernelBusyMs": 270.520443,
+        "betweenKernelGapMs": 0.067073,
+        "noRecordedDeviceActivityMs": 0.067073,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002816,
+          "normKernel": 22.303496000000003,
+          "convert": 154.48887099999996,
+          "cuBLAS kernels": 91.13906199999994,
+          "addKernel": 0.6128239999999996,
+          "ropeKernel": 0.5433549999999999,
+          "appendKVKernel": 0.128128,
+          "attentionKernel": 1.1674350000000002,
+          "swigluKernel": 0.187132,
+          "argmaxKernel": 0.28285
+        },
+        "correlatedRuntimeCalls": {
+          "cudaGraphLaunch_v10000": 1
+        }
+      },
+      {
+        "position": 9,
+        "kernels": 3315,
+        "kernelSpanMs": 270.463837,
+        "kernelBusyMs": 270.396549,
+        "betweenKernelGapMs": 0.067288,
+        "noRecordedDeviceActivityMs": 0.067288,
+        "byCategoryMs": {
+          "embeddingKernel": 0.00272,
+          "normKernel": 22.30359,
+          "convert": 154.36048799999975,
+          "cuBLAS kernels": 91.09379300000005,
+          "addKernel": 0.6095359999999997,
+          "ropeKernel": 0.5425220000000002,
+          "appendKVKernel": 0.12793300000000002,
+          "attentionKernel": 1.237891,
+          "swigluKernel": 0.18655499999999994,
+          "argmaxKernel": 0.266082
+        },
+        "correlatedRuntimeCalls": {
+          "cudaGraphLaunch_v10000": 1
+        }
+      },
+      {
+        "position": 10,
+        "kernels": 3315,
+        "kernelSpanMs": 270.67843,
+        "kernelBusyMs": 270.611289,
+        "betweenKernelGapMs": 0.067141,
+        "noRecordedDeviceActivityMs": 0.067141,
+        "byCategoryMs": {
+          "embeddingKernel": 0.002752,
+          "normKernel": 22.300995999999998,
+          "convert": 154.45555800000002,
+          "cuBLAS kernels": 91.16234800000001,
+          "addKernel": 0.6079300000000001,
+          "ropeKernel": 0.5412449999999999,
+          "appendKVKernel": 0.127966,
+          "attentionKernel": 1.2921450000000003,
+          "swigluKernel": 0.18671799999999997,
+          "argmaxKernel": 0.269954
+        },
+        "correlatedRuntimeCalls": {
+          "cudaGraphLaunch_v10000": 1
+        }
+      }
+    ],
+    "mean": {
+      "kernels": 3315.0,
+      "kernelSpanMs": 270.50566,
+      "kernelBusyMs": 270.43824957142857,
+      "betweenKernelGapMs": 0.06741042857142857,
+      "noRecordedDeviceActivityMs": 0.06741042857142857
+    },
+    "meanCategoryMs": {
+      "embeddingKernel": 0.0030719999999999996,
+      "attentionKernel": 1.1194200000000003,
+      "swigluKernel": 0.18692728571428568,
+      "argmaxKernel": 0.2721624285714286,
+      "normKernel": 22.303598428571426,
+      "ropeKernel": 0.5418264285714285,
+      "appendKVKernel": 0.1280214285714286,
+      "addKernel": 0.6092615714285712,
+      "convert": 154.4726591428571,
+      "cuBLAS kernels": 91.13726242857138
+    },
+    "limitations": [
+      "Nsight tracing changes timings; use unprofiled benchmarks for speedup.",
+      "Gaps are within one forward, exclude before/after-forward gaps, and are not SM utilization. No-recorded-device-activity also excludes traced memcpy/memset.",
+      "cuBLAS category is all kernels other than SproutLM named kernels in this trace."
+    ]
+  }
+}

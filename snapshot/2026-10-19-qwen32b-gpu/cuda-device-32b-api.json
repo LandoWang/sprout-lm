@@ -1,0 +1,38 @@
+{
+  "model": "Qwen/Qwen2.5-32B-Instruct@5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+  "baseUrl": "http://127.0.0.1:3000",
+  "text": "天空蓝色因大气散射太阳光中蓝光较多。",
+  "output": [
+    101916,
+    105681,
+    62112,
+    105797,
+    99632,
+    99759,
+    101281,
+    99225,
+    15946,
+    100400,
+    99225,
+    106204,
+    1773,
+    151645
+  ],
+  "usage": {
+    "promptTokens": 44,
+    "completionTokens": 14
+  },
+  "finishReason": "eos",
+  "jsonMs": 14747.371506000001,
+  "streaming": {
+    "firstTokenMs": 3088.7178239999994,
+    "totalMs": 6517.0917020000015,
+    "note": "After JSON request; shared prefix may be reused. Not a cold prefill measurement."
+  },
+  "cancellation": "cancelled one stream while sibling completed with expected output",
+  "oversizedRequestStatus": 400,
+  "health": {
+    "status": "ok",
+    "pendingRequests": 0
+  }
+}

@@ -1,0 +1,12 @@
+========= COMPUTE-SANITIZER
+{"directMatvecMaxError":0.00006165605773844618,"stats":{"deviceName":"NVIDIA A100 80GB PCIe","device":1,"deviceFreeBytes":84438548480,"deviceTotalBytes":85093777408,"matvecCalls":66,"tiles":66,"hostToDeviceBytes":5540664,"deviceToHostBytes":16944,"uploadWallMs":1.5004649999999997,"gpuComputeMs":0,"matvecWallMs":0,"peakScratchBytes":0,"residentWeightBytes":5257752,"peakResidentWeightBytes":5257752,"weightUploadBytes":5257752,"weightUploadWallMs":1.5004649999999997,"matvecWeightUploadBytes":0,"deviceTensorBytes":288032,"deviceOpCalls":66,"deviceForwards":44,"deviceForwardEventMs":9.534783948212862,"blockTableUploadBytes":176,"graphCaptures":22,"graphLaunches":44,"graphCaptureWallMs":31.668163999999994,"graphNodes":22,"graphInputUploadBytes":352,"liveGraphs":0,"mappedWeightBytes":5257752,"weightMode":"resident","matvecMode":"direct","weightLimitBytes":0,"reserveBytes":1073741824}}
+✔ direct 16-bit weights preserve FP32 activations, tails, reductions and graph replay (978.456078ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 982.601366
+========= ERROR SUMMARY: 0 errors

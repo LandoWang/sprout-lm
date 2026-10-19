@@ -1,0 +1,228 @@
+{
+  "model": {
+    "id": "Qwen/Qwen2.5-14B-Instruct@cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+    "layers": 48,
+    "hiddenSize": 5120,
+    "attentionHeads": 40,
+    "kvHeads": 8,
+    "headDim": 128,
+    "vocabSize": 152064,
+    "maxContextLength": 32768,
+    "kvDtype": "float32",
+    "eosTokenIds": [
+      151645,
+      151643
+    ]
+  },
+  "backend": "cuda-resident-gemv",
+  "chat": false,
+  "prompt": "1+1=",
+  "input": [
+    16,
+    10,
+    16,
+    28
+  ],
+  "output": [
+    17,
+    374,
+    264,
+    259,
+    2717,
+    2449,
+    13,
+    2160
+  ],
+  "text": "2 is a tautology. Is",
+  "finishReason": "length",
+  "loadMs": 4507.778165,
+  "firstTokenMs": 743.8711519999997,
+  "generationMs": 1911.243227,
+  "processMemory": {
+    "rss": 30239207424,
+    "heapTotal": 220704768,
+    "heapUsed": 99523920,
+    "external": 23703386,
+    "arrayBuffers": 15046914
+  },
+  "processResourceUsage": {
+    "userCPUTime": 4597468,
+    "systemCPUTime": 1917375,
+    "maxRSS": 29530476,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 569307,
+    "majorPageFault": 25,
+    "swappedOut": 0,
+    "fsRead": 647040,
+    "fsWrite": 16,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 3799,
+    "involuntaryContextSwitches": 23
+  },
+  "loadStats": {
+    "deviceName": "NVIDIA A100 80GB PCIe",
+    "device": 0,
+    "deviceFreeBytes": 19471335424,
+    "deviceTotalBytes": 85093777408,
+    "matvecCalls": 0,
+    "tiles": 0,
+    "hostToDeviceBytes": 29538385920,
+    "deviceToHostBytes": 0,
+    "uploadWallMs": 3601.981742,
+    "gpuComputeMs": 0,
+    "matvecWallMs": 0,
+    "peakScratchBytes": 0,
+    "residentWeightBytes": 29538385920,
+    "peakResidentWeightBytes": 29538385920,
+    "weightUploadBytes": 29538385920,
+    "weightUploadWallMs": 3601.981742,
+    "matvecWeightUploadBytes": 0,
+    "mappedWeightBytes": 29538385920,
+    "weightMode": "resident",
+    "weightLimitBytes": 34359738368,
+    "reserveBytes": 4294967296
+  },
+  "stats": {
+    "deviceName": "NVIDIA A100 80GB PCIe",
+    "device": 0,
+    "deviceFreeBytes": 19337117696,
+    "deviceTotalBytes": 85093777408,
+    "matvecCalls": 3704,
+    "tiles": 7056,
+    "hostToDeviceBytes": 29632626688,
+    "deviceToHostBytes": 100024320,
+    "uploadWallMs": 3639.5689400000124,
+    "gpuComputeMs": 1184.6833266299218,
+    "matvecWallMs": 1352.9083609999946,
+    "peakScratchBytes": 134286948,
+    "residentWeightBytes": 29538385920,
+    "peakResidentWeightBytes": 29538385920,
+    "weightUploadBytes": 29538385920,
+    "weightUploadWallMs": 3601.981742,
+    "matvecWeightUploadBytes": 0,
+    "mappedWeightBytes": 29538385920,
+    "weightMode": "resident",
+    "weightLimitBytes": 34359738368,
+    "reserveBytes": 4294967296
+  },
+  "generationTransfers": {
+    "hostToDeviceBytes": 94240768,
+    "deviceToHostBytes": 100024320,
+    "uploadWallMs": 37.58719800001245,
+    "weightUploadBytes": 0,
+    "matvecWeightUploadBytes": 0
+  },
+  "decodeSummary": {
+    "steps": 7,
+    "totalMs": 1164.9115829999992,
+    "meanMs": 166.4159404285713,
+    "stepsPerSecond": 6.009039743576835
+  },
+  "kv": {
+    "totalPages": 1,
+    "freePages": 1,
+    "cachedPages": 0,
+    "evictions": 0,
+    "pages": [
+      {
+        "id": 0,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "ms": 233.73241700000017,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 2,
+      "ms": 168.10432899999978,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 3,
+      "ms": 175.0108909999999,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 4,
+      "ms": 166.00599000000057,
+      "phase": "prefill",
+      "tokens": [
+        17
+      ]
+    },
+    {
+      "round": 5,
+      "ms": 170.9989740000001,
+      "phase": "decode",
+      "tokens": [
+        374
+      ]
+    },
+    {
+      "round": 6,
+      "ms": 166.20379299999968,
+      "phase": "decode",
+      "tokens": [
+        264
+      ]
+    },
+    {
+      "round": 7,
+      "ms": 165.4935689999993,
+      "phase": "decode",
+      "tokens": [
+        259
+      ]
+    },
+    {
+      "round": 8,
+      "ms": 166.94822900000054,
+      "phase": "decode",
+      "tokens": [
+        2717
+      ]
+    },
+    {
+      "round": 9,
+      "ms": 166.82912699999997,
+      "phase": "decode",
+      "tokens": [
+        2449
+      ]
+    },
+    {
+      "round": 10,
+      "ms": 163.17624399999931,
+      "phase": "decode",
+      "tokens": [
+        13
+      ]
+    },
+    {
+      "round": 11,
+      "ms": 165.26164700000027,
+      "phase": "decode",
+      "tokens": [
+        2160
+      ]
+    }
+  ],
+  "limitations": [
+    "Synchronous CUDA GEMV; TypeScript attention, norms and KV.",
+    "Matrix weights stay on GPU in checkpoint dtype; tiles still convert to FP32 for SGEMV. Norms/biases and embedding row reads use CPU.",
+    "No multi-GPU execution, tensor batching or asynchronous serving."
+  ]
+}

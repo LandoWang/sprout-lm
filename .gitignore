@@ -1,2 +1,7 @@
 node_modules/
 *.tsbuildinfo
+models/
+.cache/
+.venv-reference/
+build/
+runs/

@@ -1,0 +1,16 @@
+{
+  "observedAtUTC": "2026-10-19T23:29:25.221913+00:00",
+  "deploymentDirectory": "/mnt/nvme/sprout-lm/deployments/pd",
+  "pdActive": "active",
+  "pdEnabled": "enabled",
+  "oldActive": "inactive",
+  "oldEnabled": "disabled",
+  "coordinatorPID": 1037135,
+  "health": {
+    "status": "ok",
+    "pendingRequests": 0
+  },
+  "gpus": "index, name, memory.used [MiB], memory.free [MiB], driver_version\n0, NVIDIA A100 80GB PCIe, 63967 MiB, 17185 MiB, 580.159.03\n1, NVIDIA A100 80GB PCIe, 63967 MiB, 17185 MiB, 580.159.03",
+  "computeProcesses": "pid, gpu_uuid, used_gpu_memory [MiB]\n1037148, GPU-7f625747-eb0f-a595-3d64-84215ad232f7, 63958 MiB\n1037149, GPU-dbbc0b37-fd93-7274-db25-4a259fd9c80e, 63958 MiB",
+  "gitCommittedOrPushed": false
+}

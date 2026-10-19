@@ -1,0 +1,130 @@
+{
+  "model": {
+    "id": "Qwen/Qwen2.5-72B-Instruct@495f39366efef23836d0cfae4fbe635880d2be31",
+    "layers": 80,
+    "hiddenSize": 8192,
+    "attentionHeads": 64,
+    "kvHeads": 8,
+    "headDim": 128,
+    "vocabSize": 152064,
+    "maxContextLength": 32768,
+    "kvDtype": "float32",
+    "eosTokenIds": [
+      151645,
+      151643
+    ]
+  },
+  "backend": "cuda-offload-gemv",
+  "chat": false,
+  "prompt": "1+1=",
+  "input": [
+    16,
+    10,
+    16,
+    28
+  ],
+  "output": [
+    17,
+    13
+  ],
+  "text": "2.",
+  "finishReason": "length",
+  "loadMs": 539.2460940000001,
+  "firstTokenMs": 42875.166309,
+  "generationMs": 51630.808673,
+  "processMemory": {
+    "rss": 143580717056,
+    "heapTotal": 197144576,
+    "heapUsed": 101317696,
+    "external": 43632907,
+    "arrayBuffers": 34980096
+  },
+  "processResourceUsage": {
+    "userCPUTime": 45392464,
+    "systemCPUTime": 7656499,
+    "maxRSS": 140215544,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 2607917,
+    "majorPageFault": 0,
+    "swappedOut": 0,
+    "fsRead": 520,
+    "fsWrite": 40,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 2775,
+    "involuntaryContextSwitches": 464
+  },
+  "stats": {
+    "deviceName": "NVIDIA A100 80GB PCIe",
+    "device": 0,
+    "deviceFreeBytes": 48961486848,
+    "deviceTotalBytes": 85093777408,
+    "matvecCalls": 2802,
+    "tiles": 12076,
+    "hostToDeviceBytes": 707235340288,
+    "deviceToHostBytes": 138432512,
+    "uploadWallMs": 47442.87811100008,
+    "gpuComputeMs": 2679.113217871636,
+    "matvecWallMs": 50393.76655500001,
+    "peakScratchBytes": 201461248,
+    "mappedWeightBytes": 145408131072
+  },
+  "kv": {
+    "totalPages": 1,
+    "freePages": 1,
+    "cachedPages": 0,
+    "evictions": 0,
+    "pages": [
+      {
+        "id": 0,
+        "refs": 0,
+        "cached": false,
+        "activeRefs": 0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "ms": 16669.645253000002,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 2,
+      "ms": 8639.340046000001,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 3,
+      "ms": 8656.709071000001,
+      "phase": "prefill",
+      "tokens": []
+    },
+    {
+      "round": 4,
+      "ms": 8900.067007999998,
+      "phase": "prefill",
+      "tokens": [
+        17
+      ]
+    },
+    {
+      "round": 5,
+      "ms": 8750.425568999999,
+      "phase": "decode",
+      "tokens": [
+        13
+      ]
+    }
+  ],
+  "limitations": [
+    "Synchronous CUDA GEMV; TypeScript attention, norms and KV.",
+    "BF16/F16 file-backed host weights convert to FP32 in bounded GPU tiles. Not a device-resident BF16 model.",
+    "No multi-GPU execution, tensor batching or asynchronous serving."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "firstTokenMeanMs": 3024.4618906666656,
+  "decodeIntervals": 93,
+  "interTokenMeanMs": 66.99567206451613,
+  "decodeTokensPerSecond": 14.926337316789814,
+  "kvCopies": 7,
+  "copyBytesEach": [
+    24641536
+  ],
+  "copyEventMeanMs": 0.1921691404921668,
+  "copyEventMaxMs": 0.21695999801158905,
+  "health": {
+    "count": 1313,
+    "meanMs": 0.49157522162993644,
+    "p95Ms": 0.6750500000016473,
+    "maxMs": 25.17687300000034
+  },
+  "overlappingDecodeSteps": 31,
+  "concurrentInterToken": {
+    "count": 31,
+    "meanMs": 66.90796774193562,
+    "p95Ms": 68.0452740000037,
+    "maxMs": 68.18070699999953
+  },
+  "cancelledOutputTokens": 0,
+  "cancelledTotalMs": 4.514308000005258
+}
