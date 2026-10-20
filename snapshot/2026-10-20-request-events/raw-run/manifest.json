@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "runId": "113ecaf8-8005-4359-b682-9f73d629eb29",
+  "collectorPid": 1405148,
+  "maxFileBytes": 8388608,
+  "maxFiles": 4,
+  "maxQueueBytes": 1048576,
+  "currentFile": 0,
+  "rotatedFiles": 0,
+  "received": 0,
+  "written": 0,
+  "dropped": 0,
+  "malformed": 0,
+  "cleanShutdown": false,
+  "clock": "same-host process.hrtime.bigint (ns); wallTimeMs for display",
+  "updatedAt": "2026-10-20T20:07:42.494Z"
+}

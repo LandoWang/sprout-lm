@@ -1,0 +1,36 @@
+# /etc/systemd/system/sprout-lm-pd.service
+[Unit]
+Description=SproutLM Qwen2.5-32B three-process Prefill/Decode serving
+After=network.target
+RequiresMountsFor=/mnt/nvme/sprout-lm
+StartLimitIntervalSec=300
+StartLimitBurst=3
+Conflicts=sprout-lm-32b.service
+
+[Service]
+Type=simple
+User=azureuser
+WorkingDirectory=/mnt/nvme/sprout-lm/deployments/pd
+ExecStart=/usr/local/bin/node src/server.ts
+Environment=BACKEND=cuda-pd
+Environment=MODEL_DIR=/mnt/nvme/sprout-lm/models/qwen2.5-32b-instruct
+Environment=PREFILL_DEVICE=0
+Environment=DECODE_DEVICE=1
+Environment=CUDA_GRAPH=1
+Environment=CUDA_MATVEC=direct
+Environment=CUDA_WEIGHT_LIMIT_MIB=69632
+Environment=CUDA_RESERVE_MIB=4096
+Environment=KV_TOKENS=2048
+Environment=MAX_SEQUENCES=4
+Environment=PREFILL_CHUNK_SIZE=4
+Environment=HOST=127.0.0.1
+Environment=PORT=3000
+Restart=on-failure
+RestartSec=10
+KillMode=mixed
+TimeoutStopSec=30
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

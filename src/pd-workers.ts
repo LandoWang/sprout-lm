@@ -1,6 +1,7 @@
 import { fork, type ChildProcess } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import type { CudaDeviceOptions } from './cuda-device.ts';
+import { record, type EventConnection, type EventSink } from './observation.ts';
 import type { Command, ForwardCommand, PDExecutors, Reply, TransferCommand, WorkerInfo, WorkerResult, WorkerRole } from './pd-protocol.ts';
 
 class WorkerProcess {
@@ -65,6 +66,7 @@ class WorkerProcess {
 
 export interface PDWorkerOptions {
   directory: string; tokens: number; blockSize?: number; prefillDevice?: number; decodeDevice?: number; cuda?: CudaDeviceOptions;
+  events?: EventConnection; observer?: EventSink;
 }
 /** One native IPC channel per child (Unix socket pair on Linux); no KV bytes cross it. */
 export class PDWorkers implements PDExecutors {
@@ -81,11 +83,14 @@ export class PDWorkers implements PDExecutors {
     const p = options.prefillDevice ?? 0, d = options.decodeDevice ?? 1;
     if (![p,d].every(n => Number.isSafeInteger(n) && n >= 0) || p === d) throw new Error('PD needs two distinct CUDA devices.');
     let cluster: PDWorkers | undefined, earlyError: Error | undefined;
-    const failure = (error: Error) => { if (cluster) cluster.fail(error); else earlyError ??= error; };
+    const failure = (error: Error) => {
+      record(options.observer, 'worker.failed', { data: { message: error.message } });
+      if (cluster) cluster.fail(error); else earlyError ??= error;
+    };
     const prefill = new WorkerProcess(failure), decode = new WorkerProcess(failure), workers = { prefill, decode };
     try {
       // Load separately to keep checkpoint I/O and startup failures easy to diagnose.
-      const init = { directory: options.directory, tokens: options.tokens, blockSize: options.blockSize ?? 16, cuda: options.cuda ?? {} };
+      const init = { directory: options.directory, tokens: options.tokens, blockSize: options.blockSize ?? 16, cuda: options.cuda ?? {}, events: options.events };
       const pi = await prefill.call<WorkerInfo>({ op: 'init', value: { ...init, role: 'prefill', device: p } });
       const di = await decode.call<WorkerInfo>({ op: 'init', value: { ...init, role: 'decode', device: d } });
       if (earlyError) throw earlyError;

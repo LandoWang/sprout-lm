@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SproutLM · Observatory</title>
+  <link rel="icon" href="/sproutlm.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><img src="/sproutlm.svg" alt="SproutLM"><span>sprout<span class="brand-lm">LM</span><small>OBSERVATORY</small></span></a>
+    <div class="run-controls"><label class="sr-only" for="run">选择运行</label><select id="run"><option>读取运行目录…</option></select><label class="auto"><input id="auto" type="checkbox">每 3 秒刷新</label><button id="refresh">刷新</button></div>
+  </header>
+  <div id="error" class="error" role="alert" hidden></div>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="section-label">REQUESTS <span id="request-count">0</span></div>
+      <label class="sr-only" for="request-search">搜索 request ID</label><input id="request-search" type="search" placeholder="搜索 request ID…">
+      <div id="requests" class="request-list"></div>
+      <div class="sidebar-note"><span class="live-dot"></span>独立读取 event 文件<br>同机单调时钟 · 毫秒<br><span id="capture">尚未读取</span></div>
+    </aside>
+    <main>
+      <div id="empty" class="empty"><img src="/sproutlm.svg" alt=""><h1>从一个请求开始</h1><p>尚无请求事件。开启 OBSERVABILITY=1 运行推理服务，或选择已保存的实验。</p><code>npm run observe -- RUN_DIRECTORY</code></div>
+      <div id="workspace" hidden>
+        <div class="request-heading"><div><div class="eyebrow" id="run-label">REQUEST TRACE</div><h1>请求时序 <span id="status" class="badge"></span></h1><div id="request-id" class="mono"></div></div><button id="export">导出请求 JSON</button></div>
+        <div class="metrics" id="metrics"></div>
+        <details id="integrity" class="integrity"><summary id="integrity-summary"></summary><div id="integrity-content"></div></details>
+        <section class="panel timeline-panel">
+          <div class="panel-heading"><div><h2>执行时间线</h2><p>点击区间查看 plan；拖选放大，Ctrl / ⌘ + 滚轮缩放。</p></div><div class="toolbar"><button id="full" class="active">全请求</button><button id="ttft">首 token</button><button id="handoff">P → D 交接</button><button id="zoom-in" aria-label="放大时间线">＋</button><button id="zoom-out" aria-label="缩小时间线">−</button></div></div>
+          <div class="legend"><span><i class="prefill"></i>Prefill</span><span><i class="decode"></i>Decode</span><span><i class="transfer"></i>KV 交接</span><span><i class="wait"></i>等待 / 背压</span><span><i class="dispatch"></i>控制 IPC</span><label><input id="others" type="checkbox" checked>显示其他请求的 Worker 区间</label></div>
+          <div class="timeline-scroll"><svg id="timeline" role="img" aria-label="请求执行时间线"></svg></div>
+          <div class="pan"><span id="window-label"></span><label for="pan">平移</label><input id="pan" type="range" min="0" max="1000" value="0"></div>
+          <div class="panel-foot">Worker 区间是主机侧执行耗时，包含 CUDA 调用与同步；空白表示没有记录到该 Worker 的执行，不代表 GPU 空闲或某个锁被占用。</div>
+        </section>
+        <div class="analysis-grid">
+          <section class="panel"><div class="panel-heading"><div><h2>时间花在哪里</h2><p>完整记录区间的耗时，阶段可能重叠。</p></div><label class="sr-only" for="breakdown-mode">耗时范围</label><select id="breakdown-mode"><option value="ttft">首 token 之前</option><option value="all">整个请求</option></select></div><div id="breakdown"></div><div id="findings" class="findings"></div></section>
+          <section class="panel"><div class="panel-heading"><div><h2>Token 间隔</h2><p>点击柱条定位停顿；缺号不连线。</p></div><label class="sr-only" for="token-mode">Token 观测点</label><select id="token-mode"><option value="published">Service 发布</option><option value="written">HTTP 写出</option></select></div><svg id="tokens" role="img" aria-label="逐 token 间隔"></svg><div id="token-summary" class="panel-foot"></div></section>
+        </div>
+        <div class="analysis-grid bottom-grid">
+          <section class="panel"><div class="panel-heading"><div><h2>Worker 执行间隙</h2><p>按整个运行的相邻计划计算，列出与当前请求重叠的最长间隙。</p></div></div><div class="table-scroll"><table><thead><tr><th>Worker</th><th>开始</th><th>间隙</th><th>下一计划</th></tr></thead><tbody id="gaps"></tbody></table></div><div class="panel-foot">用于寻找下一步调查的位置。缺失记录、无待办任务和调度等待都可能形成间隙。</div></section>
+          <section class="panel inspector"><div class="panel-heading"><div><h2>事件 / 计划详情</h2><p id="detail-label">点击时间线、token 或原始事件。</p></div><button id="clear-plan" hidden>取消 plan 筛选</button></div><pre id="detail">选择一个区间，查看各阶段耗时、页号和事件字段。</pre></section>
+        </div>
+        <section class="panel events-panel"><div class="panel-heading"><div><h2>原始事件</h2><p id="event-count"></p></div><label class="sr-only" for="event-search">筛选原始事件</label><input id="event-search" type="search" placeholder="事件名 / plan ID / 字段…"></div><div class="table-scroll"><table><thead><tr><th>相对请求 / ms</th><th>来源</th><th>事件</th><th>Plan</th><th>字段</th></tr></thead><tbody id="events"></tbody></table></div><div class="pagination"><button id="prev">上一页</button><span id="page"></span><button id="next">下一页</button></div></section>
+        <footer>SproutLM · 每个结论都能回到原始事件。HTTP 写出时间不等于客户端收到时间。</footer>
+      </div>
+    </main>
+  </div>
+  <div id="tooltip" role="tooltip" hidden></div>
+</body>
+</html>

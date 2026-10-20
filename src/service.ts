@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { Engine, type Event } from './engine.ts';
 import type { FinishReason } from './runner.ts';
+import { record, type EventSink } from './observation.ts';
 
 /** A scheduler may execute locally or await completion from worker processes. */
 export interface GenerationEngine {
@@ -56,6 +57,7 @@ class EventStream implements GenerationStream {
   }
 
   [Symbol.asyncIterator](): GenerationStream { return this; }
+  get bufferedEvents(): number { return this.buffer.length; }
 
   next(): Promise<IteratorResult<GenerationEvent>> {
     const event = this.buffer.shift();
@@ -125,9 +127,11 @@ export class GenerationService {
   private pumping = false;
   private stopping?: Promise<void>;
 
-  constructor(engine: GenerationEngine = new Engine({ recordTrace: false }), options: Partial<ServiceOptions> = {}) {
+  readonly observer?: EventSink;
+  constructor(engine: GenerationEngine = new Engine({ recordTrace: false }), options: Partial<ServiceOptions> = {}, observer?: EventSink) {
     if (engine.pending) throw new Error('GenerationService needs an idle Engine and exclusive ownership.');
     this.engine = engine;
+    this.observer = observer;
     this.options = { maxPendingRequests: 128, maxBufferedEvents: 64, ...options };
     for (const [name, value] of Object.entries(this.options)) {
       if (!Number.isSafeInteger(value) || value <= 0) throw new Error(`${name} must be a positive integer.`);
@@ -137,11 +141,12 @@ export class GenerationService {
   get pendingCount(): number { return this.jobs.size; }
   get isClosed(): boolean { return this.closed || this.engine.failed === true; }
 
-  generate(input: GenerationRequest, { signal }: { signal?: AbortSignal } = {}): GenerationStream {
+  generate(input: GenerationRequest, { signal, id = randomUUID() }: { signal?: AbortSignal; id?: string } = {}): GenerationStream {
     if (this.isClosed) throw new GenerationError('closed', 'Generation service is closed.');
-    const id = randomUUID();
+    if (!id || this.jobs.has(id)) throw new GenerationError('invalid_request', 'Request ID must be unique and nonempty.');
     const stream = new EventStream(id, this.options.maxBufferedEvents, () => { this.cancel(id); });
     if (signal?.aborted) {
+      record(this.observer, 'request.cancelled', { requestId: id, data: { reason: 'aborted_before_admission' } });
       stream.finish({ id, type: 'cancelled' });
       return stream;
     }
@@ -159,6 +164,8 @@ export class GenerationService {
       removeAbortListener: () => signal?.removeEventListener('abort', abort),
     };
     this.jobs.set(id, job);
+    record(this.observer, 'service.queued', { requestId: id, data: { promptTokens: input.prompt.length,
+      maxNewTokens: input.maxNewTokens, pendingRequests: this.jobs.size } });
     stream.push({ id, type: 'queued' });
     signal?.addEventListener('abort', abort, { once: true });
     this.schedule();
@@ -196,7 +203,10 @@ export class GenerationService {
         if (!job) continue;
         if (event.type === 'token') {
           job.completionTokens++;
-          if (!job.stream.push({ id: event.id, type: 'token', token: event.token, index: event.index })) {
+          const accepted = job.stream.push({ id: event.id, type: 'token', token: event.token, index: event.index });
+          record(this.observer, accepted ? 'token.published' : 'service.buffer_full', { requestId: event.id,
+            data: { index: event.index, bufferedEvents: job.stream.bufferedEvents, limit: this.options.maxBufferedEvents } });
+          if (!accepted) {
             this.finish(event.id, {
               id: event.id, type: 'error', code: 'slow_consumer',
               message: 'Output buffer is full; request cancelled. Consume events as they arrive.',
@@ -226,6 +236,9 @@ export class GenerationService {
   private finish(id: string, event: TerminalEvent): void {
     const job = this.jobs.get(id);
     if (!job) return;
+    record(this.observer, event.type === 'finished' ? 'generation.finished' : event.type === 'cancelled' ? 'request.cancelled' : 'request.failed',
+      { requestId: id, data: { completionTokens: job.completionTokens,
+        ...(event.type === 'finished' ? { reason: event.finishReason } : event.type === 'error' ? { code: event.code } : {}) } });
     this.engine.cancel(id); // Finished requests are already released; cancellation is idempotent.
     this.engine.forget(id);
     this.jobs.delete(id);

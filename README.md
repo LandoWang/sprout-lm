@@ -230,9 +230,22 @@ CUDA_RESERVE_MIB=4096 KV_TOKENS=2048 HOST=127.0.0.1 PORT=3000 npm run serve
 
 `KV_TOKENS` 是**每张卡**的池容量，`MAX_SEQUENCES` 默认 4，`PREFILL_CHUNK_SIZE` 默认 4。原 `/generate` JSON / SSE、`/health` 和取消接口保留。API 进程可在 Worker 的同步 CUDA 调用期间响应 I/O；Worker 内部仍同步等待每个计算 / 复制计划完成。尚无 PD 前缀缓存、抢占重算、张量 batch、传输与 D 计算重叠、跨机器传输或 Worker 无损恢复。
 
-当前常驻服务为 `sprout-lm-pd`，部署目录 `/mnt/nvme/sprout-lm/deployments/pd`，启用开机启动和失败重启，监听原来的 `127.0.0.1:3000`。每张卡 2048-token FP32 KV 池，各 1 GiB；两卡各占约 62.46 GiB 显存。部署配置见 [deploy/sprout-lm-pd.service](deploy/sprout-lm-pd.service)。
+当前常驻服务为 `sprout-lm-pd`，部署目录 `/mnt/nvme/sprout-lm/deployments/observer`，启用开机启动和失败重启，监听原来的 `127.0.0.1:3000`。三个推理进程之外已启用独立 Observer，上一版三进程目录 `deployments/pd` 保留供回退。每张卡 2048-token FP32 KV 池，各 1 GiB；两卡各占约 62.46 GiB 显存。部署配置见 [deploy/sprout-lm-pd.service](deploy/sprout-lm-pd.service)。
 
 实测 32B 的 93 个稳定 HTTP/SSE token 间隔平均 66.996 ms（约 14.93 token/s），47-token prompt 的首 token 平均 3.024 s。另一个请求 prefill 时，已有请求的 31 次 decode 均有 Worker 执行区间重叠；健康检查 p95 约 0.675 ms。详细测试、复现和限制见 [三进程 PD 实验快照](snapshot/2026-10-19-pd-three-process/README.md)。
+
+### 独立观测进程
+
+通过 `OBSERVABILITY=1` 开启第四个进程。协调进程、P / D Worker 各自通过 Unix socket 发送带 `requestId` / `planId` 的事件，由 Observer 写入有界滚动日志；可追踪请求准入、等待、KV 交接、token 输出和取消后的页回收。启动、查询与完整性边界见 [OBSERVABILITY.md](OBSERVABILITY.md)。
+
+```sh
+npm run observe
+# 打开 http://127.0.0.1:3001；默认包含保存的 A100 32B 真实请求。
+# 查看另一个日志根目录或单次运行：
+npm run observe -- /path/to/events
+```
+
+Observatory 是独立只读界面，按 request 展示可缩放的 API / Scheduler / P / D 时间线、计划下发与回执、KV 交接、token 间隔、输出背压、原始事件和记录缺失。可选每 3 秒刷新，支持请求 JSON 导出。Worker 主机执行区间不等于 GPU kernel 时间；执行间隙也不代表 GPU 空闲。
 
 ### 插件式文本处理
 

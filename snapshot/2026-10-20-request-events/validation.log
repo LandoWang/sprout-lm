@@ -1,0 +1,82 @@
+
+> sprout-lm@0.1.0 check
+> tsc --noEmit
+
+
+> sprout-lm@0.1.0 test
+> node --test test/*.test.ts
+
+✔ paged attention matches independent dense recomputation at every position (11.968141ms)
+✔ continuous batches admit a late request and mix decode with chunked prefill (13.981802ms)
+✔ prefix sharing reuses physical pages and leaves the final prompt token for logits (5.427149ms)
+✔ same suffix under a different preceding context must not hit the prefix cache (2.96367ms)
+✔ memory pressure preempts/recomputes requests without changing generation (36.676413ms)
+✔ LRU eviction only removes cached pages with no active users (1.726837ms)
+✔ cancel running/queued requests and release references without damaging a sibling (5.46038ms)
+✔ reject invalid inputs and requests that cannot fit even in isolation (3.488307ms)
+✔ HTTP JSON and SSE expose identical tokens, incremental text, request IDs and usage (56.789416ms)
+✔ API rejects malformed and oversized input before streaming or admission (38.005899ms)
+✔ client disconnect cancels running generation and releases its live KV (10.970503ms)
+✔ explicit cancellation ends the matching SSE stream and leaves a sibling running (11.668313ms)
+✔ HTTP model failures produce a terminal SSE error and a closed health status (6.863725ms)
+[observation] collector exited; traces may be incomplete. SIGKILL
+✔ independent collector correlates HTTP lifecycle under the server-generated request ID (159.583159ms)
+✔ producer pressure stays bounded, reports losses, and retains cross-source plan identity (120.919845ms)
+✔ collector rotation bounds disk usage and exposes expired retention (142.8439ms)
+[observation] event flush incomplete at shutdown.
+✔ a stopped listener cannot grow producer memory or block close indefinitely (183.051932ms)
+✔ throwing instrumentation cannot change HTTP generation or reject malformed requests differently (8.505232ms)
+✔ PD reserves destination capacity, overlaps workers, and holds both page sets until transfer acknowledgement (8.984284ms)
+✔ PD keeps decode running while another request has an unfinished prefill chunk (4.431624ms)
+✔ cancellation during KV transfer suppresses late results and delays page reuse (3.349759ms)
+✔ worker loss retires the service and retains page ownership until worker teardown finishes (2.742198ms)
+✔ shutdown during prefill waits for teardown before releasing pages (2.020163ms)
+✔ a terminal first token releases both reservations without transferring KV (3.236128ms)
+✔ a mismatched completion cannot publish tokens or free a still-live pool (1.361547ms)
+✔ request events explain destination waits, plan identity and deferred cancellation cleanup (2.328277ms)
+✔ native Qwen GQA/RoPE/SwiGLU logits match independent Transformers full recomputation (16.900729ms)
+✔ Qwen mixed requests survive prefix sharing, chunking and pressure with reference outputs (9.101352ms)
+✔ EOS is sampled once, counts toward usage, and releases shared pages before the token limit (2.365436ms)
+✔ unsupported Qwen configurations fail before loading weights (0.905527ms)
+✔ cancelling a Qwen request preserves a sibling using its prefix pages (3.851954ms)
+✔ safetensors converts BF16/F16/F32 including signed and subnormal values (9.756402ms)
+✔ safetensors rejects truncated, overlapping, out-of-range and unsupported tensors (5.238737ms)
+✔ shared pump streams concurrent and late requests through pressure without changing tokens (27.963705ms)
+✔ abort queued and active requests; releasing a shared prefix preserves the sibling (6.574366ms)
+✔ early iterator return, pre-aborted signal and service close release all requests (2.713374ms)
+✔ slow consumer is bounded and cancelled while another stream completes (5.479015ms)
+✔ invalid requests and admission limits fail without leaking queued work (3.678232ms)
+✔ failed model execution terminates all streams and retires partially written KV (2.163029ms)
+✔ idle service does not keep scheduling empty steps; new arrivals restart it (3.558919ms)
+✔ byte tokenizer preserves UTF-8 across token boundaries and ignores BOS (0.420614ms)
+✔ plugin factories are independent, reject unknown names and verify model special IDs (5.276137ms)
+✔ ByteLevel plugin streams split UTF-8, literal tokens, BOM and independent decoders (11.970176ms)
+✔ Jinja chat template loads independently from tokenizer implementation (5.246211ms)
+✔ indexed Qwen weights preserve all generated tokens and validate shard lookup (26.59758ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 784.72766
+
+> sprout-lm@0.1.0 test:cuda-pd
+> node --test test/cuda-pd.integration.ts
+
+{"pdMaxError":2.2351741790771484e-8,"stats":{"prefill":{"deviceName":"NVIDIA A100 80GB PCIe","device":0,"deviceFreeBytes":17565024256,"deviceTotalBytes":85093777408,"matvecCalls":128,"tiles":128,"hostToDeviceBytes":21636,"deviceToHostBytes":256,"uploadWallMs":0.21667199999999998,"gpuComputeMs":0,"matvecWallMs":0,"peakScratchBytes":0,"residentWeightBytes":20992,"peakResidentWeightBytes":20992,"weightUploadBytes":20992,"weightUploadWallMs":0.21667199999999998,"matvecWeightUploadBytes":0,"deviceTensorBytes":5920,"deviceOpCalls":337,"deviceForwards":9,"deviceForwardEventMs":55.97619113326073,"blockTableUploadBytes":60,"graphCaptures":1,"graphLaunches":1,"graphCaptureWallMs":2.449994,"graphNodes":41,"graphInputUploadBytes":8,"ipcCopyCalls":0,"ipcCopyBytes":0,"ipcCopyEventMs":0,"liveGraphs":1,"mappedWeightBytes":20992,"weightMode":"resident","matvecMode":"direct","weightLimitBytes":0,"reserveBytes":1073741824},"decode":{"deviceName":"NVIDIA A100 80GB PCIe","device":1,"deviceFreeBytes":17565024256,"deviceTotalBytes":85093777408,"matvecCalls":90,"tiles":90,"hostToDeviceBytes":21692,"deviceToHostBytes":768,"uploadWallMs":0.19877299999999998,"gpuComputeMs":0,"matvecWallMs":0,"peakScratchBytes":0,"residentWeightBytes":20992,"peakResidentWeightBytes":20992,"weightUploadBytes":20992,"weightUploadWallMs":0.19877299999999998,"matvecWeightUploadBytes":0,"deviceTensorBytes":5920,"deviceOpCalls":234,"deviceForwards":6,"deviceForwardEventMs":55.92944176495075,"blockTableUploadBytes":84,"graphCaptures":1,"graphLaunches":5,"graphCaptureWallMs":2.224173,"graphNodes":41,"graphInputUploadBytes":40,"ipcCopyCalls":2,"ipcCopyBytes":1152,"ipcCopyEventMs":0.03936000168323517,"liveGraphs":1,"mappedWeightBytes":20992,"weightMode":"resident","matvecMode":"direct","weightLimitBytes":0,"reserveBytes":1073741824}}}
+✔ cross-process CUDA IPC remaps noncontiguous KV pages and preserves all independent logits (788.836663ms)
+{"pdState":{"coordinatorPid":1404754,"workers":{"prefill":{"pid":1404803,"device":0},"decode":{"pid":1404804,"device":1}},"busy":{"prefill":false,"decode":false},"requests":[],"prefill":{"totalPages":16,"freePages":16,"cachedPages":0,"evictions":0,"pages":[{"id":0,"refs":0,"cached":false,"activeRefs":0},{"id":1,"refs":0,"cached":false,"activeRefs":0},{"id":2,"refs":0,"cached":false,"activeRefs":0},{"id":3,"refs":0,"cached":false,"activeRefs":0},{"id":4,"refs":0,"cached":false,"activeRefs":0},{"id":5,"refs":0,"cached":false,"activeRefs":0},{"id":6,"refs":0,"cached":false,"activeRefs":0},{"id":7,"refs":0,"cached":false,"activeRefs":0},{"id":8,"refs":0,"cached":false,"activeRefs":0},{"id":9,"refs":0,"cached":false,"activeRefs":0},{"id":10,"refs":0,"cached":false,"activeRefs":0},{"id":11,"refs":0,"cached":false,"activeRefs":0},{"id":12,"refs":0,"cached":false,"activeRefs":0},{"id":13,"refs":0,"cached":false,"activeRefs":0},{"id":14,"refs":0,"cached":false,"activeRefs":0},{"id":15,"refs":0,"cached":false,"activeRefs":0}]},"decode":{"totalPages":16,"freePages":16,"cachedPages":0,"evictions":0,"pages":[{"id":0,"refs":0,"cached":false,"activeRefs":0},{"id":1,"refs":0,"cached":false,"activeRefs":0},{"id":2,"refs":0,"cached":false,"activeRefs":0},{"id":3,"refs":0,"cached":false,"activeRefs":0},{"id":4,"refs":0,"cached":false,"activeRefs":0},{"id":5,"refs":0,"cached":false,"activeRefs":0},{"id":6,"refs":0,"cached":false,"activeRefs":0},{"id":7,"refs":0,"cached":false,"activeRefs":0},{"id":8,"refs":0,"cached":false,"activeRefs":0},{"id":9,"refs":0,"cached":false,"activeRefs":0},{"id":10,"refs":0,"cached":false,"activeRefs":0},{"id":11,"refs":0,"cached":false,"activeRefs":0},{"id":12,"refs":0,"cached":false,"activeRefs":0},{"id":13,"refs":0,"cached":false,"activeRefs":0},{"id":14,"refs":0,"cached":false,"activeRefs":0},{"id":15,"refs":0,"cached":false,"activeRefs":0}]},"transfers":{"count":2,"bytes":1152,"eventMs":0.05011199973523617}},"trace":[{"id":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","phase":"prefill","worker":"prefill","from":0,"tokens":2,"sourcePages":[],"targetPages":[0],"result":{"request":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","startedAt":1792526808948,"endedAt":1792526809001}},{"id":"18bda031-8ec6-4734-a5dd-68774a2a4694","phase":"prefill","worker":"prefill","from":0,"tokens":2,"sourcePages":[],"targetPages":[2],"result":{"request":"18bda031-8ec6-4734-a5dd-68774a2a4694","startedAt":1792526809002,"endedAt":1792526809003}},{"id":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","phase":"prefill","worker":"prefill","from":2,"tokens":2,"sourcePages":[],"targetPages":[0,1],"result":{"request":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","token":9,"startedAt":1792526809003,"endedAt":1792526809007}},{"id":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","phase":"transfer","worker":"decode","from":0,"tokens":4,"sourcePages":[0,1],"targetPages":[0,1],"result":{"request":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","bytes":512,"eventMs":0.03126399964094162,"startedAt":1792526809008,"endedAt":1792526809008}},{"id":"18bda031-8ec6-4734-a5dd-68774a2a4694","phase":"prefill","worker":"prefill","from":2,"tokens":2,"sourcePages":[],"targetPages":[2,3],"result":{"request":"18bda031-8ec6-4734-a5dd-68774a2a4694","startedAt":1792526809008,"endedAt":1792526809008}},{"id":"18bda031-8ec6-4734-a5dd-68774a2a4694","phase":"prefill","worker":"prefill","from":4,"tokens":1,"sourcePages":[],"targetPages":[2,3,4],"result":{"request":"18bda031-8ec6-4734-a5dd-68774a2a4694","token":21,"startedAt":1792526809009,"endedAt":1792526809009}},{"id":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","phase":"decode","worker":"decode","from":4,"tokens":1,"sourcePages":[],"targetPages":[0,1,2],"result":{"request":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","token":9,"startedAt":1792526809009,"endedAt":1792526809069}},{"id":"18bda031-8ec6-4734-a5dd-68774a2a4694","phase":"transfer","worker":"decode","from":0,"tokens":5,"sourcePages":[2,3,4],"targetPages":[4,5,6],"result":{"request":"18bda031-8ec6-4734-a5dd-68774a2a4694","bytes":640,"eventMs":0.018848000094294548,"startedAt":1792526809070,"endedAt":1792526809070}},{"id":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","phase":"decode","worker":"decode","from":5,"tokens":1,"sourcePages":[],"targetPages":[0,1,2],"result":{"request":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","token":9,"startedAt":1792526809071,"endedAt":1792526809071}},{"id":"18bda031-8ec6-4734-a5dd-68774a2a4694","phase":"decode","worker":"decode","from":5,"tokens":1,"sourcePages":[],"targetPages":[4,5,6],"result":{"request":"18bda031-8ec6-4734-a5dd-68774a2a4694","token":17,"startedAt":1792526809071,"endedAt":1792526809072}},{"id":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","phase":"decode","worker":"decode","from":6,"tokens":1,"sourcePages":[],"targetPages":[0,1,2,3],"result":{"request":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","token":3,"startedAt":1792526809072,"endedAt":1792526809072}},{"id":"18bda031-8ec6-4734-a5dd-68774a2a4694","phase":"decode","worker":"decode","from":6,"tokens":1,"sourcePages":[],"targetPages":[4,5,6,7],"result":{"request":"18bda031-8ec6-4734-a5dd-68774a2a4694","token":9,"startedAt":1792526809074,"endedAt":1792526809075}},{"id":"18bda031-8ec6-4734-a5dd-68774a2a4694","phase":"decode","worker":"decode","from":7,"tokens":1,"sourcePages":[],"targetPages":[4,5,6,7],"result":{"request":"18bda031-8ec6-4734-a5dd-68774a2a4694","token":9,"startedAt":1792526809077,"endedAt":1792526809077}}]}
+{"observedRequest":"18bda031-8ec6-4734-a5dd-68774a2a4694","events":65,"plans":7,"sources":["coordinator","prefill","decode"]}
+{"observedRequest":"05ae8dfe-5f02-4f44-95c7-bc923568dd0a","events":53,"plans":6,"sources":["coordinator","prefill","decode"]}
+✔ PD with a fourth observer process serves JSON/SSE and correlates plans across all producers (915.076822ms)
+✔ worker exit closes the API service and tears down its peer (619.281511ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2477.26927

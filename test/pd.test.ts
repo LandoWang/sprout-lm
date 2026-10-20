@@ -5,6 +5,7 @@ import { PDScheduler } from '../src/pd-scheduler.ts';
 import { GenerationService, type GenerationStream, type GenerationEvent } from '../src/service.ts';
 import { TinyTransformer } from '../src/model.ts';
 import type { ForwardCommand, PDExecutors, TransferCommand, WorkerInfo, WorkerResult, WorkerRole } from '../src/pd-protocol.ts';
+import type { EventFields, EventSink } from '../src/observation.ts';
 
 class HeldWorkers implements PDExecutors {
   prefill: WorkerInfo; decode: WorkerInfo;
@@ -137,4 +138,27 @@ test('a mismatched completion cannot publish tokens or free a still-live pool', 
   await assert.rejects(step,/identity mismatch/);
   assert.equal(scheduler.failed,true);assert.equal(scheduler.snapshot().prefill.freePages,7);
   workers.exited();await scheduler.shutdown();assert.equal(scheduler.snapshot().prefill.freePages,8);
+});
+
+test('request events explain destination waits, plan identity and deferred cancellation cleanup', async () => {
+  const events: Array<EventFields & { name: string }> = [];
+  const observer: EventSink = (name, fields) => events.push({ name, ...fields });
+  const workers = new HeldWorkers(4), scheduler = new PDScheduler(workers, { observer, prefillChunkSize: 4 });
+  scheduler.add({ id: 'A', prompt: [1,2,3], maxNewTokens: 3 });
+  scheduler.add({ id: 'B', prompt: [1,2,3], maxNewTokens: 3 });
+  let step = scheduler.step();
+  assert.ok(events.some(e => e.requestId === 'B' && e.data?.reason === 'decode_pages_unavailable'));
+  workers.complete('prefill'); await step;
+  step = scheduler.step();
+  const transfer = workers.calls[0];
+  assert.ok(transfer.value.planId);
+  scheduler.cancel('A'); await step;
+  assert.ok(!events.some(e => e.requestId === 'A' && e.name === 'request.resources_released'));
+  workers.complete('decode'); await settle();
+  const a = events.filter(e => e.requestId === 'A');
+  const completion = a.find(e => e.name === 'plan.completion_received' && e.planId === transfer.value.planId)!;
+  assert.equal(completion.data?.discarded, true);
+  assert.ok(a.indexOf(completion) < a.findIndex(e => e.name === 'request.resources_released'));
+  assert.equal(a.filter(e => e.name === 'request.resources_released').length, 1);
+  scheduler.cancel('B');
 });

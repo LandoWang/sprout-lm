@@ -1,8 +1,10 @@
 import { once } from 'node:events';
+import { randomUUID } from 'node:crypto';
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { GenerationError, GenerationService, type GenerationEvent } from './service.ts';
 import { byteTokenizer, type Tokenizer } from './tokenizer.ts';
 import type { ChatTemplate, ChatMessage } from './text-plugins.ts';
+import { record, type EventSink } from './observation.ts';
 
 class HttpError extends Error {
   readonly status: number;
@@ -43,7 +45,7 @@ async function readBody(request: IncomingMessage, limit: number): Promise<unknow
   }
 }
 
-function parseRequest(body: unknown, tokenizer: Tokenizer, template?: ChatTemplate) {
+function parseRequest(body: unknown, tokenizer: Tokenizer, template?: ChatTemplate, observer?: EventSink, requestId?: string) {
   const invalid = (message: string): never => { throw new HttpError(400, 'invalid_request', message); };
   if (!body || typeof body !== 'object' || Array.isArray(body)) return invalid('Body must be an object.');
   const input = body as Record<string, unknown>;
@@ -68,10 +70,21 @@ function parseRequest(body: unknown, tokenizer: Tokenizer, template?: ChatTempla
       || typeof m.content !== 'string' || Object.keys(m).some(k => !['role', 'content'].includes(k)))) {
       return invalid('messages must contain text-only system, user or assistant messages.');
     }
-    try { prompt = tokenizer.encode(template.render(input.messages as ChatMessage[])); }
+    try {
+      record(observer, 'text.template_started', { requestId });
+      const text = template.render(input.messages as ChatMessage[]);
+      record(observer, 'text.template_completed', { requestId });
+      record(observer, 'text.encode_started', { requestId });
+      prompt = tokenizer.encode(text);
+      record(observer, 'text.encoded', { requestId, data: { promptTokens: prompt.length } });
+    }
     catch (error) { return invalid(error instanceof Error ? error.message : 'Failed to format messages.'); }
   } else {
-    try { prompt = typeof input.prompt === 'string' ? tokenizer.encode(input.prompt) : input.prompt as number[]; }
+    try {
+      record(observer, 'text.encode_started', { requestId });
+      prompt = typeof input.prompt === 'string' ? tokenizer.encode(input.prompt) : input.prompt as number[];
+      record(observer, 'text.encoded', { requestId, data: { promptTokens: prompt.length, input: typeof input.prompt === 'string' ? 'text' : 'tokens' } });
+    }
     catch (error) { return invalid(error instanceof Error ? error.message : 'Failed to encode prompt.'); }
   }
   return { prompt, maxNewTokens, stream: input.stream === true };
@@ -91,9 +104,16 @@ function sse(event: { type: string; [key: string]: unknown }): string {
   return `event: ${event.type}\ndata: ${JSON.stringify(event)}\n\n`;
 }
 
-async function writeEvent(response: ServerResponse, event: { type: string; [key: string]: unknown }, signal: AbortSignal): Promise<void> {
+async function writeEvent(response: ServerResponse, event: { type: string; [key: string]: unknown }, signal: AbortSignal, observer?: EventSink): Promise<void> {
   signal.throwIfAborted();
-  if (!response.write(sse(event))) await once(response, 'drain', { signal });
+  const requestId = event.id as string;
+  const accepted = response.write(sse(event));
+  if (event.type === 'token') record(observer, 'http.token_written', { requestId, data: { index: event.index, writableBytes: response.writableLength } });
+  if (!accepted) {
+    record(observer, 'http.backpressure_started', { requestId });
+    try { await once(response, 'drain', { signal }); }
+    finally { record(observer, 'http.backpressure_ended', { requestId, data: { aborted: signal.aborted } }); }
+  }
 }
 
 export interface ApiOptions {
@@ -101,10 +121,11 @@ export interface ApiOptions {
   tokenizer?: Tokenizer;
   template?: ChatTemplate;
   maxBodyBytes?: number;
+  observer?: EventSink;
 }
 
 /** Native SproutLM protocol. Protocol adapters call the service, never Engine.step(). */
-export function createApiServer({ service = new GenerationService(), tokenizer = byteTokenizer, template, maxBodyBytes = 65536 }: ApiOptions = {}) {
+export function createApiServer({ service = new GenerationService(), tokenizer = byteTokenizer, template, maxBodyBytes = 65536, observer = service.observer }: ApiOptions = {}) {
   if (!Number.isSafeInteger(maxBodyBytes) || maxBodyBytes <= 0) throw new Error('maxBodyBytes must be a positive integer.');
   const server = createServer((request, response) => {
     void handle(request, response);
@@ -137,9 +158,17 @@ export function createApiServer({ service = new GenerationService(), tokenizer =
         request.resume();
         throw new HttpError(404, 'not_found', 'Use POST /generate, DELETE /requests/:id, or GET /health.');
       }
-      const input = parseRequest(await readBody(request, maxBodyBytes), tokenizer, template);
+      id = randomUUID();
+      response.setHeader('x-request-id', id);
+      record(observer, 'request.received', { requestId: id });
+      const requestId = id;
+      response.once('finish', () => record(observer, 'http.response_finished', { requestId, data: { status: response.statusCode } }));
+      response.once('close', () => record(observer, 'http.response_closed', { requestId, data: { finished: response.writableFinished } }));
+      const body = await readBody(request, maxBodyBytes);
+      record(observer, 'http.body_read', { requestId: id });
+      const input = parseRequest(body, tokenizer, template, observer, id);
       controller.signal.throwIfAborted();
-      const events = service.generate(input, { signal: controller.signal });
+      const events = service.generate(input, { signal: controller.signal, id });
       id = events.id;
       response.setHeader('x-request-id', id);
       const decoder = tokenizer.decoder();
@@ -153,7 +182,7 @@ export function createApiServer({ service = new GenerationService(), tokenizer =
           for await (const event of events) {
             const textDelta = event.type === 'token' ? decoder.push(event.token)
               : event.type === 'queued' ? '' : decoder.finish();
-            await writeEvent(response, { ...event, textDelta }, controller.signal);
+            await writeEvent(response, { ...event, textDelta }, controller.signal, observer);
           }
           response.end();
         } else {
@@ -176,6 +205,7 @@ export function createApiServer({ service = new GenerationService(), tokenizer =
         await events.return?.();
       }
     } catch (error) {
+      if (id) record(observer, 'http.request_failed', { requestId: id, data: { code: errorResponse(error).code, aborted: controller.signal.aborted } });
       if (id) service.cancel(id);
       if (controller.signal.aborted || response.destroyed) return;
       const { status, ...detail } = errorResponse(error);

@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import { once } from 'node:events';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
@@ -9,6 +10,8 @@ import { PDScheduler } from '../src/pd-scheduler.ts';
 import { GenerationService } from '../src/service.ts';
 import { createApiServer } from '../src/http.ts';
 import { argmax } from '../src/runner.ts';
+import { ObserverProcess } from '../src/observer-process.ts';
+import { readRequestTrace } from '../src/request-trace.ts';
 
 const directory=fileURLToPath(new URL('./fixtures/qwen-tiny/',import.meta.url));
 const reference=JSON.parse(await readFile(join(directory,'reference.json'),'utf8'));
@@ -49,9 +52,14 @@ test('cross-process CUDA IPC remaps noncontiguous KV pages and preserves all ind
   for(const pid of [workers.prefill.pid,workers.decode.pid]) assert.throws(()=>process.kill(pid,0),{code:'ESRCH'});
 });
 
-test('three-process PD serves concurrent JSON/SSE and returns all page references', async () => {
-  const workers=await PDWorkers.start(options),scheduler=new PDScheduler(workers,{prefillChunkSize:2,traceLimit:1000});
-  const service=new GenerationService(scheduler),server=createApiServer({service});
+test('PD with a fourth observer process serves JSON/SSE and correlates plans across all producers', async t => {
+  const root=await mkdtemp(join(tmpdir(),'sprout-pd-observe-'));
+  const observation=await ObserverProcess.start({directory:root});
+  t.after(async()=>{await observation.close();await rm(root,{recursive:true,force:true});});
+  const observer=observation.client.emit;
+  const workers=await PDWorkers.start({...options,events:observation.connection,observer}),scheduler=new PDScheduler(workers,{prefillChunkSize:2,traceLimit:1000,observer});
+  const service=new GenerationService(scheduler,{},observer),server=createApiServer({service});
+  const requestIds:string[]=[];
   server.listen(0,'127.0.0.1'); await once(server,'listening');
   const address=server.address();assert.ok(address&&typeof address==='object');const url=`http://127.0.0.1:${address.port}`;
   try {
@@ -59,6 +67,7 @@ test('three-process PD serves concurrent JSON/SSE and returns all page reference
       const response=await fetch(url+'/generate',{method:'POST',headers:{'content-type':'application/json'},
         body:JSON.stringify({prompt:sample.tokens,maxNewTokens:sample.output.length,stream:i===1})});
       assert.equal(response.status,200);
+      requestIds.push(response.headers.get('x-request-id')!);
       if(i===0)assert.deepEqual((await response.json() as {output:number[]}).output,sample.output);
       else {
         const events=(await response.text()).split('\n').filter(l=>l.startsWith('data: ')).map(l=>JSON.parse(l.slice(6)));
@@ -72,6 +81,24 @@ test('three-process PD serves concurrent JSON/SSE and returns all page reference
     assert.equal(scheduler.snapshot().transfers.count,2);
     assert.equal((await fetch(url+'/health')).status,200);
     console.log(JSON.stringify({pdState:scheduler.snapshot(),trace:scheduler.trace}));
+    await scheduler.shutdown(); // Flush both Worker event sockets at their existing shutdown boundary.
+    assert.ok(await observation.client.flush());
+    for(const id of requestIds) {
+      const trace=await readRequestTrace(observation.directory,id);
+      assert.deepEqual(new Set(trace.events.map(e=>e.source)),new Set(['coordinator','prefill','decode']));
+      const sent=trace.events.filter(e=>e.name==='plan.sent');
+      for(const plan of sent) {
+        assert.equal(trace.events.filter(e=>e.planId===plan.planId&&e.name==='plan.started').length,1);
+        assert.equal(trace.events.filter(e=>e.planId===plan.planId&&e.name==='plan.completed').length,1);
+        assert.equal(trace.events.filter(e=>e.planId===plan.planId&&e.name==='plan.completion_received').length,1);
+      }
+      const names=trace.events.map(e=>e.name);
+      assert.ok(names.indexOf('token.ready')<names.indexOf('kv.transfer_ack_received'));
+      assert.ok(names.indexOf('kv.transfer_ack_received')<names.indexOf('kv.source_pages_released'));
+      assert.equal(names.filter(n=>n==='request.resources_released').length,1);
+      assert.equal(trace.diagnostics.losses.length,0);
+      console.log(JSON.stringify({observedRequest:id,events:trace.events.length,plans:sent.length,sources:[...new Set(trace.events.map(e=>e.source))]}));
+    }
   } finally { service.close(); server.close();server.closeAllConnections();await service.drained(); }
 });
 

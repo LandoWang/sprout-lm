@@ -330,6 +330,22 @@
 
 这里完成的是同机 CUDA IPC / P2P 的初版；不将下面 B4.1 的 RDMA 设计清单标成已完成。
 
+## M3-O · 独立请求事件观测
+
+- [x] 第四个 Observer 进程，协调进程与 P / D 通过独立 Unix socket 直接投递事件，不占用执行 RPC。
+- [x] requestId、planId、进程序号、同机单调时间贯穿 API、Service、Scheduler 与 Worker。
+- [x] 准入等待原因、执行计划、首 token、KV 交接、输出背压与取消后的页回收事件。
+- [x] 有界生产者 / 写盘缓冲、事件丢失标记、每次运行的滚动日志与查询完整性说明。
+- [x] 按 requestId 查询保留事件；Collector 暂停 / 退出时推理继续，正常关闭按有界 barrier 收尾。
+- [x] 独立只读 Observatory：请求列表、缩放时序、TTFT / HTTP 写出 / 首到第二 token、耗时拆分、逐 token 间隔、跨请求 Worker 间隙、plan / 原始事件下钻、JSON 导出与轮询刷新。
+- [x] UI 对轮转 / 丢失 / 未闭合区间明确提示；相邻 token 缺号不拼接，重叠等待不重复计时，Worker 区间不冒充 GPU occupancy。
+- [x] 45 项轻量测试与 3 项双 GPU 集成测试通过，真实 P / D 的计划事件及数值验证通过。
+- [ ] Perfetto 时间线导出、聚合指标与观测开销的严格对照实验。
+- [ ] CUDA kernel / stream 时间线、GPU utilization / memory 指标，以及真正的锁等待埋点，与 request / plan 关联。
+- [ ] Collector 独立重连 / 重启，以及跨运行目录的自动保留策略。
+
+启动、事件协议和限制见 [OBSERVABILITY.md](OBSERVABILITY.md)。Observer 的日志写入 ACK 只用于显式诊断 / 关闭，不是 KV 交接的 ACK，不进入推理关键路径。
+
 ## M4 · Agent / Harness / Codex
 
 目标：让上层客户端通过模型接口完成一次包含工具交互的任务，观察端到端行为。

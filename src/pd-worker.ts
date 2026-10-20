@@ -2,17 +2,25 @@ import { CudaDeviceBackend } from './cuda-device.ts';
 import { CudaQwenRunner } from './qwen-cuda.ts';
 import type { DeviceKVStorage, KVStore } from './runner.ts';
 import type { Command, Envelope, WorkerInfo, WorkerRole } from './pd-protocol.ts';
+import { EventClient, record } from './observation.ts';
 
 if (!process.send) throw new Error('PD workers must be started by their coordinator.');
 let backend: CudaDeviceBackend | undefined, model: CudaQwenRunner | undefined;
 let pool: DeviceKVStorage, imported: object | undefined, role: WorkerRole;
 let busy = false, lastId = 0, closing = false;
-process.on('disconnect', () => { backend?.close(); process.exit(1); });
+let events: EventClient | undefined;
+async function exit(code: number): Promise<void> {
+  backend?.close(); record(events?.emit, 'worker.stopped', { data: { code } });
+  await events?.close(); process.exit(code);
+}
+process.on('disconnect', () => { void exit(1); });
 
 async function execute(command: Command): Promise<unknown> {
   if (command.op === 'init') {
     if (backend) throw new Error('Worker already initialized.');
     const config = command.value; role = config.role;
+    if (config.events) events = new EventClient(config.events, role);
+    record(events?.emit, 'worker.starting', { data: { device: config.device } });
     if (!['prefill', 'decode'].includes(role) || !Number.isSafeInteger(config.blockSize) || config.blockSize < 1)
       throw new Error('Invalid worker configuration.');
     backend = new CudaDeviceBackend({ ...config.cuda, device: config.device });
@@ -22,6 +30,7 @@ async function execute(command: Command): Promise<unknown> {
     pool = model.createKVStorage(layout);
     const info: WorkerInfo = { role, pid: process.pid, device: config.device, spec: model.spec, layout,
       ipc: role === 'prefill' ? backend.exportIPC(pool.handle) : undefined, stats: backend.stats() };
+    record(events?.emit, 'worker.ready', { data: { device: config.device, kvTokens: layout.numBlocks * layout.blockSize } });
     return info;
   }
   if (command.op === 'close') { closing = true; backend?.close(); return null; }
@@ -67,12 +76,19 @@ process.on('message', async (message: Envelope) => {
     process.exit(1);
   }
   busy = true; lastId = message.id;
+  const plan = message.command.op === 'forward' || message.command.op === 'transfer' ? message.command.value : undefined;
+  const fields = plan ? { requestId: plan.request, planId: plan.planId ?? `${role}-rpc-${message.id}`,
+    data: { operation: message.command.op, rpcId: message.id } } : undefined;
+  if (fields) record(events?.emit, 'plan.started', fields);
   try {
     const value = await execute(message.command);
+    if (fields) record(events?.emit, 'plan.completed', { ...fields,
+      data: { ...fields.data, ...('eventMs' in (value as object) ? { cudaEventMs: (value as { eventMs: number }).eventMs } : {}) } });
     process.send!({ id: message.id, value }, error => {
-      if (closing || error) { backend?.close(); process.exit(error ? 1 : 0); }
+      if (closing || error) void exit(error ? 1 : 0);
     });
   } catch (error) {
+    if (fields) record(events?.emit, 'plan.execution_failed', fields);
     process.send!({ id: message.id, error: error instanceof Error ? error.message : String(error) });
   } finally { busy = false; }
 });

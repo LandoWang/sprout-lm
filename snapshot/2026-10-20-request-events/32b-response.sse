@@ -1,0 +1,414 @@
+event: queued
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"queued","textDelta":""}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101888,"index":0,"textDelta":"关于"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":2073,"index":1,"textDelta":"“"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":111012,"index":2,"textDelta":"世界上最"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101607,"index":3,"textDelta":"美的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102064,"index":4,"textDelta":"语言"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":854,"index":5,"textDelta":"”"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105073,"index":6,"textDelta":"这个问题"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":3837,"index":7,"textDelta":"，"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101359,"index":8,"textDelta":"实际上"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":104065,"index":9,"textDelta":"并没有"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":46944,"index":10,"textDelta":"一个"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":103967,"index":11,"textDelta":"统一"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":111230,"index":12,"textDelta":"的答案"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":3837,"index":13,"textDelta":"，"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":99519,"index":14,"textDelta":"因为"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102064,"index":15,"textDelta":"语言"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":9370,"index":16,"textDelta":"的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":57566,"index":17,"textDelta":"美"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101207,"index":18,"textDelta":"往往"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":108747,"index":19,"textDelta":"取决于"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":99605,"index":20,"textDelta":"个人"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":107137,"index":21,"textDelta":"的文化"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102193,"index":22,"textDelta":"背景"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":5373,"index":23,"textDelta":"、"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":104934,"index":24,"textDelta":"情感"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":72064,"index":25,"textDelta":"联系"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":109553,"index":26,"textDelta":"和个人"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":113721,"index":27,"textDelta":"偏好"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":1773,"index":28,"textDelta":"。"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101970,"index":29,"textDelta":"不同的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102064,"index":30,"textDelta":"语言"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":107111,"index":31,"textDelta":"承载"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":99164,"index":32,"textDelta":"着"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101970,"index":33,"textDelta":"不同的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":99348,"index":34,"textDelta":"文化"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105895,"index":35,"textDelta":"内涵"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":33108,"index":36,"textDelta":"和"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":100022,"index":37,"textDelta":"历史"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":3837,"index":38,"textDelta":"，"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":73157,"index":39,"textDelta":"每"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101053,"index":40,"textDelta":"一种"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102064,"index":41,"textDelta":"语言"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101103,"index":42,"textDelta":"都有"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":41146,"index":43,"textDelta":"其"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105071,"index":44,"textDelta":"独特的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102550,"index":45,"textDelta":"魅力"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":33108,"index":46,"textDelta":"和"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101280,"index":47,"textDelta":"美丽"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105046,"index":48,"textDelta":"之处"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":3407,"index":49,"textDelta":"。\n\n"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":77557,"index":50,"textDelta":"例如"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":3837,"index":51,"textDelta":"，"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":108264,"index":52,"textDelta":"许多人"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":100140,"index":53,"textDelta":"认为"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":24339,"index":54,"textDelta":"法"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":72881,"index":55,"textDelta":"语"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":111615,"index":56,"textDelta":"因其"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":116966,"index":57,"textDelta":"发音"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":112411,"index":58,"textDelta":"柔和"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":5373,"index":59,"textDelta":"、"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":78685,"index":60,"textDelta":"音"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101485,"index":61,"textDelta":"韵"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":107004,"index":62,"textDelta":"优美"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":68536,"index":63,"textDelta":"而"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":114533,"index":64,"textDelta":"被认为是"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105750,"index":65,"textDelta":"浪漫"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":109824,"index":66,"textDelta":"的语言"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":24968,"index":67,"textDelta":"；"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105101,"index":68,"textDelta":"意大利"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":72881,"index":69,"textDelta":"语"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":111615,"index":70,"textDelta":"因其"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101941,"index":71,"textDelta":"音乐"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":106148,"index":72,"textDelta":"般的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105288,"index":73,"textDelta":"节奏"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":33108,"index":74,"textDelta":"和"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":114091,"index":75,"textDelta":"旋律"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":68536,"index":76,"textDelta":"而"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":100683,"index":77,"textDelta":"受到"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102721,"index":78,"textDelta":"喜爱"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":24968,"index":79,"textDelta":"；"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":109023,"index":80,"textDelta":"汉语"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":46448,"index":81,"textDelta":"则"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":109859,"index":82,"textDelta":"以其"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":104653,"index":83,"textDelta":"丰富的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105895,"index":84,"textDelta":"内涵"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":5373,"index":85,"textDelta":"、"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":103658,"index":86,"textDelta":"悠久"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":104754,"index":87,"textDelta":"的历史"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":33108,"index":88,"textDelta":"和"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105071,"index":89,"textDelta":"独特的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":108201,"index":90,"textDelta":"书写"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":72448,"index":91,"textDelta":"系统"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":9909,"index":92,"textDelta":"（"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":114311,"index":93,"textDelta":"汉字"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":7552,"index":94,"textDelta":"）"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":68536,"index":95,"textDelta":"而"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":99610,"index":96,"textDelta":"著"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":24641,"index":97,"textDelta":"称"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":24968,"index":98,"textDelta":"；"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105576,"index":99,"textDelta":"西班牙"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":72881,"index":100,"textDelta":"语"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":46448,"index":101,"textDelta":"则"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":111615,"index":102,"textDelta":"因其"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":110205,"index":103,"textDelta":"流畅"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":9370,"index":104,"textDelta":"的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":116966,"index":105,"textDelta":"发音"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":33108,"index":106,"textDelta":"和"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":104653,"index":107,"textDelta":"丰富的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102124,"index":108,"textDelta":"表达"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":47534,"index":109,"textDelta":"力"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":68536,"index":110,"textDelta":"而"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":100683,"index":111,"textDelta":"受到"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":100437,"index":112,"textDelta":"欢迎"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":3407,"index":113,"textDelta":"。\n\n"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101886,"index":114,"textDelta":"因此"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":3837,"index":115,"textDelta":"，"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102531,"index":116,"textDelta":"可以说"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":73157,"index":117,"textDelta":"每"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101053,"index":118,"textDelta":"一种"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102064,"index":119,"textDelta":"语言"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":101103,"index":120,"textDelta":"都有"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":41146,"index":121,"textDelta":"其"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105071,"index":122,"textDelta":"独特的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":57566,"index":123,"textDelta":"美"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":3837,"index":124,"textDelta":"，"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":113679,"index":125,"textDelta":"最美的"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102064,"index":126,"textDelta":"语言"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":20412,"index":127,"textDelta":"是"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":102245,"index":128,"textDelta":"那种"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":100006,"index":129,"textDelta":"能够"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":117052,"index":130,"textDelta":"触动"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":56568,"index":131,"textDelta":"你"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":105261,"index":132,"textDelta":"心灵"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":109824,"index":133,"textDelta":"的语言"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":1773,"index":134,"textDelta":"。"}
+
+event: token
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"token","token":151645,"index":135,"textDelta":""}
+
+event: finished
+data: {"id":"f6f4a789-6dbf-4691-8d41-69f54dbc41aa","type":"finished","finishReason":"eos","usage":{"promptTokens":33,"completionTokens":136},"textDelta":""}
+

@@ -1,5 +1,5 @@
 [Unit]
-Description=SproutLM Qwen2.5-32B three-process Prefill/Decode serving
+Description=SproutLM Qwen2.5-32B Prefill/Decode serving with event observer
 After=network.target
 RequiresMountsFor=/mnt/nvme/sprout-lm
 StartLimitIntervalSec=300
@@ -9,9 +9,11 @@ Conflicts=sprout-lm-32b.service
 [Service]
 Type=simple
 User=azureuser
-WorkingDirectory=/mnt/nvme/sprout-lm/deployments/pd
+WorkingDirectory=/mnt/nvme/sprout-lm/deployments/observer
 ExecStart=/usr/local/bin/node src/server.ts
 Environment=BACKEND=cuda-pd
+Environment=OBSERVABILITY=1
+Environment=EVENT_DIR=/mnt/nvme/sprout-lm/runs/events
 Environment=MODEL_DIR=/mnt/nvme/sprout-lm/models/qwen2.5-32b-instruct
 Environment=PREFILL_DEVICE=0
 Environment=DECODE_DEVICE=1

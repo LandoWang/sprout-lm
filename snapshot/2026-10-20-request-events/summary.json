@@ -1,0 +1,43 @@
+{
+  "requestId": "f6f4a789-6dbf-4691-8d41-69f54dbc41aa",
+  "eventCount": 1005,
+  "plans": 145,
+  "sources": [
+    "coordinator",
+    "decode",
+    "prefill"
+  ],
+  "pids": [
+    1405136,
+    1405165,
+    1405166
+  ],
+  "eventCounts": {
+    "request.received": 1,
+    "http.body_read": 1,
+    "text.template_started": 1,
+    "text.template_completed": 1,
+    "text.encode_started": 1,
+    "text.encoded": 1,
+    "scheduler.queued": 1,
+    "service.queued": 1,
+    "scheduler.admitted": 1,
+    "plan.sent": 145,
+    "plan.started": 145,
+    "plan.completed": 145,
+    "plan.completion_received": 145,
+    "token.ready": 136,
+    "kv.transfer_queued": 1,
+    "token.published": 136,
+    "http.token_written": 136,
+    "kv.transfer_ack_received": 1,
+    "kv.source_pages_released": 1,
+    "decode.ready": 1,
+    "request.resources_released": 1,
+    "generation.finished": 1,
+    "http.response_finished": 1,
+    "http.response_closed": 1
+  },
+  "lossReports": 0,
+  "sampleOnly": "functional event coverage, not an observability overhead benchmark"
+}

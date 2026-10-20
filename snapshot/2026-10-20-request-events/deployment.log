@@ -1,0 +1,12 @@
+MainPID=1405136
+NRestarts=0
+SubState=running
+    PID    PPID STAT   RSS COMMAND
+1405136       1 Ssl  169620 /usr/local/bin/node src/server.ts
+1405148 1405136 Sl   81184 /usr/local/bin/node /mnt/nvme/sprout-lm/deployments/observer/src/observer-worker.ts
+1405165 1405136 Sl   64354132 /usr/local/bin/node /mnt/nvme/sprout-lm/deployments/observer/src/pd-worker.ts
+1405166 1405136 Sl   64354992 /usr/local/bin/node /mnt/nvme/sprout-lm/deployments/observer/src/pd-worker.ts
+pid, gpu_uuid, used_gpu_memory [MiB]
+1405165, GPU-7f625747-eb0f-a595-3d64-84215ad232f7, 63958 MiB
+1405166, GPU-dbbc0b37-fd93-7274-db25-4a259fd9c80e, 63958 MiB
+{"status":"ok","pendingRequests":0}

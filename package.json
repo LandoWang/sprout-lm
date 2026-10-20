@@ -10,6 +10,8 @@
   "scripts": {
     "demo": "node src/demo.ts",
     "serve": "node src/server.ts",
+    "trace:request": "node scripts/request-events.ts",
+    "observe": "node scripts/observe.ts",
     "model:download": "node scripts/download-model.ts",
     "test:model": "node --test test/model.integration.ts",
     "build:cuda": "node scripts/build-cuda.ts",
