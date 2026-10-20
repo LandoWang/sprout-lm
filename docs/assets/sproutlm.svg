@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">SproutLM — 橘子般的发芽推理引擎</title>
+  <desc id="desc">橘红色的大脑轮廓中，折线电路连接金橙色节点；顶部的绿色芽茎长出两片放大的嫩叶，像一颗长芽的橘子。</desc>
+  <defs>
+    <mask id="leaf-veins" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="white"/>
+      <g fill="none" stroke="black" stroke-width="7" stroke-linecap="round">
+        <path d="M238 128Q218 108 191 93"/>
+        <path d="M275 112Q300 87 326 66"/>
+      </g>
+    </mask>
+  </defs>
+  <g fill="none" stroke="#215B40" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 204V158Q256 137 268 118M256 159Q254 143 242 135" stroke-width="14"/>
+  </g>
+  <!-- Leaves enlarged by 23%, anchored at the stem fork. -->
+  <g transform="translate(256 155) scale(1.23) translate(-256 -155)">
+    <g mask="url(#leaf-veins)">
+      <path d="M249 139C207 146 177 119 172 80C215 77 250 97 249 139Z" fill="#4B9460"/>
+      <path d="M263 125C259 81 293 52 342 52C338 96 310 129 263 125Z" fill="#88BA5B"/>
+    </g>
+  </g>
+  <!-- Tangerine brain outline and connected circuit traces. -->
+  <g fill="none" stroke="#E86B35" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 204C241 176 199 173 177 194C146 183 113 205 112 237C82 247 69 280 81 307C64 335 79 369 109 377C109 408 141 431 173 421C194 448 237 442 256 418C275 442 318 448 339 421C371 431 403 408 403 377C433 369 448 335 431 307C443 280 430 247 400 237C399 205 366 183 335 194C313 173 271 176 256 204Z" stroke-width="17"/>
+    <path d="M256 206V416" stroke-width="12"/>
+    <g stroke-width="11">
+      <path d="M177 194V226L207 256V283"/>
+      <path d="M112 237H145V265L174 294V318"/>
+      <path d="M81 307H111L136 332V360H174"/>
+      <path d="M173 421V397H209V348"/>
+      <path d="M335 194V226L305 256V283"/>
+      <path d="M400 237H367V265L338 294V318"/>
+      <path d="M431 307H401L376 332V360H338"/>
+      <path d="M339 421V397H303V348"/>
+    </g>
+  </g>
+  <g fill="#F5B65D" stroke="#E86B35" stroke-width="7">
+    <circle cx="207" cy="283" r="10"/>
+    <circle cx="174" cy="318" r="10"/>
+    <circle cx="174" cy="360" r="10"/>
+    <circle cx="209" cy="348" r="10"/>
+    <circle cx="305" cy="283" r="10"/>
+    <circle cx="338" cy="318" r="10"/>
+    <circle cx="338" cy="360" r="10"/>
+    <circle cx="303" cy="348" r="10"/>
+  </g>
+</svg>

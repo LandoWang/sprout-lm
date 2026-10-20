@@ -1,6 +1,20 @@
-# SproutLM
+<p align="center">
+  <a href="https://landowang.github.io/sprout-lm/">
+    <img src="docs/assets/sproutlm.svg" width="180" height="180" alt="SproutLM：橘红色电路大脑，顶部长出两片绿叶">
+  </a>
+</p>
 
-[项目主页](https://landowang.github.io/sprout-lm/) · [开发里程碑](MILESTONES.md) · [实验快照](snapshot/README.md)
+<h1 align="center">SproutLM</h1>
+
+<p align="center"><strong>让推理的每一步，看得见。</strong><br>TypeScript orchestrates. CUDA computes.</p>
+
+<p align="center">
+  <a href="https://landowang.github.io/sprout-lm/">项目主页</a> ·
+  <a href="MILESTONES.md">开发里程碑</a> ·
+  <a href="snapshot/README.md">实验快照</a>
+</p>
+
+---
 
 用 TypeScript 拆解 LLM 推理引擎的核心机制：连续批处理、分块 prefill、分页 KV cache、前缀复用、内存压力下的抢占与重算。模型结构保留在 TypeScript，设备计算可以通过原生扩展接入。
 

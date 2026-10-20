@@ -6,7 +6,20 @@
 <meta name="description" content="SproutLM：用 TypeScript 看懂 LLM 推理。从分页 KV 到双 A100 上的三进程 Prefill / Decode 分离。">
 <meta name="theme-color" content="#f5f7ef">
 <title>SproutLM · 让推理的每一步看得见</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🌱%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/svg+xml" href="assets/sproutlm.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SproutLM">
+<meta property="og:title" content="SproutLM · 让推理的每一步看得见">
+<meta property="og:description" content="一个正在生长的推理引擎。TypeScript 编排模型与调度，CUDA 完成设备计算。">
+<meta property="og:url" content="https://landowang.github.io/sprout-lm/">
+<meta property="og:image" content="https://landowang.github.io/sprout-lm/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SproutLM 橘红色电路大脑与绿色嫩芽标识。TypeScript orchestrates. CUDA computes.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://landowang.github.io/sprout-lm/assets/social-card.png">
 <style>
 :root{color-scheme:light;--paper:#f5f7ef;--ink:#20362c;--muted:#53685c;--line:#d6dfd1;--green:#215b40;--lime:#d9edaa;--white:#fffef9}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75}a{color:var(--green);text-underline-offset:4px}a:hover{color:#102e20}a:focus-visible{outline:3px solid #497e23;outline-offset:5px}::selection{background:var(--lime)}
@@ -21,13 +34,22 @@ section{padding:54px 0;border-top:1px solid var(--line)}.section-head{display:fl
 @media(max-width:850px){.hero{gap:30px;grid-template-columns:1fr 1fr}.brand span{display:none}.metrics{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}.metric:nth-child(-n+2){border-bottom:1px solid var(--line)}.steps{grid-template-columns:1fr 1fr}.workers{grid-template-columns:1fr 100px 1fr}.worker{padding:16px}.reading{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:10px}}
 @media(max-width:580px){.wrap{padding:0 20px}header{align-items:flex-start;gap:16px}nav{gap:14px;font-size:12px;flex-wrap:wrap;justify-content:flex-end}.hero{grid-template-columns:1fr;padding:44px 0;gap:24px}.hero h1{letter-spacing:-1px}.hero p{font-size:15px}.field-note{padding:22px}section{padding:36px 0}.section-head h2{font-size:25px}.architecture{padding:18px}.control{padding:18px 12px}.control h3{font-size:17px}.workers{grid-template-columns:1fr;gap:8px}.transfer b{font-size:0}.transfer b:after{content:"↓";font-size:25px}.metric{padding:20px 16px}.metric strong{font-size:28px}.facts,.two-col{grid-template-columns:1fr;gap:22px}.steps{gap:18px}footer{flex-direction:column;gap:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* The tangerine circuit brain is shared with the repository README. */
+:root{--orange:#e86b35;--peach:#fbe9da}
+.brand{display:inline-flex;align-items:center;gap:10px;flex-shrink:0}.brand img{display:block;width:40px;height:40px}.brand span{margin-left:2px}
+.hero{padding:64px 0 48px}.hero-mark{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}.hero-mark img{display:block;width:min(100%,340px);height:auto}.hero-mark figcaption{font-size:12px;color:var(--muted);letter-spacing:2px}
+.field-note{margin-bottom:48px}.field-note:before{background:var(--orange);margin-bottom:18px}.field-note h2{margin-bottom:20px}.field-note dl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}.field-note dl div{display:block;padding:12px 0 0}.field-note dd{text-align:left;margin-top:5px}.field-note .stamp{margin-bottom:0}
+.metric strong{color:#b74b1d}.steps li{border-top-color:#edba97}.fact{border-left-color:var(--orange)}::selection{background:var(--peach)}
+.footer-brand{display:inline-flex;align-items:center;gap:9px}.footer-brand img{width:28px;height:28px}
+@media(max-width:850px){.field-note dl{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:580px){.brand{font-size:19px;gap:7px}.brand img{width:32px;height:32px}.hero{padding:40px 0;gap:24px}.hero-mark{grid-row:1;gap:0}.hero-mark img{width:180px}.hero-mark figcaption{font-size:11px}.field-note{margin-bottom:32px}.field-note dl{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 </style>
 </head>
 <body>
 <a href="#main" class="skip">跳到主要内容</a>
 <div class="wrap">
 <header>
-<a class="brand" href="./">🌱 SproutLM <span>一个正在生长的推理引擎</span></a>
+<a class="brand" href="./"><img src="assets/sproutlm.svg" width="40" height="40" alt="">SproutLM <span>一个正在生长的推理引擎</span></a>
 <nav aria-label="主导航"><a href="#architecture">架构</a><a href="#results">实测</a><a href="#start">开始</a><a href="https://github.com/LandoWang/sprout-lm">GitHub ↗</a></nav>
 </header>
 <main id="main">
@@ -38,13 +60,17 @@ section{padding:54px 0;border-top:1px solid var(--line)}.section-head{display:fl
 <p>从一个 token、几页 KV 开始，写出自己的 LLM 推理引擎。用 TypeScript 编排模型、调度请求，用 CUDA 完成设备计算，逐步走到双 A100 上的真实 32B 模型。</p>
 <div class="links"><a class="button" href="https://github.com/LandoWang/sprout-lm">阅读源码 ↗</a><a class="button secondary" href="#architecture">看现在的架构 ↓</a></div>
 </div>
+<figure class="hero-mark">
+<img src="assets/sproutlm.svg" width="340" height="340" alt="橘红色的电路大脑，顶部长出两片绿色嫩叶" fetchpriority="high">
+<figcaption>一个正在生长的推理引擎</figcaption>
+</figure>
+</div>
 <aside class="field-note" aria-label="当前实验进展">
 <div class="eyebrow">Field notes / 2026.10.19</div>
 <h2>三个进程，两张卡。</h2>
 <dl><div><dt>模型</dt><dd>Qwen2.5-32B-Instruct</dd></div><div><dt>设备</dt><dd>2 × A100 80GB · NVLink</dd></div><div><dt>角色</dt><dd>API + Scheduler / P / D</dd></div><div><dt>权重 / KV</dt><dd>BF16 / FP32</dd></div><div><dt>执行</dt><dd>原生 CUDA 算子 + Graph</dd></div></dl>
 <div class="stamp">已验证的实验状态 · 页面不是实时监控</div>
 </aside>
-</div>
 
 <section id="architecture">
 <div class="section-head"><h2><span class="number">01</span>谁负责什么</h2><p>模型结构在 TypeScript，设备操作在原生扩展。</p></div>
@@ -110,7 +136,7 @@ MODEL_DIR=models/qwen2.5-0.5b-instruct npm run serve</code></pre><p><a href="htt
 <div class="reading"><a href="https://github.com/LandoWang/sprout-lm/blob/main/MILESTONES.md"><strong>Milestones ↗</strong><span>模型变大、PD 扩展、批量计算、Agent / Harness；逐项记录验收状态。</span></a><a href="https://github.com/LandoWang/sprout-lm/tree/main/snapshot"><strong>实验快照 ↗</strong><span>从 72B CPU + GPU 协同到 32B 全 GPU、Graph、BF16 和双卡 PD。</span></a><a href="https://github.com/LandoWang/sprout-lm/blob/main/src/pd-scheduler.ts"><strong>从调度器读源码 ↗</strong><span>观察执行计划、双端页引用、KV 交接、取消和 Worker 失败清理。</span></a></div>
 </section>
 </main>
-<footer><span>🌱 SproutLM · 把机制写清楚，把实验留下来。</span><span>内容更新于 2026-10-19 · <a href="https://github.com/LandoWang/sprout-lm">LandoWang / sprout-lm</a></span></footer>
+<footer><span class="footer-brand"><img src="assets/sproutlm.svg" width="28" height="28" alt="">SproutLM · 把机制写清楚，把实验留下来。</span><span>实验记录更新于 2026-10-19 · <a href="https://github.com/LandoWang/sprout-lm">LandoWang / sprout-lm</a></span></footer>
 </div>
 </body>
 </html>
